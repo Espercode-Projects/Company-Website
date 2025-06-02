@@ -477,7 +477,7 @@ const WhoWeAre = () => {
             key={i}
             className="absolute w-32 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-30"
             animate={{
-              x: [-200, window.innerWidth + 200],
+              x: [-200, 800 + 200],
               opacity: [0, 1, 0],
             }}
             transition={{
