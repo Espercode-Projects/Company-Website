@@ -1,3 +1,6 @@
+"use client";
+
+
 import React from "react";
 import Hero, { RunningText } from "./Hero";
 import Service from "./Service";
