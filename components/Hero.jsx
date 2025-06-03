@@ -29,6 +29,7 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
+import { useLocale } from "@/app/ClientRootLayout";
 
 // Navbar Component
 const Navbar = ({
@@ -41,6 +42,8 @@ const Navbar = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
+  const { translations } = useLocale()
+
   const services = [
     { name: "Web Development", icon: FaCode },
     { name: "Mobile App Development", icon: FaMobile },
@@ -101,7 +104,7 @@ const Navbar = ({
               textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
             }}
           >
-            DIGITAL SOLUTIONS
+            {translations.header}
           </motion.div>
         </div>
       </motion.div>
@@ -109,8 +112,8 @@ const Navbar = ({
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center space-x-8">
         {[
-          "HOME",
-          "ABOUT",
+          translations.nav_home,
+          translations.nav_about,
           <div key="services" className="relative">
             <motion.button
               onMouseEnter={() => setIsServiceHovered(true)}
@@ -121,7 +124,7 @@ const Navbar = ({
                 textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
               }}
             >
-              <span>OUR SERVICES</span>
+              <span>{translations.nav_service}</span>
               <motion.span
                 animate={{ rotate: isServiceHovered ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
@@ -168,8 +171,8 @@ const Navbar = ({
               )}
             </AnimatePresence>
           </div>,
-          "PORTFOLIO",
-          "CONTACT",
+          translations.nav_portofolio,
+          translations.nav_contact,
         ].map((item, index) =>
           typeof item === "string" ? (
             <motion.a
@@ -384,6 +387,8 @@ const MobileMenu = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
+  const { translations } = useLocale()
+
   const languages = [
     { code: "EN", name: "English", country: "US" },
     { code: "ID", name: "Indonesia", country: "ID" },
@@ -439,7 +444,7 @@ const MobileMenu = ({
               </div>
 
               <nav className="space-y-6">
-                {["HOME", "ABOUT", "OUR SERVICES", "PORTFOLIO", "CONTACT"].map(
+                {[translations.nav_home, translations.nav_about, translations.nav_service, translations.nav_portofolio, translations.nav_contact].map(
                   (item, index) => (
                     <motion.a
                       key={item}
@@ -584,7 +589,8 @@ export const RunningText = () => {
 
 // Hero Content Component
 const HeroContent = ({ mousePosition, currentTextIndex }) => {
-  const animatedTexts = ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
+  const { translations } = useLocale()
+  const animatedTexts = translations.animatedTexts || '[]'
 
   return (
     <div className="flex-1 max-w-4xl mb-12 lg:mb-0 lg:pr-12">
@@ -630,7 +636,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             textShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
           }}
         >
-          Transform your ideas into powerful digital products. 
+          {translations.head_subheader}
         </motion.div>
       </div>
 
@@ -644,7 +650,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           textShadow: "0 0 8px rgba(255, 255, 255, 0.2)",
         }}
       >
-        Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.
+        {translations.head_description}
       </motion.p>
 
       {/* CTA Buttons */}
@@ -667,7 +673,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           }}
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <span className="relative z-10">Get Started</span>
+          <span className="relative z-10">{translations.head_main_cta}</span>
           <motion.div
             className="relative z-10"
             animate={{ x: [0, 4, 0] }}
@@ -688,7 +694,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           whileTap={{ scale: 0.95 }}
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <span className="relative z-10">View Portfolio</span>
+          <span className="relative z-10">{translations.head_secondary_cta}</span>
         </motion.button>
       </motion.div>
     </div>
@@ -865,6 +871,8 @@ const ParticleSystem = () => {
 
 // Main Hero Component
 const Hero = () => {
+  const { setCurrentLocale, translations } = useLocale()
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -896,6 +904,10 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    setCurrentLocale(currentLanguage.toLowerCase())
+  }, [currentLanguage])
 
   return (
     <div className="relative  min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden">

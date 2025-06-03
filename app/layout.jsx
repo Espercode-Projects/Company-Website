@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import ClientRootLayout from "./ClientRootLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${spaceGrotesk.variable}  antialiased`}
       >
-        {children}
+        <ClientRootLayout>{children}</ClientRootLayout>
       </body>
     </html>
   );

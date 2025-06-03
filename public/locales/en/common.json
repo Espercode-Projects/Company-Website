@@ -1,0 +1,13 @@
+{
+  "header": "DIGITAL SOLUTIONS",
+  "nav_home": "HOME", 
+  "nav_about": "ABOUT", 
+  "nav_service": "OUR SERVICES", 
+  "nav_portofolio": "PORTOFOLIO", 
+  "nav_contact": "CONTACT", 
+  "animatedTexts": ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"], 
+  "head_subheader": "Transform your ideas into powerful digital products. ", 
+  "head_description": "Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.", 
+  "head_main_cta": "Get Started", 
+  "head_secondary_cta": "View Portofolio"
+}
