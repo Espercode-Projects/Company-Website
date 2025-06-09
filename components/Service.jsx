@@ -5,34 +5,23 @@ import { FaAndroid, FaChartLine, FaCode } from "react-icons/fa";
 
 const Service = () => {
   const [activeCard, setActiveCard] = useState(null);
-  const [isInView, setIsInView] = useState(false);
+  // const [isInView, setIsInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
     // Check for mobile screen size
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
@@ -98,8 +87,10 @@ const Service = () => {
     {
       id: 1,
       title: "MODERN WEB",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaCode />,
       color: "from-gray-900 to-gray-800",
       accentColor: "lime-400",
@@ -107,8 +98,10 @@ const Service = () => {
     {
       id: 2,
       title: "MOBILE APPS",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaAndroid />,
       // color: "from-blue-600 to-blue-800",
       color: "from-gray-900 to-gray-800",
@@ -117,21 +110,23 @@ const Service = () => {
     {
       id: 3,
       title: "MARKETING",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaChartLine />,
       color: "from-gray-900 to-gray-800",
       accentColor: "lime-400",
     },
   ];
 
-  const floatingElements = [...Array(15)].map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 20 + 10,
-    duration: Math.random() * 10 + 5,
-  }));
+  // const floatingElements = [...Array(15)].map((_, i) => ({
+  //   id: i,
+  //   x: Math.random() * 100,
+  //   y: Math.random() * 100,
+  //   size: Math.random() * 20 + 10,
+  //   duration: Math.random() * 10 + 5,
+  // }));
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % services.length);
@@ -143,16 +138,19 @@ const Service = () => {
 
   const getCardPosition = (index) => {
     const diff = index - currentIndex;
-    if (diff === 0) return { x: '0%', scale: 1, opacity: 1, zIndex: 10 }; // center
-    if (diff === 1 || diff === -(services.length - 1)) return { x: '100%', scale: 0.8, opacity: 0.6, zIndex: 5 }; // right
-    if (diff === -1 || diff === services.length - 1) return { x: '-100%', scale: 0.8, opacity: 0.6, zIndex: 5 }; // left
-    return { x: '200%', scale: 0.6, opacity: 0, zIndex: 1 }; // hidden
+    if (diff === 0) return { x: "0%", scale: 1, opacity: 1, zIndex: 10 }; // center
+    if (diff === 1 || diff === -(services.length - 1))
+      return { x: "100%", scale: 0.8, opacity: 0.6, zIndex: 5 }; // right
+    if (diff === -1 || diff === services.length - 1)
+      return { x: "-100%", scale: 0.8, opacity: 0.6, zIndex: 5 }; // left
+    return { x: "200%", scale: 0.6, opacity: 0, zIndex: 1 }; // hidden
   };
 
   return (
     <section
       ref={sectionRef}
       className="relative  min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden py-16 lg:py-24"
+      id="service"
     >
       {/* Animated Background Pattern */}
       <motion.div
@@ -166,13 +164,14 @@ const Service = () => {
           repeatType: "reverse",
         }}
         style={{
-          backgroundImage: "linear-gradient(45deg, #a3e635 25%, transparent 25%), linear-gradient(-45deg, #a3e635 25%, transparent 25%)",
+          backgroundImage:
+            "linear-gradient(45deg, #a3e635 25%, transparent 25%), linear-gradient(-45deg, #a3e635 25%, transparent 25%)",
           backgroundSize: "60px 60px",
         }}
       />
 
       {/* Floating Background Elements */}
-      {floatingElements.map((element) => (
+      {/* {floatingElements.map((element) => (
         <motion.div
           key={element.id}
           className="absolute bg-lime-400 rounded-full opacity-20 blur-sm"
@@ -194,18 +193,19 @@ const Service = () => {
             ease: "easeInOut",
           }}
         />
-      ))}
+      ))} */}
 
       {/* Header Section */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="relative z-10 text-center mb-16 px-4 md:px-8 lg:px-16"
       >
         <motion.div variants={itemVariants} className="mb-8">
           <span className="inline-block text-lime-400 text-sm font-bold tracking-wider uppercase mb-4">
-            WHAT WE DO
+            WHAT WE DO ?
           </span>
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"
@@ -234,12 +234,7 @@ const Service = () => {
           className="bg-transparent border-2 border-lime-400 text-lime-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-lime-400 hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 mx-auto group"
         >
           <span>ALL SERVICES</span>
-          <motion.span
-            
-            className="text-xl"
-          >
-            ⚡
-          </motion.span>
+          <motion.span className="text-xl">⚡</motion.span>
         </motion.button>
       </motion.div>
 
@@ -247,11 +242,16 @@ const Service = () => {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="relative z-10 px-4 md:px-8 lg:px-16"
       >
         {/* Desktop Grid */}
-        <div className={`${isMobile ? 'hidden' : 'grid'} grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto`}>
+        <div
+          className={`${
+            isMobile ? "hidden" : "grid"
+          } grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto`}
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -267,7 +267,9 @@ const Service = () => {
               {/* Card Glow Effect */}
               <motion.div
                 className={`absolute inset-0 bg-gradient-to-r from-${service.accentColor} to-cyan-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}
-                animate={activeCard === service.id ? { scale: [1, 1.1, 1] } : {}}
+                animate={
+                  activeCard === service.id ? { scale: [1, 1.1, 1] } : {}
+                }
                 transition={{ duration: 2, repeat: Infinity }}
               />
 
@@ -276,10 +278,14 @@ const Service = () => {
                 {/* Service Icon */}
                 <motion.div
                   className="mb-6"
-                  animate={activeCard === service.id ? { rotate: [0, 10, -10, 0] } : {}}
+                  animate={
+                    activeCard === service.id ? { rotate: [0, 10, -10, 0] } : {}
+                  }
                   transition={{ duration: 0.5 }}
                 >
-                  <div className={`w-16 h-16 text-gray-900 bg-${service.accentColor} rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 text-gray-900 bg-${service.accentColor} rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg`}
+                  >
                     {service.icon}
                   </div>
                   <motion.div
@@ -307,7 +313,9 @@ const Service = () => {
                 {/* Service Description */}
                 <motion.p
                   className="text-gray-300 text-base leading-relaxed mb-6 flex-grow"
-                  animate={activeCard === service.id ? { opacity: [0.7, 1, 0.7] } : {}}
+                  animate={
+                    activeCard === service.id ? { opacity: [0.7, 1, 0.7] } : {}
+                  }
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   {service.description}
@@ -325,10 +333,14 @@ const Service = () => {
                   />
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
-                    animate={activeCard === service.id ? { opacity: [0.5, 0.8, 0.5] } : {}}
+                    animate={
+                      activeCard === service.id
+                        ? { opacity: [0.5, 0.8, 0.5] }
+                        : {}
+                    }
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  
+
                   {/* Image Overlay Elements */}
                   <motion.div
                     className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
@@ -364,14 +376,18 @@ const Service = () => {
               {/* Card Border Animation */}
               <motion.div
                 className={`absolute inset-0 border-2 border-${service.accentColor} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                animate={activeCard === service.id ? {
-                  borderRadius: ["24px", "32px", "24px"],
-                } : {}}
+                animate={
+                  activeCard === service.id
+                    ? {
+                        borderRadius: ["24px", "32px", "24px"],
+                      }
+                    : {}
+                }
                 transition={{ duration: 2, repeat: Infinity }}
               />
 
               {/* Floating Elements Inside Card */}
-              {[...Array(3)].map((_, i) => (
+              {/* {[...Array(3)].map((_, i) => (
                 <motion.div
                   key={i}
                   className={`absolute w-2 h-2 bg-${service.accentColor} rounded-full opacity-40`}
@@ -391,13 +407,17 @@ const Service = () => {
                     delay: i * 0.5,
                   }}
                 />
-              ))}
+              ))} */}
             </motion.div>
           ))}
         </div>
 
         {/* Mobile Carousel */}
-        <div className={`${isMobile ? 'block' : 'hidden'} relative max-w-sm mx-auto`}>
+        <div
+          className={`${
+            isMobile ? "block" : "hidden"
+          } relative max-w-sm mx-auto`}
+        >
           <div className="relative h-[600px] overflow-hidden">
             {services.map((service, index) => {
               const position = getCardPosition(index);
@@ -429,7 +449,9 @@ const Service = () => {
                   <div className="relative z-10 p-6 h-full flex flex-col">
                     {/* Service Icon */}
                     <div className="mb-6">
-                      <div className={`w-16 h-16 bg-${service.accentColor} rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg`}>
+                      <div
+                        className={`w-16 h-16 bg-${service.accentColor} rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg`}
+                      >
                         {service.icon}
                       </div>
                       <motion.div
@@ -464,7 +486,7 @@ const Service = () => {
                         className="w-full h-40 object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      
+
                       <motion.div
                         className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
                         animate={{
@@ -480,14 +502,16 @@ const Service = () => {
                     </div>
 
                     {/* Action Button */}
-                    <button className={`self-start bg-${service.accentColor} text-gray-900 px-6 py-3 rounded-full font-bold text-sm flex items-center space-x-2 shadow-lg`}>
+                    <button
+                      className={`self-start bg-${service.accentColor} text-gray-900 px-6 py-3 rounded-full font-bold text-sm flex items-center space-x-2 shadow-lg`}
+                    >
                       <span>LEARN MORE</span>
                       <span>→</span>
                     </button>
                   </div>
 
                   {/* Floating Elements Inside Card */}
-                  {[...Array(3)].map((_, i) => (
+                  {/* {[...Array(3)].map((_, i) => (
                     <motion.div
                       key={i}
                       className={`absolute w-2 h-2 bg-${service.accentColor} rounded-full opacity-40`}
@@ -507,7 +531,7 @@ const Service = () => {
                         delay: i * 0.5,
                       }}
                     />
-                  ))}
+                  ))} */}
                 </motion.div>
               );
             })}
@@ -523,7 +547,7 @@ const Service = () => {
             >
               ←
             </motion.button>
-            
+
             {/* Dots Indicator */}
             <div className="flex space-x-2">
               {services.map((_, index) => (
@@ -531,7 +555,7 @@ const Service = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-lime-400' : 'bg-gray-600'
+                    index === currentIndex ? "bg-lime-400" : "bg-gray-600"
                   }`}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}

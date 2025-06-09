@@ -16,7 +16,7 @@ function MainHome() {
       <div className="relative flex flex-col">
         <Hero />
 
-        <div className="relative h-20">
+        <div className="relative ">
           <BorderSeparator />
         </div>
 

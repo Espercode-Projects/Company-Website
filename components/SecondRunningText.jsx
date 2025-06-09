@@ -53,10 +53,10 @@ function SecondRunningText() {
               <motion.span
                 key={index}
                 className="mx-8 text-xl font-bold text-slate-900 hover:text-white transition-all duration-300 cursor-pointer"
-                whileHover={{
-                  scale: 1.1,
-                  textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-                }}
+                // whileHover={{
+                //   scale: 1.1,
+                //   textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
+                // }}
                 style={{
                   textShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
                 }}

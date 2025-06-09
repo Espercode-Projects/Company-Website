@@ -21,9 +21,7 @@ import {
   FaCode,
   FaMobile,
   FaPalette,
-  FaCloud,
   FaBrain,
-  FaShieldAlt,
   FaCaretDown,
   FaWhatsapp,
   FaFacebook,
@@ -42,15 +40,13 @@ const Navbar = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
-  const { translations } = useLocale()
+  const { translations } = useLocale();
 
   const services = [
     { name: "Web Development", icon: FaCode },
     { name: "Mobile App Development", icon: FaMobile },
     { name: "UI/UX Design", icon: FaPalette },
-    // { name: "Cloud Solutions", icon: FaCloud },
-    // { name: "AI & Machine Learning", icon: FaBrain },
-    // { name: "Blockchain Development", icon: FaShieldAlt },
+    { name: "AI & Machine Learning", icon: FaBrain },
   ];
 
   const languages = [
@@ -319,10 +315,30 @@ const Navbar = ({
 // Social Media Component
 const SocialMedia = () => {
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/Espercode-Projects", color: "#333", name: "GitHub" },
-    { icon: FaWhatsapp, href: "https://wa.me/+6281226577201", color: "#0077B5", name: "LinkedIn" },
-    { icon: FaFacebook, href: "https://www.facebook.com/profile.php?id=61575600557984", color: "#1DA1F2", name: "Twitter" },
-    { icon: FaInstagram, href: "https://www.instagram.com/espercode/", color: "#E4405F", name: "Instagram" },
+    {
+      icon: FaGithub,
+      href: "https://github.com/Espercode-Projects",
+      color: "#333",
+      name: "GitHub",
+    },
+    {
+      icon: FaWhatsapp,
+      href: "https://wa.me/+6281226577201",
+      color: "#0077B5",
+      name: "LinkedIn",
+    },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/profile.php?id=61575600557984",
+      color: "#1DA1F2",
+      name: "Twitter",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/espercode/",
+      color: "#E4405F",
+      name: "Instagram",
+    },
   ];
 
   return (
@@ -387,7 +403,7 @@ const MobileMenu = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
-  const { translations } = useLocale()
+  const { translations } = useLocale();
 
   const languages = [
     { code: "EN", name: "English", country: "US" },
@@ -444,25 +460,29 @@ const MobileMenu = ({
               </div>
 
               <nav className="space-y-6">
-                {[translations.nav_home, translations.nav_about, translations.nav_service, translations.nav_portofolio, translations.nav_contact].map(
-                  (item, index) => (
-                    <motion.a
-                      key={item}
-                      href="#"
-                      className="block text-white text-lg font-medium hover:text-green-400 transition-colors duration-300"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      initial={{ x: 50, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{
-                        x: 10,
-                        textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
-                      }}
-                    >
-                      {item}
-                    </motion.a>
-                  )
-                )}
+                {[
+                  translations.nav_home,
+                  translations.nav_about,
+                  translations.nav_service,
+                  translations.nav_portofolio,
+                  translations.nav_contact,
+                ].map((item, index) => (
+                  <motion.a
+                    key={item}
+                    href="#"
+                    className="block text-white text-lg font-medium hover:text-green-400 transition-colors duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{
+                      x: 10,
+                      textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
+                    }}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
               </nav>
 
               {/* Mobile Language Selector */}
@@ -524,15 +544,11 @@ export const RunningText = () => {
     "React Development",
     "Node.js Solutions",
     "Python AI/ML",
-    // "Cloud Computing",
     "DevOps Services",
     "Mobile Apps",
-    // "Blockchain",
     "UI/UX Design",
     "API Integration",
     "Database Design",
-    // "Cybersecurity",
-    // "IoT Solutions",
   ];
 
   return (
@@ -569,13 +585,13 @@ export const RunningText = () => {
               <motion.span
                 key={index}
                 className="mx-8 text-xl font-bold text-slate-900 hover:text-white transition-all duration-300 cursor-pointer"
-                whileHover={{
-                  scale: 1.1,
-                  textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-                }}
-                style={{
-                  textShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
-                }}
+                // whileHover={{
+                //   scale: 1.1,
+                //   textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
+                // }}
+                // style={{
+                //   textShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
+                // }}
               >
                 {service} •
               </motion.span>
@@ -589,8 +605,8 @@ export const RunningText = () => {
 
 // Hero Content Component
 const HeroContent = ({ mousePosition, currentTextIndex }) => {
-  const { translations } = useLocale()
-  const animatedTexts = translations.animatedTexts || '[]'
+  const { translations } = useLocale();
+  const animatedTexts = translations.animatedTexts || "[]";
 
   return (
     <div className="flex-1 max-w-4xl mb-12 lg:mb-0 lg:pr-12">
@@ -614,12 +630,12 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             <motion.h1
               key={currentTextIndex}
               className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
-              initial={{ opacity: 0, y: 100, rotateX: 90 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              exit={{ opacity: 0, y: -100, rotateX: -90 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               style={{
-                filter: "drop-shadow(0 0 25px rgba(34, 197, 94, 0.6))",
+                filter: "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
               }}
             >
               {animatedTexts[currentTextIndex]}
@@ -636,7 +652,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             textShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
           }}
         >
-          {translations.head_subheader}
+          " {translations.head_subheader} "
         </motion.div>
       </div>
 
@@ -660,7 +676,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
       >
-        <motion.button
+        <motion.a
           className="bg-gradient-to-r from-green-400 to-green-600 text-slate-900 px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 group relative overflow-hidden"
           whileHover={{
             scale: 1.05,
@@ -671,6 +687,8 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           style={{
             boxShadow: "0 0 20px rgba(34, 197, 94, 0.4)",
           }}
+          href="#service"
+          
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="relative z-10">{translations.head_main_cta}</span>
@@ -681,7 +699,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           >
             <FaArrowRight />
           </motion.div>
-        </motion.button>
+        </motion.a>
 
         <motion.button
           className="border border-green-400/40 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group"
@@ -694,7 +712,9 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           whileTap={{ scale: 0.95 }}
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <span className="relative z-10">{translations.head_secondary_cta}</span>
+          <span className="relative z-10">
+            {translations.head_secondary_cta}
+          </span>
         </motion.button>
       </motion.div>
     </div>
@@ -763,7 +783,7 @@ const HeroImage = ({ mousePosition }) => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <img
-            src="https://i.pinimg.com/736x/34/5b/91/345b91c82ec09efccb78db492bdf3eab.jpg"
+            src="/img/programmer.avif"
             alt="Technology Innovation"
             className="w-full h-90 object-cover "
           />
@@ -871,7 +891,7 @@ const ParticleSystem = () => {
 
 // Main Hero Component
 const Hero = () => {
-  const { setCurrentLocale, translations } = useLocale()
+  const { setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
@@ -906,8 +926,8 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    setCurrentLocale(currentLanguage.toLowerCase())
-  }, [currentLanguage])
+    setCurrentLocale(currentLanguage.toLowerCase());
+  }, [currentLanguage]);
 
   return (
     <div className="relative  min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden">
@@ -1012,29 +1032,19 @@ const Hero = () => {
         <HeroImage mousePosition={mousePosition} />
       </motion.div>
 
-      
-
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2  mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
         <span className="text-white/60 text-sm">Scroll Down</span>
-        <motion.div
-          className="w-6 h-10 border-2 border-green-400/50 rounded-full flex justify-center"
-          style={{
-            boxShadow: "0 0 15px rgba(34, 197, 94, 0.3)",
-          }}
-        >
+        <motion.div className="w-6 h-10 border-2 border-green-400/50 rounded-full flex justify-center">
           <motion.div
             className="w-1 h-3 bg-green-400 rounded-full mt-2"
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            style={{
-              boxShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
-            }}
           />
         </motion.div>
       </motion.div>
