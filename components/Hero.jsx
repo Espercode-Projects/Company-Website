@@ -40,7 +40,7 @@ const Navbar = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
-  const { translations } = useLocale();
+  const { currentLocale, translations } = useLocale();
 
   const services = [
     { name: "Web Development", icon: FaCode },
@@ -215,12 +215,12 @@ const Navbar = ({
           >
             <ReactCountryFlag
               countryCode={
-                languages.find((lang) => lang.code === currentLanguage)?.country
+                languages.find((lang) => lang.code === currentLocale.toUpperCase())?.country
               }
               svg
               style={{ width: "1em", height: "1em" }}
             />
-            <span>{currentLanguage}</span>
+            <span>{currentLocale.toUpperCase()}</span>
             <motion.span
               animate={{ rotate: isLanguageOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -891,13 +891,13 @@ const ParticleSystem = () => {
 
 // Main Hero Component
 const Hero = () => {
-  const { setCurrentLocale, translations } = useLocale();
+  const { currentLocale, setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("EN");
+  const [currentLanguage, setCurrentLanguage] = useState(currentLocale.toUpperCase());
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const { scrollY } = useScroll();
@@ -934,7 +934,9 @@ const Hero = () => {
     }
 
     setCurrentLocale(currentLanguage.toLowerCase());
-    localStorage.setItem('lang', currentLanguage.toLowerCase())
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('lang', currentLanguage.toLowerCase())
+      }
   }, [currentLanguage]);
 
   return (

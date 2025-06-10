@@ -13,8 +13,17 @@ export function useLocale() {
 }
 
 export default function ClientRootLayout({children}) {
-    const [currentLocale, setCurrentLocale] = useState(localStorage.getItem('lang') || 'en')
+    const [currentLocale, setCurrentLocale] = useState('en')
     const [translations, setTranslations] = useState({})
+
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+          const storedLang = localStorage.getItem('lang');
+          if (storedLang) {
+              setCurrentLocale(storedLang);
+          }
+      }
+    }, []);
 
     let parsedLocale = currentLocale
 
