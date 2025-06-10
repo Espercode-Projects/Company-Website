@@ -12,8 +12,10 @@ import {
   FaGitAlt,
   FaDocker,
 } from "react-icons/fa";
+import { useLocale } from "@/app/ClientRootLayout";
 
 const TeamCard = () => {
+  const { translations } = useLocale()
   const [selectedMember, setSelectedMember] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -53,9 +55,9 @@ const TeamCard = () => {
   ];
 
   const stats = [
-    { number: "50+", label: "PROJECTS" },
-    { number: "15+", label: "EXPERTS" },
-    { number: "5+", label: "YEARS" },
+    { number: "50+", label: `${translations.team_stats_label?.[0]}` },
+    { number: "15+", label: `${translations.team_stats_label?.[1]}` },
+    { number: "5+", label: `${translations.team_stats_label?.[2]}` },
   ];
 
   const getSkillIcon = (skill) => {
@@ -149,7 +151,7 @@ const TeamCard = () => {
                   className="w-4 h-4 bg-green-400 transform rotate-45"
                 />
                 <span className="text-green-400 font-semibold tracking-wider text-sm">
-                  MEET THE EXPERT
+                  {translations.team_persuasive}
                 </span>
               </div>
               <motion.h1
@@ -159,7 +161,7 @@ const TeamCard = () => {
                   transition: { duration: 0.3 },
                 }}
               >
-                TEAM OF{" "}
+                {translations.team_title?.[0]}{" "}
                 <motion.span
                   className="text-green-400"
                   animate={{
@@ -175,7 +177,7 @@ const TeamCard = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  EXPERT
+                  {translations.team_title?.[1]}
                 </motion.span>
               </motion.h1>
             </motion.div>
@@ -184,9 +186,7 @@ const TeamCard = () => {
               variants={itemVariants}
               className="text-gray-300 text-base lg:text-lg leading-relaxed max-w-lg"
             >
-              Our passionate team of developers, designers, and innovators work
-              together to create extraordinary digital experiences that drive
-              business growth and exceed client expectations.
+              {translations.team_description}
             </motion.p>
 
             {/* Stats */}

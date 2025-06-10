@@ -1,0 +1,49 @@
+{
+  "head_title": "数字解决方案",
+  "nav_home": "首页", 
+  "nav_about": "关于我们", 
+  "nav_service": "我们的服务", 
+  "nav_portofolio": "投资组合", 
+  "nav_contact": "联系我们", 
+  "hero_header": "数字", 
+  "hero_animated_texts": ["创新", "解决方案", "卓越", "未来"], 
+  "hero_subheader": "将你的想法转化为强大的数字产品。", 
+  "hero_description": "无论您需要网站、移动应用或完整的数字解决方案，我们都能为您设计、开发并交付提升品牌和发展业务的体验。", 
+  "hero_main_cta": "开始使用", 
+  "hero_secondary_cta": "查看作品集", 
+  "hero_hint": "向下滚动", 
+  "service_question": "我们做什么？", 
+  "service_first_title": "专注于高性能网页和", 
+  "service_second_title": "移动应用开发。", 
+  "service_main_cta": "所有服务", 
+  "service_services": [
+    {
+      "title": "现代网络", 
+      "description": "专为提升您的品牌而设计的高性能网站。我们构建响应迅速、引人入胜的体验，从而推动成果并发展您的业务。我们提供根据您的独特需求量身定制的 Web 解决方案。"
+    }, 
+    {
+      "title": "移动应用", 
+      "description": "将您的想法转化为强大的移动体验。我们为 Android 设计和开发直观的应用程序，从而增强客户参与度并简化运营。让我们将您的移动愿景变为现实。"
+    }, 
+    {
+      "title": "市场营销", 
+      "description": "通过我们独特的营销解决方案，吸引您的受众并提升您的品牌。我们是一支充满热情的设计师、营销人员和创新者团队，致力于提供推动增长并建立持久联系的战略。"
+    }
+  ], 
+  "service_secondary_cta": "了解更多", 
+  "second_running_text": [
+    "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode"
+  ], 
+  "team_persuasive": "见见专家", 
+  "team_title": ["专家", "团队"], 
+  "team_description": "我们充满热情的开发者、设计师和创新者团队创造出卓越的数字体验，推动业务增长，满足客户期望。", 
+  "team_stats_label": ["项目", "专家", "年"], 
+  "weare_main_text": "我们是 创造者、创新者 和 故事讲述者，致力于理解每个品牌独特的身份。我们沉浸在您的愿景中，将战略与 创造力 融合，打造不仅存在，而且在 受众 心中蓬勃发展的品牌。", 
+  "weare_highlighted_words": ["创造者", "创新者", "故事讲述者", "创造力", "打造品牌", "受众"], 
+  "weare_icon_label": ["自然", "优质", "能源", "力量", "创造性", "创新", "卓越", "焦点"], 
+  "footer_title": ["页面", "联系我们"], 
+  "footer_pages_nav": ["关于我们", "投资组合", "FAQs"], 
+  "footer_contact_title": ["电话号码", "电子邮件地址"], 
+  "footer_description": "我们由热情的设计师、营销人员和创新者组成的团队，专注于提供能提升品牌、吸引受众的独特解决方案。", 
+  "footer_bottom_section": ["隐私政策", "服务条款"]
+}

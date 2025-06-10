@@ -1,13 +1,49 @@
 {
-  "header": "DIGITAL SOLUTIONS",
-  "nav_home": "HOME", 
-  "nav_about": "ABOUT", 
-  "nav_service": "OUR SERVICES", 
-  "nav_portofolio": "PORTOFOLIO", 
-  "nav_contact": "CONTACT", 
-  "animatedTexts": ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"], 
-  "head_subheader": "Transform your ideas into powerful digital products. ", 
-  "head_description": "Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.", 
-  "head_main_cta": "Get Started", 
-  "head_secondary_cta": "View Portofolio"
+  "head_title": "DIGITALE LÖSUNGEN",
+  "nav_home": "STARTSEITE", 
+  "nav_about": "ÜBER UNS", 
+  "nav_service": "UNSERE DIENSTLEISTUNGEN", 
+  "nav_portofolio": "PORTFOLIO", 
+  "nav_contact": "KONTAKT", 
+  "hero_header": "DIGITAL", 
+  "hero_animated_texts": ["INNOVATION", "Lösungen", "Exzellenz", "Zukunft"], 
+  "hero_subheader": "Verwandle deine Ideen in leistungsstarke digitale Produkte. ", 
+  "hero_description": "Ob Website, mobile App oder digitale Komplettlösung – wir gestalten, entwickeln und liefern Erlebnisse, die Ihre Marke stärken und Ihr Geschäft ausbauen.", 
+  "hero_main_cta": "Loslegen", 
+  "hero_secondary_cta": "Portfolio ansehen", 
+  "hero_hint": "Nach Unten Scrollen", 
+  "service_question": "WAS MACHEN WIR?", 
+  "service_first_title": "SPEZIALISIERUNG AUF HOCHLEISTUNGS-WEB UND", 
+  "service_second_title": "MOBILE-APP-ENTWICKLUNG.", 
+  "service_main_cta": "ALLE DIENSTLEISTUNGEN", 
+  "service_services": [
+    {
+      "title": "MODERNE WEB", 
+      "description": "Leistungsstarke Websites, die entwickelt wurden, um Ihre Marke hervorzuheben. Wir entwickeln responsive, ansprechende Erlebnisse, die Ergebnisse liefern und Ihr Geschäft ausbauen. Wir bieten Web-Lösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind."
+    }, 
+    {
+      "title": "MOBILE APPS", 
+      "description": "Verwandeln Sie Ihre Ideen in leistungsstarke mobile Erlebnisse. Wir entwerfen und entwickeln intuitive Apps für Android, verbessern die Kundenbindung und optimieren Abläufe. Lassen Sie uns Ihre mobile Vision zum Leben erwecken."
+    }, 
+    {
+      "title": "MARKETING", 
+      "description": "Fesseln Sie Ihr Publikum und heben Sie Ihre Marke mit unseren einzigartigen Marketinglösungen hervor. Wir sind ein Team aus leidenschaftlichen Designern, Marketingspezialisten und Innovatoren, die Strategien liefern, die Wachstum fördern und dauerhafte Verbindungen aufbauen."
+    }
+  ], 
+  "service_secondary_cta": "MEHR ERFAHREN", 
+  "second_running_text": [
+    "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode"
+  ], 
+  "team_persuasive": "TREFFEN SIE DEN EXPERTEN", 
+  "team_title": ["TEAM VON", "EXPERTEN"], 
+  "team_description": "Unser engagiertes Team aus Entwicklern, Designern und Innovatoren schafft außergewöhnliche digitale Erlebnisse, die das Unternehmenswachstum fördern und die Kundenerwartungen erfüllen.", 
+  "team_stats_label": ["PROJEKTE", "EXPERTEN", "JAHRE"], 
+  "weare_main_text": "WIR SIND SCHÖPFER, INNOVATOREN UND GESCHICHTENERZÄHLER, DIE SICH DER EINZIGARTIGEN IDENTITÄT JEDER MARKE VERSCHRIEBEN HABEN. WIR TAUCHEN IN IHRE VISION EIN UND VERBINDEN STRATEGIE MIT KREATIVITÄT, UM MARKEN AUFZUBAUEN, DIE NICHT NUR EXISTIEREN, SONDERN IM HERZEN IHRER ZIELGRUPPE LEBEN.", 
+  "weare_highlighted_words": ["SCHÖPFER", "INNOVATOREN", "GESCHICHTENERZÄHLER", "KREATIVITÄT", "MARKEN AUFZUBAUEN", "ZIELGRUPPE"], 
+  "weare_icon_label": ["Natur", "Premium", "Energie", "Kraft", "Kreativ", "Innovation", "Exzellenz", "Fokus"], 
+  "footer_title": ["Seiten", "VERBINDEN SIE SICH MIT UNS"], 
+  "footer_pages_nav": ["Über uns", "Portfolio", "FAQs"], 
+  "footer_contact_title": ["TELEFONNUMMER", "E-MAIL-ADRESSE"], 
+  "footer_description": "Mit einem leidenschaftlichen Team aus Designern, Marketern und Innovatoren liefern wir einzigartige Lösungen, die Ihre Marke stärken und Ihr Publikum begeistern.", 
+  "footer_bottom_section": ["Datenschutzrichtlinie", "Nutzungsbedingungen"]
 }

@@ -1,13 +1,49 @@
 {
-  "header": "SOLUSI DIGITAL",
+  "head_title": "SOLUSI DIGITAL",
   "nav_home": "BERANDA", 
   "nav_about": "TENTANG", 
   "nav_service": "LAYANAN KAMI", 
   "nav_portofolio": "PORTOFOLIO", 
   "nav_contact": "KONTAK", 
-  "animatedTexts": ["INOVASI", "SOLUSI", "KEUNGGULAN", "MASA DEPAN"], 
-  "head_subheader": "Ubah ide Anda menjadi solusi produk digital yang kuat. ", 
-  "head_description": "Baik website, mobile app, atau solusi digital yang komplit — kami hadir untuk merancang, mengembangkan, dan menyajikan pengalaman yang menumbuhkan brand dan bisnis Anda.", 
-  "head_main_cta": "Mulai", 
-  "head_secondary_cta": "Lihat Portofolio"
+  "hero_header": "DIGITAL", 
+  "hero_animated_texts": ["INOVASI", "SOLUSI", "KEUNGGULAN", "MASA DEPAN"], 
+  "hero_subheader": "Ubah ide-ide Anda menjadi produk digital yang kuat. ", 
+  "hero_description": "Baik Anda butuh website, aplikasi mobile, atau solusi digital lengkap — kami hadir untuk mendesain, mengembangkan, dan menghadirkan pengalaman yang mengangkat merek Anda dan mengembangkan bisnis Anda.", 
+  "hero_main_cta": "Mulai Sekarang", 
+  "hero_secondary_cta": "Lihat Portofolio", 
+  "hero_hint": "Gulir ke Bawah", 
+  "service_question": "APA YANG KAMI LAKUKAN?", 
+  "service_first_title": "SPESIALISASI DALAM PENGEMBANGAN WEB BERPERFORMA TINGGI DAN", 
+  "service_second_title": "PENGEMBANGAN APLIKASI MOBILE.", 
+  "service_main_cta": "SEMUA LAYANAN", 
+  "service_services": [
+    {
+      "title": "WEB MODERN", 
+      "description": "Situs web berperforma tinggi yang dirancang untuk meningkatkan merek Anda. Kami membangun pengalaman responsif dan menarik yang mendorong hasil dan mengembangkan bisnis Anda. Kami memberikan solusi web yang disesuaikan dengan kebutuhan unik Anda."
+    }, 
+    {
+      "title": "APLIKASI MOBILE", 
+      "description": "Ubah ide Anda menjadi pengalaman seluler yang hebat. Kami merancang dan mengembangkan aplikasi intuitif untuk Android, meningkatkan keterlibatan pelanggan dan menyederhanakan operasi. Biarkan kami mewujudkan visi seluler Anda."
+    }, 
+    {
+      "title": "MARKETING", 
+      "description": "Pikat audiens dan tingkatkan merek Anda dengan solusi pemasaran unik kami. Kami adalah tim desainer, pemasar, dan inovator yang bersemangat, memberikan strategi yang mendorong pertumbuhan dan membangun koneksi yang awet."
+    }
+  ], 
+  "service_secondary_cta": "PELAJARI LEBIH LANJUT", 
+  "second_running_text": [
+    "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode"
+  ], 
+  "team_persuasive": "TEMUI AHLI", 
+  "team_title": ["TIM", "AHLI"], 
+  "team_description": "Tim kami yang bersemangat, terdiri dari pengembang, desainer, dan inovator, menciptakan pengalaman digital luar biasa untuk mendorong pertumbuhan bisnis dan memenuhi harapan klien.", 
+  "team_stats_label": ["PROYEK", "AHLI", "TAHUN"], 
+  "weare_main_text": "KAMI ADALAH KREATOR INOVATOR, DAN PENCERITA YANG BERKOMITMEN MEMAHAMI IDENTITAS UNIK SETIAP MEREK. KAMI MENYELAMI VISI ANDA, MEMADUKAN STRATEGI DAN KREATIVITAS UNTUK MEMBANGUN MEREK YANG TIDAK HANYA ADA, TETAPI JUGA BERKESAN DI HATI AUDIENS.", 
+  "weare_highlighted_words": ["KREATOR", "INOVATOR", "PENCERITA", "KREATIVITAS", "MEMBANGUN MEREK", "AUDIENS"], 
+  "weare_icon_label": ["Alam", "Premium", "Energi", "Daya", "Kreatif", "Inovasi", "Keunggulan", "Fokus"], 
+  "footer_title": ["HALAMAN", "TERHUBUNG DENGAN KAMI"], 
+  "footer_pages_nav": ["Tentang Kami", "Portofolio", "FAQ"], 
+  "footer_contact_title": ["NOMOR TELEPON", "ALAMAT EMAIL"], 
+  "footer_description": "Dengan tim desainer, pemasar, dan inovator yang penuh semangat, kami hadirkan solusi unik yang mengangkat brand Anda dan menarik perhatian audiens.", 
+  "footer_bottom_section": ["Kebijakan Privasi", "Syarat Layanan"]
 }

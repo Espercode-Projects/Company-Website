@@ -1,16 +1,18 @@
 "use client";
+import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
 const WeAre = () => {
+  const { translations } = useLocale()
   const [isInView, setIsInView] = useState(false);
   const [activeIcon, setActiveIcon] = useState(null);
   const [textRevealIndex, setTextRevealIndex] = useState(0);
   const sectionRef = useRef(null);
 
-  const mainText = "WE ARE CREATORS, INNOVATORS, AND STORYTELLERS COMMITTED TO UNDERSTANDING EACH BRAND'S UNIQUE IDENTITY. WE IMMERSE OURSELVES IN YOUR VISION, BLENDING STRATEGY WITH CREATIVITY TO BUILD BRANDS THAT DON'T JUST EXIST BUT THRIVE IN THE HEARTS OF THEIR AUDIENCES.";
+  const mainText = translations.weare_main_text || "WE ARE CREATORS, INNOVATORS, AND STORYTELLERS COMMITTED TO UNDERSTANDING EACH BRAND'S UNIQUE IDENTITY. WE IMMERSE OURSELVES IN YOUR VISION, BLENDING STRATEGY WITH CREATIVITY TO BUILD BRANDS THAT DON'T JUST EXIST BUT THRIVE IN THE HEARTS OF THEIR AUDIENCES.";
   
-  const highlightedWords = ["CREATORS", "INNOVATORS", "STORYTELLERS", "CREATIVITY", "BUILD BRANDS", "AUDIENCES"];
+  const highlightedWords = translations.weare_highlighted_words || ["CREATORS", "INNOVATORS", "STORYTELLERS", "CREATIVITY", "BUILD BRANDS", "AUDIENCES"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,14 +86,14 @@ const WeAre = () => {
   };
 
   const icons = [
-    { id: 1, icon: "🌿", color: "from-green-400 to-emerald-500", name: "Nature" },
-    { id: 2, icon: "💎", color: "from-blue-400 to-cyan-500", name: "Premium" },
-    { id: 3, icon: "🔥", color: "from-orange-400 to-red-500", name: "Energy" },
-    { id: 4, icon: "⚡", color: "from-yellow-400 to-orange-500", name: "Power" },
-    { id: 5, icon: "🎨", color: "from-purple-400 to-pink-500", name: "Creative" },
-    { id: 6, icon: "🚀", color: "from-indigo-400 to-purple-500", name: "Innovation" },
-    { id: 7, icon: "🌟", color: "from-lime-400 to-green-500", name: "Excellence" },
-    { id: 8, icon: "🎯", color: "from-teal-400 to-blue-500", name: "Focus" },
+    { id: 1, icon: "🌿", color: "from-green-400 to-emerald-500", name: `${translations.weare_icon_label?.[0]}` },
+    { id: 2, icon: "💎", color: "from-blue-400 to-cyan-500", name: `${translations.weare_icon_label?.[1]}` },
+    { id: 3, icon: "🔥", color: "from-orange-400 to-red-500", name: `${translations.weare_icon_label?.[2]}` },
+    { id: 4, icon: "⚡", color: "from-yellow-400 to-orange-500", name: `${translations.weare_icon_label?.[3]}` },
+    { id: 5, icon: "🎨", color: "from-purple-400 to-pink-500", name: `${translations.weare_icon_label?.[4]}` },
+    { id: 6, icon: "🚀", color: "from-indigo-400 to-purple-500", name: `${translations.weare_icon_label?.[5]}` },
+    { id: 7, icon: "🌟", color: "from-lime-400 to-green-500", name: `${translations.weare_icon_label?.[6]}` },
+    { id: 8, icon: "🎯", color: "from-teal-400 to-blue-500", name: `${translations.weare_icon_label?.[7]}` },
   ];
 
   const floatingElements = [...Array(20)].map((_, i) => ({

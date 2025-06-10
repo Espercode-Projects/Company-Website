@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
 import {
   FaPinterest,
@@ -16,6 +17,8 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const { translations } = useLocale()
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,7 +81,7 @@ const Footer = () => {
     },
   ];
 
-  const pages = ["About Us", "Portfolio", "FAQs"];
+  const pages = translations.footer_pages_nav || ["About Us", "Portfolio", "FAQs"];
 
   return (
     <motion.footer
@@ -125,7 +128,7 @@ const Footer = () => {
           {/* Pages Section */}
           <motion.div className="lg:col-span-1" variants={itemVariants}>
             <h3 className="text-lime-400 text-lg font-semibold mb-6 tracking-wider">
-              PAGES
+              {translations?.footer_title?.[0]}
             </h3>
             <ul className="space-y-4">
               {pages.map((page, index) => (
@@ -146,7 +149,7 @@ const Footer = () => {
           {/* Connect Section */}
           <motion.div className="lg:col-span-1" variants={itemVariants}>
             <h3 className="text-lime-400 text-lg font-semibold mb-6 tracking-wider">
-              CONNECT WITH US
+              {translations.footer_title?.[1]}
             </h3>
             <div className="space-y-4">
               {socialIcons.map(({ Icon, label }, index) => (
@@ -179,7 +182,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-2">
                   <FaPhone className="text-lime-400" />
-                  <span className="text-gray-400 text-sm">PHONE NUMBER</span>
+                  <span className="text-gray-400 text-sm">{translations.footer_contact_title?.[0]}</span>
                 </div>
                 <a
                   href="tel:+6281234567890"
@@ -195,7 +198,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-2">
                   <FaEnvelope className="text-lime-400" />
-                  <span className="text-gray-400 text-sm">EMAIL ADDRESS</span>
+                  <span className="text-gray-400 text-sm">{translations.footer_contact_title?.[1]}</span>
                 </div>
                 <a
                   href="mailto:info@espercode.com"
@@ -209,9 +212,7 @@ const Footer = () => {
                 className="text-gray-400 text-sm leading-relaxed mt-6"
                 variants={itemVariants}
               >
-                With a team of passionate designers, marketers, and innovators,
-                we specialize in delivering unique solutions that elevate your
-                brand and captivate your audience.
+                {translations.footer_description}
               </motion.p>
             </div>
           </motion.div>
@@ -234,14 +235,14 @@ const Footer = () => {
               className="text-gray-500 hover:text-lime-400 transition-colors duration-300 text-sm"
               whileHover={{ y: -2 }}
             >
-              Privacy Policy
+              {translations.footer_bottom_section?.[0]}
             </motion.a>
             <motion.a
               href="#"
               className="text-gray-500 hover:text-lime-400 transition-colors duration-300 text-sm"
               whileHover={{ y: -2 }}
             >
-              Terms of Service
+              {translations.footer_bottom_section?.[1]}
             </motion.a>
           </div>
         </motion.div>

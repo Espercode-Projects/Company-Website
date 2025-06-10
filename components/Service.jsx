@@ -1,9 +1,11 @@
 "use client";
+import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { FaAndroid, FaChartLine, FaCode } from "react-icons/fa";
 
 const Service = () => {
+  const { translations } = useLocale()
   const [activeCard, setActiveCard] = useState(null);
   // const [isInView, setIsInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,9 +88,8 @@ const Service = () => {
   const services = [
     {
       id: 1,
-      title: "MODERN WEB",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: `${translations.service_services?.[0].title || "MODERN WEB"}`,
+      description: `${translations.service_services?.[0].description}`,
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaCode />,
@@ -97,9 +98,8 @@ const Service = () => {
     },
     {
       id: 2,
-      title: "MOBILE APPS",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: `${translations.service_services?.[1].title || "MOBILE APPS"}`,
+      description:`${translations.service_services?.[1].description}`,
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaAndroid />,
@@ -109,9 +109,8 @@ const Service = () => {
     },
     {
       id: 3,
-      title: "MARKETING",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: `${translations.service_services?.[2].title || "MARKETING"}`,
+      description:`${translations.service_services?.[2].description}`,
       image:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaChartLine />,
@@ -205,7 +204,7 @@ const Service = () => {
       >
         <motion.div variants={itemVariants} className="mb-8">
           <span className="inline-block text-lime-400 text-sm font-bold tracking-wider uppercase mb-4">
-            WHAT WE DO ?
+            {translations.service_question}
           </span>
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"
@@ -218,9 +217,9 @@ const Service = () => {
             }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            SPECIALIZING IN HIGH-PERFORMANCE WEB AND
+            {translations.service_first_title}
             <br />
-            <span className="text-lime-400">MOBILE APP DEVELOPMENT.</span>
+            <span className="text-lime-400">{translations.service_second_title}</span>
           </motion.h2>
         </motion.div>
 
@@ -233,7 +232,7 @@ const Service = () => {
           whileTap={{ scale: 0.95 }}
           className="bg-transparent border-2 border-lime-400 text-lime-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-lime-400 hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 mx-auto group"
         >
-          <span>ALL SERVICES</span>
+          <span>{translations.service_main_cta}</span>
           <motion.span className="text-xl">⚡</motion.span>
         </motion.button>
       </motion.div>
@@ -362,7 +361,7 @@ const Service = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`self-start bg-${service.accentColor} text-gray-900 px-6 py-3 rounded-full font-bold text-sm flex items-center space-x-2 shadow-lg group/btn`}
                 >
-                  <span>LEARN MORE</span>
+                  <span>{translations.service_secondary_cta}</span>
                   <motion.span
                     animate={activeCard === service.id ? { x: [0, 5, 0] } : {}}
                     transition={{ duration: 1, repeat: Infinity }}

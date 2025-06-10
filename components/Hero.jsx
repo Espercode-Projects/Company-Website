@@ -100,7 +100,7 @@ const Navbar = ({
               textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
             }}
           >
-            {translations.header}
+            {translations.head_title}
           </motion.div>
         </div>
       </motion.div>
@@ -606,7 +606,7 @@ export const RunningText = () => {
 // Hero Content Component
 const HeroContent = ({ mousePosition, currentTextIndex }) => {
   const { translations } = useLocale();
-  const animatedTexts = translations.animatedTexts || "[]";
+  const animatedTexts = translations.hero_animated_texts || "[]";
 
   return (
     <div className="flex-1 max-w-4xl mb-12 lg:mb-0 lg:pr-12">
@@ -621,7 +621,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             filter: "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
           }}
         >
-          DIGITAL
+          {translations.hero_header}
         </motion.h1>
 
         {/* Animated changing text */}
@@ -652,7 +652,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             textShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
           }}
         >
-          " {translations.head_subheader} "
+          " {translations.hero_subheader} "
         </motion.div>
       </div>
 
@@ -666,7 +666,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           textShadow: "0 0 8px rgba(255, 255, 255, 0.2)",
         }}
       >
-        {translations.head_description}
+        {translations.hero_description}
       </motion.p>
 
       {/* CTA Buttons */}
@@ -691,7 +691,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
           
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <span className="relative z-10">{translations.head_main_cta}</span>
+          <span className="relative z-10">{translations.hero_main_cta}</span>
           <motion.div
             className="relative z-10"
             animate={{ x: [0, 4, 0] }}
@@ -713,7 +713,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="relative z-10">
-            {translations.head_secondary_cta}
+            {translations.hero_secondary_cta}
           </span>
         </motion.button>
       </motion.div>
@@ -904,7 +904,7 @@ const Hero = () => {
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
 
-  const animatedTexts = ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
+  const animatedTexts = translations.hero_animated_texts || ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -925,8 +925,16 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const [isInitialRender, setIsInitialRender] = useState(true);
+  
   useEffect(() => {
+    if (isInitialRender) {
+      setIsInitialRender(false);
+      return;
+    }
+
     setCurrentLocale(currentLanguage.toLowerCase());
+    localStorage.setItem('lang', currentLanguage.toLowerCase())
   }, [currentLanguage]);
 
   return (
@@ -1039,7 +1047,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <span className="text-white/60 text-sm">Scroll Down</span>
+        <span className="text-white/60 text-sm">{translations.hero_hint}</span>
         <motion.div className="w-6 h-10 border-2 border-green-400/50 rounded-full flex justify-center">
           <motion.div
             className="w-1 h-3 bg-green-400 rounded-full mt-2"

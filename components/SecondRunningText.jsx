@@ -1,11 +1,14 @@
 "use client";
 
+import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
 
 import React from "react";
 
 function SecondRunningText() {
-  const techServices = [
+  const { translations } = useLocale()
+
+  const techServices = translations.second_running_text || [
     "We Are Espercode",
     "We Are Espercode",
     "We Are Espercode",

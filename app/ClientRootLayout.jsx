@@ -13,11 +13,22 @@ export function useLocale() {
 }
 
 export default function ClientRootLayout({children}) {
-    const [currentLocale, setCurrentLocale] = useState('en')
+    const [currentLocale, setCurrentLocale] = useState(localStorage.getItem('lang') || 'en')
     const [translations, setTranslations] = useState({})
 
+    let parsedLocale = currentLocale
+
+    switch (currentLocale) {
+      case "jp": 
+        parsedLocale = "ja"; 
+      break; 
+      case "cn": 
+        parsedLocale = "zh";
+      break;
+    }
+
     useEffect(() => {
-      fetch(`/locales/${currentLocale}/common.json`)
+      fetch(`/locales/${parsedLocale}/common.json`)
         .then((res) => {
           if(!res.ok) throw new Error('Translation file not found');
           return res.json();

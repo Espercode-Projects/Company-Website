@@ -1,13 +1,49 @@
 {
-  "header": "DIGITAL SOLUTIONS",
+  "head_title": "DIGITAL SOLUTIONS",
   "nav_home": "HOME", 
   "nav_about": "ABOUT", 
   "nav_service": "OUR SERVICES", 
   "nav_portofolio": "PORTOFOLIO", 
   "nav_contact": "CONTACT", 
-  "animatedTexts": ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"], 
-  "head_subheader": "Transform your ideas into powerful digital products ", 
-  "head_description": "Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.", 
-  "head_main_cta": "Get Started", 
-  "head_secondary_cta": "View Portofolio"
+  "hero_header": "DIGITAL", 
+  "hero_animated_texts": ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"], 
+  "hero_subheader": "Transform your ideas into powerful digital products ", 
+  "hero_description": "Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.", 
+  "hero_main_cta": "Get Started", 
+  "hero_secondary_cta": "View Portofolio", 
+  "hero_hint": "Scroll Down", 
+  "service_question": "WHAT WE DO?", 
+  "service_first_title": "SPECIALIZING IN HIGH PERFORMANCE WEB AND", 
+  "service_second_title": "MOBILE APP DEVELOPMENT.", 
+  "service_main_cta": "ALL SERVICES", 
+  "service_services": [
+    {
+      "title": "MODERN WEB", 
+      "description": "High-performance websites designed to elevate your brand. We build responsive, engaging experiences that drive results and grow your business. We deliver web solutions tailored to your unique needs."
+    }, 
+    {
+      "title": "MOBILE APPS", 
+      "description": "Transform your ideas into powerful mobile experiences. We design and develop intuitive apps for Android, enhancing customer engagement and streamlining operations. Let us bring your mobile vision to life."
+    }, 
+    {
+      "title": "MARKETING", 
+      "description": "Captivate your audience and elevate your brand with our unique marketing solutions. We're a team of passionate designers, marketers, and innovators, delivering strategies that drive growth and build lasting connections."
+    }
+  ], 
+  "service_secondary_cta": "LEARN MORE", 
+  "second_running_text": [
+    "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode"
+  ], 
+  "team_persuasive": "MEET THE EXPERT", 
+  "team_title": ["TEAM OF", "EXPERT"], 
+  "team_description": "Our passionate team of developers, designers, and innovators work together to create extraordinary digital experiences that drive business growth and exceed client expectations.", 
+  "team_stats_label": ["PROJECTS", "EXPERTS", "YEARS"], 
+  "weare_main_text": "WE ARE CREATORS, INNOVATORS, AND STORYTELLERS COMMITTED TO UNDERSTANDING EACH BRAND'S UNIQUE IDENTITY. WE IMMERSE OURSELVES IN YOUR VISION, BLENDING STRATEGY WITH CREATIVITY TO BUILD BRANDS THAT DON'T JUST EXIST BUT THRIVE IN THE HEARTS OF THEIR AUDIENCES.", 
+  "weare_highlighted_words": ["CREATORS", "INNOVATORS", "STORYTELLERS", "CREATIVITY", "BUILD BRANDS", "AUDIENCES"], 
+  "weare_icon_label": ["Nature", "Premium", "Energy", "Power", "Creative", "Innovation", "Exellence", "Focus"], 
+  "footer_title": ["PAGES", "CONNECT WITH US"], 
+  "footer_pages_nav": ["About Us", "Portofolio", "FAQs"], 
+  "footer_contact_title": ["PHONE NUMBER", "EMAIL ADDRESS"], 
+  "footer_description": "With a team of passionate designers, marketers, and innovators, we specialize in delivering unique solutions that elevate your brand and captivate your audience.", 
+  "footer_bottom_section": ["Privacy Policy", "Terms of Service"]
 }
