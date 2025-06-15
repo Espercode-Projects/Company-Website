@@ -1,11 +1,12 @@
 "use client";
 import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { FaAndroid, FaChartLine, FaCode } from "react-icons/fa";
 
 const Service = () => {
-  const { translations } = useLocale()
+  const { translations } = useLocale();
   const [activeCard, setActiveCard] = useState(null);
   // const [isInView, setIsInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -99,7 +100,7 @@ const Service = () => {
     {
       id: 2,
       title: `${translations.service_services?.[1].title || "MOBILE APPS"}`,
-      description:`${translations.service_services?.[1].description}`,
+      description: `${translations.service_services?.[1].description}`,
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaAndroid />,
@@ -110,7 +111,7 @@ const Service = () => {
     {
       id: 3,
       title: `${translations.service_services?.[2].title || "MARKETING"}`,
-      description:`${translations.service_services?.[2].description}`,
+      description: `${translations.service_services?.[2].description}`,
       image:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaChartLine />,
@@ -219,22 +220,20 @@ const Service = () => {
           >
             {translations.service_first_title}
             <br />
-            <span className="text-lime-400">{translations.service_second_title}</span>
+            <span className="text-lime-400">
+              {translations.service_second_title}
+            </span>
           </motion.h2>
         </motion.div>
 
-        <motion.button
+        <Link
           variants={itemVariants}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 10px 30px rgba(163, 230, 53, 0.4)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-transparent border-2 border-lime-400 text-lime-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-lime-400 hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 mx-auto group"
+          href={"/services"}
+          className="w-fit bg-transparent border-2 border-lime-400 text-lime-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-lime-400 hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 mx-auto group"
         >
           <span>{translations.service_main_cta}</span>
           <motion.span className="text-xl">⚡</motion.span>
-        </motion.button>
+        </Link>
       </motion.div>
 
       {/* Services Grid/Carousel */}
@@ -343,15 +342,15 @@ const Service = () => {
                   {/* Image Overlay Elements */}
                   <motion.div
                     className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [1, 0.5, 1],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
+                    // animate={{
+                    //   scale: [1, 1.5, 1],
+                    //   opacity: [1, 0.5, 1],
+                    // }}
+                    // transition={{
+                    //   duration: 3,
+                    //   repeat: Infinity,
+                    //   ease: "easeInOut",
+                    // }}
                   />
                 </motion.div>
 
@@ -488,15 +487,15 @@ const Service = () => {
 
                       <motion.div
                         className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
-                        animate={{
-                          scale: [1, 1.5, 1],
-                          opacity: [1, 0.5, 1],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
+                        // animate={{
+                        //   scale: [1, 1.5, 1],
+                        //   opacity: [1, 0.5, 1],
+                        // }}
+                        // transition={{
+                        //   duration: 3,
+                        //   repeat: Infinity,
+                        //   ease: "easeInOut",
+                        // }}
                       />
                     </div>
 
@@ -619,7 +618,7 @@ const Service = () => {
       </motion.div> */}
 
       {/* Additional Floating Elements */}
-      {[...Array(8)].map((_, i) => (
+      {/* {[...Array(8)].map((_, i) => (
         <motion.div
           key={`extra-${i}`}
           className="absolute w-1 h-1 bg-lime-400 rounded-full opacity-60"
@@ -639,7 +638,7 @@ const Service = () => {
             ease: "easeInOut",
           }}
         />
-      ))}
+      ))} */}
     </section>
   );
 };

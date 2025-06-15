@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 function SecondRunningText() {
-  const { translations } = useLocale()
+  const { translations } = useLocale();
 
   const techServices = translations.second_running_text || [
     "We Are Espercode",
@@ -19,8 +19,7 @@ function SecondRunningText() {
     "We Are Espercode",
     "We Are Espercode",
     "We Are Espercode",
-
-];
+  ];
 
   return (
     <motion.div
@@ -31,7 +30,7 @@ function SecondRunningText() {
       transition={{ delay: 1.5, duration: 0.8 }}
     >
       <motion.div
-        className="bg-gradient-to-r from-green-400 to-green-600 py-4"
+        className="bg-gradient-to-r from-green-400 to-green-600 py-2"
         style={{
           boxShadow:
             "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
@@ -55,16 +54,17 @@ function SecondRunningText() {
             (service, index) => (
               <motion.span
                 key={index}
-                className="mx-8 text-xl font-bold text-slate-900 hover:text-white transition-all duration-300 cursor-pointer"
-                // whileHover={{
-                //   scale: 1.1,
-                //   textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-                // }}
+                className="mx-8 flex items-center gap-4 text-xl font-bold text-slate-900 hover:text-white transition-all duration-300 cursor-pointer"
                 style={{
                   textShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
                 }}
               >
-                {service} •
+                {service}
+                <img
+                  src="/img/logo.png"
+                  alt="separator"
+                  className=" h-12 w-auto object-contain"
+                />
               </motion.span>
             )
           )}

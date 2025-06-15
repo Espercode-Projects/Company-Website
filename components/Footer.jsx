@@ -185,7 +185,7 @@ const Footer = () => {
                   <span className="text-gray-400 text-sm">{translations.footer_contact_title?.[0]}</span>
                 </div>
                 <a
-                  href="tel:+6281234567890"
+                  href="https://wa.me/+6281226577201"
                   className="text-xl font-semibold hover:text-lime-400 transition-colors duration-300"
                 >
                   (+62) 812-2657-7201

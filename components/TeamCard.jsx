@@ -11,65 +11,84 @@ import {
   FaCss3Alt,
   FaGitAlt,
   FaDocker,
+  FaInstagram,
+  FaFacebook,
+  FaJava,
 } from "react-icons/fa";
 import { useLocale } from "@/app/ClientRootLayout";
+import {
+  SiAndroidstudio,
+  SiCanva,
+  SiCashapp,
+  SiKotlin,
+  SiNextdotjs,
+  SiPhp,
+  SiTailwindcss,
+  SiWhatsapp,
+} from "@icons-pack/react-simple-icons";
 
 const TeamCard = () => {
-  const { translations } = useLocale()
+  const { translations } = useLocale();
   const [selectedMember, setSelectedMember] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   // Sample team data with skills
   const teamMembers = [
-  
     {
       id: 1,
       name: "Adi Firmansyah",
       role: "Digital Marketing",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=1031",
-      skills: ["Node.js", "Python", "Docker", "Git"],
-      bio: "Full-stack engineer specializing in scalable backend systems and cloud architecture.",
+      image: "/img/adi_profile.avif",
+      skills: ["Facebook", "Instagram", "Whatsapp", "Canva"],
+      bio: "Experienced digital marketer focused on creating impactful social media campaigns across Facebook, Instagram, and WhatsApp. Skilled in using Canva to design engaging content that boosts brand visibility and audience interaction.",
       link: "#",
     },
     {
       id: 2,
       name: "Rifal Ali Fahri",
       role: "Backend Developer",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=1031",
-      skills: ["Figma", "Adobe XD", "Sketch", "Prototyping"],
-      bio: "Creative designer focused on user-centered design and creating intuitive digital experiences.",
-      link: "#",
+      image: "/img/rifal_profile.avif",
+      skills: ["PHP", "Java", "Kotlin", "Python"],
+      bio: "Backend developer skilled in building robust APIs and server-side systems.",
+      link: "https://portofolio-rifalalis-projects.vercel.app/",
     },
     {
       id: 3,
       name: "Nando Abdillah Salam",
       role: "Frontend Developer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=1031",
-      skills: ["AWS", "Kubernetes", "CI/CD", "Monitoring"],
-      bio: "Infrastructure specialist ensuring smooth deployment and system reliability.",
-      link: "#",
+      image: "/img/nando_profile.avif",
+      skills: ["React", "NextJs", "Tailwinds", "PHP"],
+      bio: "Frontend developer focused on building fast and responsive web interfaces.",
+      link: "https://nando-abdillah-profile.vercel.app/",
     },
   ];
 
   const stats = [
-    { number: "50+", label: `${translations.team_stats_label?.[0]}` },
-    { number: "15+", label: `${translations.team_stats_label?.[1]}` },
-    { number: "5+", label: `${translations.team_stats_label?.[2]}` },
+    { number: "6+", label: `${translations.team_stats_label?.[0]}` },
+    { number: "3+", label: `${translations.team_stats_label?.[1]}` },
+    { number: "4+", label: `${translations.team_stats_label?.[2]}` },
   ];
 
   const getSkillIcon = (skill) => {
     const icons = {
       React: <FaReact className="text-blue-400" />,
       JavaScript: <FaJs className="text-yellow-400" />,
-      "Node.js": <FaNodeJs className="text-green-500" />,
+      // "Node.js": <FaNodeJs className="text-green-500" />,
       Python: <FaPython className="text-blue-500" />,
-      HTML: <FaHtml5 className="text-orange-500" />,
-      CSS: <FaCss3Alt className="text-blue-400" />,
-      Git: <FaGitAlt className="text-red-500" />,
-      Docker: <FaDocker className="text-blue-600" />,
+      // HTML: <FaHtml5 className="text-orange-500" />,
+      // CSS: <FaCss3Alt className="text-blue-400" />,
+      // Git: <FaGitAlt className="text-red-500" />,
+      // Docker: <FaDocker className="text-blue-600" />,
+      Instagram: <FaInstagram className="text-red-500" />,
+      Facebook: <FaFacebook className="text-blue-600" />,
+      Canva: <SiCanva className="text-blue-500" />,
+      Whatsapp: <SiWhatsapp className="text-green-600" />,
+      AndroidStudio: <SiAndroidstudio className="text-green-500" />,
+      Java: <FaJava className="text-yellow-800" />,
+      Kotlin: <SiKotlin className="text-blue-500" />,
+      Tailwinds: <SiTailwindcss className="text-blue-600" />,
+      NextJs: <SiNextdotjs className="text-white" />,
+      PHP : <SiPhp className="text-indigo-500" />
     };
     return icons[skill] || <div className="w-4 h-4 bg-gray-400 rounded-full" />;
   };
@@ -133,12 +152,12 @@ const TeamCard = () => {
   };
 
   return (
-    <div className="min-h-screen  py-8 px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8">
       <motion.div
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        // initial="hidden"
+        // whileInView="visible"
+        // viewport={{ once: true, amount: 0.3 }}
         className="max-w-7xl mx-auto"
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -280,10 +299,10 @@ const TeamCard = () => {
               <div className="absolute inset-0 flex items-center justify-center  ">
                 {teamMembers.map((member, index) => {
                   // Responsive fan calculation
-                  const baseX = -100 + index * 80; 
+                  const baseX = -100 + index * 80;
                   const baseY = -20 + index * 15;
-                  const rotation = -45 + index * 30; 
-                  const rotationDef = -15 + index * 20; 
+                  const rotation = -45 + index * 30;
+                  const rotationDef = -15 + index * 20;
 
                   return (
                     <motion.div
