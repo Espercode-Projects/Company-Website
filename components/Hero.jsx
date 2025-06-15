@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -257,8 +257,12 @@ export const MobileMenu = ({
   );
 };
 
-// Running Text Component
+
 export const RunningText = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isWindowFocused, setIsWindowFocused] = useState(true);
+  const runningTextRef = useRef(null);
+
   const techServices = [
     "React Development",
     "Node.js Solutions",
@@ -270,8 +274,49 @@ export const RunningText = () => {
     "Database Design",
   ];
 
+  // Intersection Observer untuk detect visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '100px'
+      }
+    );
+
+    if (runningTextRef.current) {
+      observer.observe(runningTextRef.current);
+    }
+
+    return () => {
+      if (runningTextRef.current) {
+        observer.unobserve(runningTextRef.current);
+      }
+    };
+  }, []);
+
+  // Window focus/blur detection
+  useEffect(() => {
+    const handleFocus = () => setIsWindowFocused(true);
+    const handleBlur = () => setIsWindowFocused(false);
+
+    window.addEventListener('focus', handleFocus);
+    window.addEventListener('blur', handleBlur);
+
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, []);
+
+  // Kondisi untuk menghentikan animasi
+  const shouldAnimate = isVisible && isWindowFocused;
+
   return (
     <motion.div
+      ref={runningTextRef}
       className="absolute -bottom-14  right-0 left-0 z-10 mt-20 mb-8 overflow-hidden rotate-[2deg]"
       style={{ transform: "rotate(-2deg)", transformOrigin: "center" }}
       initial={{ opacity: 0, y: 50 }}
@@ -284,33 +329,27 @@ export const RunningText = () => {
           boxShadow:
             "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
         }}
-        animate={{
+        animate={shouldAnimate ? {
           boxShadow: [
             "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
             "0 0 40px rgba(34, 197, 94, 0.7), 0 0 80px rgba(34, 197, 94, 0.4)",
             "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
           ],
-        }}
-        transition={{ duration: 2, repeat: Infinity }}
+        } : {}}
+        transition={shouldAnimate ? { duration: 2, repeat: Infinity } : { duration: 0 }}
       >
         <motion.div
           className="flex whitespace-nowrap"
           style={{ transform: "rotate(2deg)" }}
-          animate={{ x: [0, -2000] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          animate={shouldAnimate ? { x: [0, -2000] } : {}}
+          transition={shouldAnimate ? { duration: 30, repeat: Infinity, ease: "linear" } : { duration: 0 }}
         >
           {[...techServices, ...techServices, ...techServices].map(
             (service, index) => (
               <motion.span
                 key={index}
                 className="mx-8 text-xl font-bold text-slate-900 hover:text-white transition-all duration-300 cursor-pointer"
-                // whileHover={{
-                //   scale: 1.1,
-                //   textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-                // }}
-                // style={{
-                //   textShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
-                // }}
+               
               >
                 {service} •
               </motion.span>
@@ -608,7 +647,8 @@ const ParticleSystem = () => {
   );
 };
 
-// Main Hero Component
+
+
 const Hero = () => {
   const { currentLocale, setCurrentLocale, translations } = useLocale();
 
@@ -618,6 +658,11 @@ const Hero = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(currentLocale.toUpperCase());
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  
+  // State untuk mengontrol animasi
+  const [isVisible, setIsVisible] = useState(true);
+  const [isWindowFocused, setIsWindowFocused] = useState(true);
+  const heroRef = useRef(null);
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
@@ -625,7 +670,47 @@ const Hero = () => {
 
   const animatedTexts = translations.hero_animated_texts || ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
 
+  // Intersection Observer untuk detect visibility
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Trigger ketika 10% komponen terlihat
+        rootMargin: '50px' // Tambahan margin untuk early detection
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
+  // Window focus/blur detection
+  useEffect(() => {
+    const handleFocus = () => setIsWindowFocused(true);
+    const handleBlur = () => setIsWindowFocused(false);
+
+    window.addEventListener('focus', handleFocus);
+    window.addEventListener('blur', handleBlur);
+
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, []);
+
+  // Mouse move handler - hanya aktif saat visible dan focused
+  useEffect(() => {
+    if (!isVisible || !isWindowFocused) return;
+
     const handleMouseMove = (e) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth - 0.5) * 2,
@@ -635,14 +720,18 @@ const Hero = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isVisible, isWindowFocused]);
 
+  // Text animation - hanya aktif saat visible dan focused
   useEffect(() => {
+    if (!isVisible || !isWindowFocused) return;
+
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % animatedTexts.length);
     }, 3000);
+    
     return () => clearInterval(interval);
-  }, []);
+  }, [isVisible, isWindowFocused, animatedTexts.length]);
 
   const [isInitialRender, setIsInitialRender] = useState(true);
   
@@ -654,14 +743,24 @@ const Hero = () => {
 
     setCurrentLocale(currentLanguage.toLowerCase());
     if (typeof window !== 'undefined') {
-      localStorage.setItem('lang', currentLanguage.toLowerCase())
-      }
+      localStorage.setItem('lang', currentLanguage.toLowerCase());
+    }
   }, [currentLanguage]);
 
+  // Kondisi untuk menghentikan animasi
+  const shouldAnimate = isVisible && isWindowFocused;
+
   return (
-    <div className="relative  min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden">
+    <div 
+      ref={heroRef}
+      className="relative min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden"
+    >
       {/* Animated Background Pattern */}
-      <motion.div className="absolute inset-0" style={{ y: y1 }}>
+      <motion.div 
+        className="absolute inset-0" 
+        style={{ y: shouldAnimate ? y1 : 0 }}
+        animate={shouldAnimate ? {} : { transition: { duration: 0 } }}
+      >
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -678,29 +777,30 @@ const Hero = () => {
           }}
         />
 
-        {/* Enhanced floating geometric shapes */}
+        {/* Enhanced floating geometric shapes - dengan conditional animation */}
         <motion.div
           className="absolute top-20 left-20 w-64 h-64 bg-green-400/10 rounded-full blur-3xl"
-          animate={{
+          animate={shouldAnimate ? {
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.3, 0.1],
             x: [0, 50, 0],
             y: [0, -30, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
+          } : {}}
+          transition={shouldAnimate ? { duration: 8, repeat: Infinity } : { duration: 0 }}
           style={{
             boxShadow: "0 0 100px rgba(34, 197, 94, 0.2)",
           }}
         />
+        
         <motion.div
           className="absolute bottom-20 right-20 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"
-          animate={{
+          animate={shouldAnimate ? {
             scale: [1.2, 1, 1.2],
             opacity: [0.1, 0.25, 0.1],
             x: [0, -40, 0],
             y: [0, 20, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity, delay: 2 }}
+          } : {}}
+          transition={shouldAnimate ? { duration: 10, repeat: Infinity, delay: 2 } : { duration: 0 }}
           style={{
             boxShadow: "0 0 120px rgba(34, 197, 94, 0.25)",
           }}
@@ -709,19 +809,19 @@ const Hero = () => {
         {/* Additional ambient elements */}
         <motion.div
           className="absolute top-1/3 left-1/3 w-32 h-32 bg-green-300/5 rounded-full blur-2xl"
-          animate={{
+          animate={shouldAnimate ? {
             rotate: 360,
             scale: [1, 1.5, 1],
-          }}
-          transition={{
+          } : {}}
+          transition={shouldAnimate ? {
             rotate: { duration: 15, repeat: Infinity, ease: "linear" },
             scale: { duration: 6, repeat: Infinity },
-          }}
+          } : { duration: 0 }}
         />
       </motion.div>
 
-      {/* Particle System */}
-      <ParticleSystem />
+      {/* Particle System - conditional rendering */}
+      {shouldAnimate && <ParticleSystem />}
 
       {/* Navbar */}
       <Navbar
@@ -749,31 +849,35 @@ const Hero = () => {
       {/* Main Content */}
       <motion.div
         className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 lg:px-[6rem] py-12 min-h-[calc(100vh-200px)] mb-5"
-        style={{ y: y2 }}
+        style={{ y: shouldAnimate ? y2 : 0 }}
       >
         {/* Left Content */}
         <HeroContent
           mousePosition={mousePosition}
           currentTextIndex={currentTextIndex}
+          shouldAnimate={shouldAnimate}
         />
 
         {/* Right Content - Tech Image */}
-        <HeroImage mousePosition={mousePosition} />
+        <HeroImage 
+          mousePosition={mousePosition} 
+          shouldAnimate={shouldAnimate}
+        />
       </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2  mb-16"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 mb-16"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0.5, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
         <span className="text-white/60 text-sm">{translations.hero_hint}</span>
         <motion.div className="w-6 h-10 border-2 border-green-400/50 rounded-full flex justify-center">
           <motion.div
             className="w-1 h-3 bg-green-400 rounded-full mt-2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            animate={shouldAnimate ? { y: [0, 12, 0] } : {}}
+            transition={shouldAnimate ? { duration: 1.5, repeat: Infinity } : { duration: 0 }}
           />
         </motion.div>
       </motion.div>

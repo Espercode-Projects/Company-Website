@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaArrowRight,
@@ -31,8 +31,61 @@ const TeamCard = () => {
   const { translations } = useLocale();
   const [selectedMember, setSelectedMember] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isInView, setIsInView] = useState(false);
 
-  // Sample team data with skills
+  // Intersection Observer untuk mengoptimalkan animasi
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "50px",
+      }
+    );
+
+    const element = document.getElementById("team-section");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedMember) {
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "15px"; // Prevent layout shift
+    } else {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
+    };
+  }, [selectedMember]);
+
+  // Optimized close handler
+  const handleCloseModal = useCallback((e) => {
+    e.stopPropagation();
+    setSelectedMember(null);
+  }, []);
+
+  // Optimized backdrop click handler
+  const handleBackdropClick = useCallback((e) => {
+    if (e.target === e.currentTarget) {
+      setSelectedMember(null);
+    }
+  }, []);
+
   const teamMembers = [
     {
       id: 1,
@@ -73,12 +126,7 @@ const TeamCard = () => {
     const icons = {
       React: <FaReact className="text-blue-400" />,
       JavaScript: <FaJs className="text-yellow-400" />,
-      // "Node.js": <FaNodeJs className="text-green-500" />,
       Python: <FaPython className="text-blue-500" />,
-      // HTML: <FaHtml5 className="text-orange-500" />,
-      // CSS: <FaCss3Alt className="text-blue-400" />,
-      // Git: <FaGitAlt className="text-red-500" />,
-      // Docker: <FaDocker className="text-blue-600" />,
       Instagram: <FaInstagram className="text-red-500" />,
       Facebook: <FaFacebook className="text-blue-600" />,
       Canva: <SiCanva className="text-blue-500" />,
@@ -88,7 +136,7 @@ const TeamCard = () => {
       Kotlin: <SiKotlin className="text-blue-500" />,
       Tailwinds: <SiTailwindcss className="text-blue-600" />,
       NextJs: <SiNextdotjs className="text-white" />,
-      PHP : <SiPhp className="text-indigo-500" />
+      PHP: <SiPhp className="text-indigo-500" />
     };
     return icons[skill] || <div className="w-4 h-4 bg-gray-400 rounded-full" />;
   };
@@ -141,7 +189,8 @@ const TeamCard = () => {
     },
   };
 
-  const pulseAnimation = {
+  // Optimized pulse animation - hanya berjalan saat in view
+  const pulseAnimation = isInView ? {
     scale: [1, 1.2, 1],
     opacity: [0.7, 1, 0.7],
     transition: {
@@ -149,15 +198,60 @@ const TeamCard = () => {
       repeat: Infinity,
       ease: "easeInOut",
     },
-  };
+  } : {};
+
+  // Optimized text shadow animation - hanya berjalan saat in view
+  const textShadowAnimation = isInView ? {
+    textShadow: [
+      "0 0 0px #10b981",
+      "0 0 20px #10b981",
+      "0 0 0px #10b981",
+    ],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  } : {};
+
+  // Optimized stats animation - hanya berjalan saat in view
+  const getStatsAnimation = (index) => isInView ? {
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: index * 0.5,
+    },
+  } : {};
+
+  // Optimized floating effects - hanya berjalan saat in view
+  const floatingEffect1 = isInView ? {
+    y: [0, -20, 0],
+    rotate: [0, 360],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  } : {};
+
+  const floatingEffect2 = isInView ? {
+    y: [0, 15, 0],
+    rotate: [0, -360],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  } : {};
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8" id="team-section">
       <motion.div
         variants={containerVariants}
-        // initial="hidden"
-        // whileInView="visible"
-        // viewport={{ once: true, amount: 0.3 }}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
         className="max-w-7xl mx-auto"
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -183,18 +277,7 @@ const TeamCard = () => {
                 {translations.team_title?.[0]}{" "}
                 <motion.span
                   className="text-green-400"
-                  animate={{
-                    textShadow: [
-                      "0 0 0px #10b981",
-                      "0 0 20px #10b981",
-                      "0 0 0px #10b981",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  animate={textShadowAnimation}
                 >
                   {translations.team_title?.[1]}
                 </motion.span>
@@ -225,15 +308,7 @@ const TeamCard = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <motion.span
                       className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-400"
-                      animate={{
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.5,
-                      }}
+                      animate={getStatsAnimation(index)}
                     >
                       {stat.number}
                     </motion.span>
@@ -258,7 +333,7 @@ const TeamCard = () => {
                     custom={index}
                     variants={cardVariants}
                     initial="hidden"
-                    animate="visible"
+                    animate={isInView ? "visible" : "hidden"}
                     whileHover="hover"
                     className="cursor-pointer"
                     onClick={() => setSelectedMember(member)}
@@ -294,9 +369,9 @@ const TeamCard = () => {
           </div>
 
           {/* Right Section - Desktop Fan Card Effect */}
-          <div className="hidden lg:block relative  ">
-            <div className="relative w-full h-96 overflow-visible  ">
-              <div className="absolute inset-0 flex items-center justify-center  ">
+          <div className="hidden lg:block relative">
+            <div className="relative w-full h-96 overflow-visible">
+              <div className="absolute inset-0 flex items-center justify-center">
                 {teamMembers.map((member, index) => {
                   // Responsive fan calculation
                   const baseX = -100 + index * 80;
@@ -310,7 +385,7 @@ const TeamCard = () => {
                       custom={index}
                       variants={cardVariants}
                       initial="hidden"
-                      animate="visible"
+                      animate={isInView ? "visible" : "hidden"}
                       whileHover="hover"
                       className="absolute cursor-pointer"
                       style={{
@@ -371,50 +446,44 @@ const TeamCard = () => {
 
               {/* Floating Effects */}
               <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, 360] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                animate={floatingEffect1}
                 className="absolute top-4 right-4 w-12 h-12 bg-green-400/30 rounded-full blur-lg"
               />
 
               <motion.div
-                animate={{ y: [0, 15, 0], rotate: [0, -360] }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                animate={floatingEffect2}
                 className="absolute bottom-4 left-4 w-8 h-8 bg-green-400 transform rotate-45 opacity-60"
               />
             </div>
           </div>
         </div>
 
-        {/* Full Screen Modal */}
-        <AnimatePresence>
+        {/* Full Screen Modal - Optimized */}
+        <AnimatePresence mode="wait">
           {selectedMember && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-              onClick={() => setSelectedMember(null)}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-[9999] p-4"
+              onClick={handleBackdropClick}
+              style={{ touchAction: 'none' }}
             >
               <motion.div
-                initial={{ scale: 0.8, opacity: 0, rotateY: -90 }}
-                animate={{ scale: 1, opacity: 1, rotateY: 0 }}
-                exit={{ scale: 0.8, opacity: 0, rotateY: 90 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
+                {/* Close Button - Fixed positioning and larger touch target */}
                 <button
-                  onClick={() => setSelectedMember(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                  onClick={handleCloseModal}
+                  className="absolute top-4 right-4 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors z-10 touch-manipulation"
+                  style={{ minWidth: '48px', minHeight: '48px' }}
+                  aria-label="Close modal"
                 >
                   <FaTimes className="w-5 h-5 text-white" />
                 </button>
@@ -422,9 +491,9 @@ const TeamCard = () => {
                 <div className="grid md:grid-cols-2 gap-6 items-start">
                   {/* Profile Image */}
                   <motion.div
-                    initial={{ x: -50, opacity: 0 }}
+                    initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
                     className="relative"
                   >
                     <div className="aspect-[3/4] rounded-2xl overflow-hidden">
@@ -432,30 +501,31 @@ const TeamCard = () => {
                         src={selectedMember.image}
                         alt={selectedMember.name}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                   </motion.div>
 
                   {/* Profile Info */}
                   <motion.div
-                    initial={{ x: 50, opacity: 0 }}
+                    initial={{ x: 20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.2, duration: 0.3 }}
                     className="space-y-6"
                   >
                     <div>
                       <motion.h2
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={{ y: 10, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="text-3xl font-bold text-white mb-2"
                       >
                         {selectedMember.name}
                       </motion.h2>
                       <motion.p
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={{ y: 10, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.5 }}
+                        transition={{ delay: 0.4, duration: 0.3 }}
                         className="text-green-400 font-semibold text-lg"
                       >
                         {selectedMember.role}
@@ -463,9 +533,9 @@ const TeamCard = () => {
                     </div>
 
                     <motion.p
-                      initial={{ y: 20, opacity: 0 }}
+                      initial={{ y: 10, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.6 }}
+                      transition={{ delay: 0.5, duration: 0.3 }}
                       className="text-gray-300 leading-relaxed"
                     >
                       {selectedMember.bio}
@@ -473,9 +543,9 @@ const TeamCard = () => {
 
                     {/* Skills Section */}
                     <motion.div
-                      initial={{ y: 20, opacity: 0 }}
+                      initial={{ y: 10, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.7 }}
+                      transition={{ delay: 0.6, duration: 0.3 }}
                     >
                       <h3 className="text-white font-semibold mb-4 text-lg">
                         Skills & Expertise
@@ -484,12 +554,11 @@ const TeamCard = () => {
                         {selectedMember.skills.map((skill, index) => (
                           <motion.div
                             key={skill}
-                            initial={{ scale: 0, opacity: 0 }}
+                            initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{
-                              delay: 0.8 + index * 0.1,
-                              type: "spring",
-                              stiffness: 200,
+                              delay: 0.7 + index * 0.05,
+                              duration: 0.2,
                             }}
                             className="flex items-center gap-3 bg-gray-800/50 rounded-lg p-3 hover:bg-gray-700/50 transition-colors"
                           >
@@ -505,10 +574,12 @@ const TeamCard = () => {
                     {/* Contact Button */}
                     <motion.a
                       href={selectedMember.link}
-                      initial={{ y: 20, opacity: 0 }}
+                      initial={{ y: 10, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.9 }}
+                      transition={{ delay: 0.8, duration: 0.3 }}
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span>View Portfolio</span>
                       <FaArrowRight className="w-4 h-4" />

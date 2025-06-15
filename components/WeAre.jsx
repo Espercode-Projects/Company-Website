@@ -1,42 +1,151 @@
 "use client";
 import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 const WeAre = () => {
   const { translations } = useLocale()
   const [isInView, setIsInView] = useState(false);
   const [activeIcon, setActiveIcon] = useState(null);
   const [textRevealIndex, setTextRevealIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [touchedIcon, setTouchedIcon] = useState(null);
+  const [animationStarted, setAnimationStarted] = useState(false); // Track if animation has started
+  
   const sectionRef = useRef(null);
+  const textIntervalRef = useRef(null);
+  const animationFrameRef = useRef(null);
+  const touchTimeoutRef = useRef(null);
 
   const mainText = translations.weare_main_text || "WE ARE CREATORS, INNOVATORS, AND STORYTELLERS COMMITTED TO UNDERSTANDING EACH BRAND'S UNIQUE IDENTITY. WE IMMERSE OURSELVES IN YOUR VISION, BLENDING STRATEGY WITH CREATIVITY TO BUILD BRANDS THAT DON'T JUST EXIST BUT THRIVE IN THE HEARTS OF THEIR AUDIENCES.";
   
   const highlightedWords = translations.weare_highlighted_words || ["CREATORS", "INNOVATORS", "STORYTELLERS", "CREATIVITY", "BUILD BRANDS", "AUDIENCES"];
 
+  // Enhanced intersection observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        const isCurrentlyVisible = entry.isIntersecting && entry.intersectionRatio > 0.1;
+        setIsInView(isCurrentlyVisible);
+        setIsVisible(isCurrentlyVisible);
+        
+        // Reset animation when coming into view for the first time or after leaving
+        if (isCurrentlyVisible && !animationStarted) {
+          setTextRevealIndex(0);
+          setAnimationStarted(true);
+        } else if (!isCurrentlyVisible) {
+          setAnimationStarted(false);
+        }
       },
-      { threshold: 0.3 }
+      { 
+        threshold: [0, 0.1, 0.3, 0.5, 0.7, 1],
+        rootMargin: '-50px 0px -50px 0px'
+      }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      if (textIntervalRef.current) {
+        clearInterval(textIntervalRef.current);
+      }
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (touchTimeoutRef.current) {
+        clearTimeout(touchTimeoutRef.current);
+      }
+    };
+  }, []); // Remove dependencies to prevent re-running
 
+  // Fixed text reveal animation - simplified logic
   useEffect(() => {
-    if (isInView) {
-      const interval = setInterval(() => {
-        setTextRevealIndex((prev) => (prev + 1) % mainText.split(' ').length);
-      }, 100);
-      return () => clearInterval(interval);
+    // Clear any existing interval first
+    if (textIntervalRef.current) {
+      clearInterval(textIntervalRef.current);
+      textIntervalRef.current = null;
     }
-  }, [isInView, mainText]);
+
+    // Only start animation if component is visible and in view
+    if (isVisible && isInView && animationStarted) {
+      const totalWords = mainText.split(' ').length;
+      
+      // Don't start if animation is already complete
+      if (textRevealIndex >= totalWords - 1) {
+        return;
+      }
+
+      console.log('Starting text animation...', { textRevealIndex, totalWords }); // Debug log
+
+      textIntervalRef.current = setInterval(() => {
+        setTextRevealIndex((prevIndex) => {
+          const nextIndex = prevIndex + 1;
+          console.log('Revealing word:', nextIndex, 'of', totalWords); // Debug log
+          
+          if (nextIndex >= totalWords - 1) {
+            // Animation complete
+            if (textIntervalRef.current) {
+              clearInterval(textIntervalRef.current);
+              textIntervalRef.current = null;
+            }
+            return totalWords - 1;
+          }
+          return nextIndex;
+        });
+      }, 120); // Slightly slower for better visibility
+    }
+
+    // Cleanup function
+    return () => {
+      if (textIntervalRef.current) {
+        clearInterval(textIntervalRef.current);
+        textIntervalRef.current = null;
+      }
+    };
+  }, [isVisible, isInView, animationStarted]); // Removed textRevealIndex and mainText from dependencies
+
+  // Simplified page visibility handling
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Pause animation when tab is hidden
+        if (textIntervalRef.current) {
+          clearInterval(textIntervalRef.current);
+          textIntervalRef.current = null;
+        }
+      } else if (isVisible && isInView && animationStarted) {
+        // Resume animation when tab becomes visible again
+        const totalWords = mainText.split(' ').length;
+        if (textRevealIndex < totalWords - 1) {
+          textIntervalRef.current = setInterval(() => {
+            setTextRevealIndex((prevIndex) => {
+              const nextIndex = prevIndex + 1;
+              if (nextIndex >= totalWords - 1) {
+                if (textIntervalRef.current) {
+                  clearInterval(textIntervalRef.current);
+                  textIntervalRef.current = null;
+                }
+                return totalWords - 1;
+              }
+              return nextIndex;
+            });
+          }, 120);
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (touchTimeoutRef.current) {
+        clearTimeout(touchTimeoutRef.current);
+      }
+    };
+  }, [isVisible, isInView, animationStarted, textRevealIndex, mainText]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,14 +205,50 @@ const WeAre = () => {
     { id: 8, icon: "🎯", color: "from-teal-400 to-blue-500", name: `${translations.weare_icon_label?.[7]}` },
   ];
 
-  const floatingElements = [...Array(20)].map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 12 + 4,
-    duration: Math.random() * 6 + 4,
-    delay: Math.random() * 3,
-  }));
+  // Memoize floating elements to prevent recalculation
+  const floatingElements = useCallback(() => {
+    return [...Array(20)].map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 12 + 4,
+      duration: Math.random() * 6 + 4,
+      delay: Math.random() * 3,
+    }));
+  }, []);
+
+  const memoizedFloatingElements = useRef(floatingElements()).current;
+
+  // Handle touch interactions for mobile
+  const handleIconTouch = useCallback((iconId) => {
+    setTouchedIcon(iconId);
+    setActiveIcon(iconId);
+    
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current);
+    }
+    
+    touchTimeoutRef.current = setTimeout(() => {
+      setTouchedIcon(null);
+      setActiveIcon(null);
+    }, 2000);
+  }, []);
+
+  // Handle hover for desktop
+  const handleHoverStart = useCallback((iconId) => {
+    if (!touchedIcon) {
+      setActiveIcon(iconId);
+    }
+  }, [touchedIcon]);
+
+  const handleHoverEnd = useCallback(() => {
+    if (!touchedIcon) {
+      setActiveIcon(null);
+    }
+  }, [touchedIcon]);
+
+  // Detect if device supports touch
+  const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
   const renderAnimatedText = () => {
     const words = mainText.split(' ');
@@ -117,10 +262,10 @@ const WeAre = () => {
       
       return (
         <motion.span
-          key={index}
+          key={`${word}-${index}`} // More unique key
           initial={{ opacity: 0, y: 20 }}
           animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.3, delay: index * 0.05 }}
+          transition={{ duration: 0.3, delay: index * 0.02 }} // Reduced delay for smoother animation
           className={`inline-block mr-2 ${
             isHighlighted 
               ? 'text-lime-400 font-bold bg-gradient-to-r from-lime-400 to-green-500 bg-clip-text text-transparent' 
@@ -141,14 +286,14 @@ const WeAre = () => {
       {/* Animated Background Grid */}
       <motion.div
         className="absolute inset-0 opacity-10"
-        animate={{
+        animate={isVisible ? {
           backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
-        transition={{
+        } : {}}
+        transition={isVisible ? {
           duration: 25,
           repeat: Infinity,
           repeatType: "reverse",
-        }}
+        } : {}}
         style={{
           backgroundImage: "linear-gradient(90deg, #a3e635 1px, transparent 1px), linear-gradient(0deg, #a3e635 1px, transparent 1px)",
           backgroundSize: "100px 100px",
@@ -156,7 +301,7 @@ const WeAre = () => {
       />
 
       {/* Floating Background Elements */}
-      {floatingElements.map((element) => (
+      {isVisible && memoizedFloatingElements.map((element) => (
         <motion.div
           key={element.id}
           className="absolute bg-gradient-to-br from-lime-400 to-green-500 rounded-full opacity-20 blur-md"
@@ -166,18 +311,18 @@ const WeAre = () => {
             width: `${element.size}px`,
             height: `${element.size}px`,
           }}
-          animate={{
+          animate={isVisible ? {
             y: [-20, 20, -20],
             x: [-15, 15, -15],
             scale: [1, 1.4, 1],
             opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{
+          } : {}}
+          transition={isVisible ? {
             duration: element.duration,
             repeat: Infinity,
             ease: "easeInOut",
             delay: element.delay,
-          }}
+          } : {}}
         />
       ))}
 
@@ -195,6 +340,14 @@ const WeAre = () => {
             variants={itemVariants}
           >
             {renderAnimatedText()}
+            
+            {/* Debug Info - Remove in production */}
+            {/* <div className="text-sm text-gray-500 mt-4">
+              Debug: Index {textRevealIndex} / {mainText.split(' ').length} | 
+              Visible: {isVisible.toString()} | 
+              InView: {isInView.toString()} | 
+              Started: {animationStarted.toString()}
+            </div> */}
           </motion.h1>
         </motion.div>
 
@@ -208,9 +361,11 @@ const WeAre = () => {
               key={iconItem.id}
               variants={iconVariants}
               whileHover="hover"
-              onHoverStart={() => setActiveIcon(iconItem.id)}
-              onHoverEnd={() => setActiveIcon(null)}
-              className={`relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${iconItem.color} cursor-pointer shadow-lg`}
+              onHoverStart={() => handleHoverStart(iconItem.id)}
+              onHoverEnd={handleHoverEnd}
+              onTouchStart={() => handleIconTouch(iconItem.id)}
+              onClick={() => isTouchDevice ? handleIconTouch(iconItem.id) : null}
+              className={`relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${iconItem.color} cursor-pointer shadow-lg touch-manipulation select-none`}
             >
               <motion.span
                 className="text-2xl md:text-3xl"
@@ -230,10 +385,39 @@ const WeAre = () => {
                   y: activeIcon === iconItem.id ? -5 : 10,
                   scale: activeIcon === iconItem.id ? 1 : 0.8,
                 }}
-                className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-sm"
+                className={`absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-3 py-2 rounded-lg backdrop-blur-sm whitespace-nowrap z-10 pointer-events-none ${
+                  isTouchDevice ? 'text-sm px-4 py-2' : ''
+                }`}
               >
                 {iconItem.name}
+                {isTouchDevice && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
+                )}
               </motion.div>
+
+              {/* Touch indicator for mobile */}
+              {isTouchDevice && (
+                <motion.div
+                  className="absolute -bottom-1 -right-1 w-4 h-4 bg-lime-400 rounded-full flex items-center justify-center"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: touchedIcon === iconItem.id ? [1, 1.3, 1] : 0,
+                    opacity: touchedIcon === iconItem.id ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={touchedIcon === iconItem.id ? {
+                      scale: [1, 0.8, 1],
+                    } : {}}
+                    transition={{
+                      duration: 0.5,
+                      repeat: Infinity,
+                    }}
+                  />
+                </motion.div>
+              )}
 
               {/* Glow Effect */}
               <motion.div
@@ -260,31 +444,31 @@ const WeAre = () => {
           >
             <motion.div
               className="w-3 h-3 bg-lime-400 rounded-full"
-              animate={{
+              animate={isVisible ? {
                 scale: [1, 1.5, 1],
                 opacity: [1, 0.5, 1],
-              }}
-              transition={{
+              } : {}}
+              transition={isVisible ? {
                 duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut",
-              }}
+              } : {}}
             />
             <span className="text-lime-400 font-bold text-sm uppercase tracking-wider">
                ESPERCODE
             </span>
             <motion.div
               className="w-3 h-3 bg-lime-400 rounded-full"
-              animate={{
+              animate={isVisible ? {
                 scale: [1, 1.5, 1],
                 opacity: [1, 0.5, 1],
-              }}
-              transition={{
+              } : {}}
+              transition={isVisible ? {
                 duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: 1,
-              }}
+              } : {}}
             />
           </motion.div>
         </motion.div>
@@ -293,9 +477,9 @@ const WeAre = () => {
         <motion.div
           className="absolute inset-0 pointer-events-none"
           initial={{ opacity: 0 }}
-          animate={{ opacity: activeIcon ? 1 : 0 }}
+          animate={{ opacity: activeIcon && isVisible ? 1 : 0 }}
         >
-          {[...Array(15)].map((_, i) => (
+          {isVisible && [...Array(15)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-lime-400 rounded-full"
@@ -303,17 +487,17 @@ const WeAre = () => {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
               }}
-              animate={{
+              animate={activeIcon && isVisible ? {
                 y: [-20, -100, -20],
                 opacity: [0, 1, 0],
                 scale: [0, 1, 0],
-              }}
-              transition={{
+              } : {}}
+              transition={activeIcon && isVisible ? {
                 duration: 2,
                 repeat: Infinity,
                 delay: i * 0.1,
                 ease: "easeOut",
-              }}
+              } : {}}
             />
           ))}
         </motion.div>

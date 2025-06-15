@@ -8,12 +8,41 @@ import { FaAndroid, FaChartLine, FaCode } from "react-icons/fa";
 const Service = () => {
   const { translations } = useLocale();
   const [activeCard, setActiveCard] = useState(null);
-  // const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    // Intersection Observer untuk mendeteksi visibility
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            setIsVisible(true);
+          } else {
+            setIsInView(false);
+            // Delay sebelum benar-benar menghentikan animasi untuk menghindari flickering
+            setTimeout(() => {
+              if (!entry.isIntersecting) {
+                setIsVisible(false);
+              }
+            }, 500);
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger saat 10% komponen terlihat
+        rootMargin: "50px", // Mulai animasi 50px sebelum masuk viewport
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     // Check for mobile screen size
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -28,15 +57,15 @@ const Service = () => {
     };
   }, []);
 
-  // Auto-scroll carousel for mobile
+  // Auto-scroll carousel for mobile - hanya jalan saat terlihat
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile && isVisible) {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % services.length);
       }, 4000);
       return () => clearInterval(interval);
     }
-  }, [isMobile]);
+  }, [isMobile, isVisible]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -104,7 +133,6 @@ const Service = () => {
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <FaAndroid />,
-      // color: "from-blue-600 to-blue-800",
       color: "from-gray-900 to-gray-800",
       accentColor: "lime-400",
     },
@@ -119,14 +147,6 @@ const Service = () => {
       accentColor: "lime-400",
     },
   ];
-
-  // const floatingElements = [...Array(15)].map((_, i) => ({
-  //   id: i,
-  //   x: Math.random() * 100,
-  //   y: Math.random() * 100,
-  //   size: Math.random() * 20 + 10,
-  //   duration: Math.random() * 10 + 5,
-  // }));
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % services.length);
@@ -152,15 +172,21 @@ const Service = () => {
       className="relative  min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden py-16 lg:py-24"
       id="service"
     >
-      {/* Animated Background Pattern */}
+      {/* Animated Background Pattern - hanya animasi saat terlihat */}
       <motion.div
         className="absolute inset-0 opacity-10"
-        animate={{
-          backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
+        animate={
+          isVisible
+            ? {
+                backgroundPosition: ["0% 0%", "100% 100%"],
+              }
+            : {
+                backgroundPosition: "0% 0%",
+              }
+        }
         transition={{
           duration: 25,
-          repeat: Infinity,
+          repeat: isVisible ? Infinity : 0,
           repeatType: "reverse",
         }}
         style={{
@@ -169,31 +195,6 @@ const Service = () => {
           backgroundSize: "60px 60px",
         }}
       />
-
-      {/* Floating Background Elements */}
-      {/* {floatingElements.map((element) => (
-        <motion.div
-          key={element.id}
-          className="absolute bg-lime-400 rounded-full opacity-20 blur-sm"
-          style={{
-            left: `${element.x}%`,
-            top: `${element.y}%`,
-            width: `${element.size}px`,
-            height: `${element.size}px`,
-          }}
-          animate={{
-            y: [-20, 20, -20],
-            x: [-10, 10, -10],
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{
-            duration: element.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))} */}
 
       {/* Header Section */}
       <motion.div
@@ -209,14 +210,23 @@ const Service = () => {
           </span>
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"
-            animate={{
-              textShadow: [
-                "0 0 20px rgba(163, 230, 53, 0.5)",
-                "0 0 40px rgba(163, 230, 53, 0.8)",
-                "0 0 20px rgba(163, 230, 53, 0.5)",
-              ],
+            animate={
+              isVisible
+                ? {
+                    textShadow: [
+                      "0 0 20px rgba(163, 230, 53, 0.5)",
+                      "0 0 40px rgba(163, 230, 53, 0.8)",
+                      "0 0 20px rgba(163, 230, 53, 0.5)",
+                    ],
+                  }
+                : {
+                    textShadow: "0 0 20px rgba(163, 230, 53, 0.5)",
+                  }
+            }
+            transition={{ 
+              duration: 3, 
+              repeat: isVisible ? Infinity : 0 
             }}
-            transition={{ duration: 3, repeat: Infinity }}
           >
             {translations.service_first_title}
             <br />
@@ -262,13 +272,18 @@ const Service = () => {
                 transformStyle: "preserve-3d",
               }}
             >
-              {/* Card Glow Effect */}
+              {/* Card Glow Effect - hanya animasi saat terlihat dan active */}
               <motion.div
                 className={`absolute inset-0 bg-gradient-to-r from-${service.accentColor} to-cyan-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}
                 animate={
-                  activeCard === service.id ? { scale: [1, 1.1, 1] } : {}
+                  isVisible && activeCard === service.id 
+                    ? { scale: [1, 1.1, 1] } 
+                    : { scale: 1 }
                 }
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: isVisible && activeCard === service.id ? Infinity : 0 
+                }}
               />
 
               {/* Card Content */}
@@ -277,7 +292,9 @@ const Service = () => {
                 <motion.div
                   className="mb-6"
                   animate={
-                    activeCard === service.id ? { rotate: [0, 10, -10, 0] } : {}
+                    isVisible && activeCard === service.id 
+                      ? { rotate: [0, 10, -10, 0] } 
+                      : { rotate: 0 }
                   }
                   transition={{ duration: 0.5 }}
                 >
@@ -288,13 +305,20 @@ const Service = () => {
                   </div>
                   <motion.div
                     className={`w-8 h-8 bg-${service.accentColor} rounded-full`}
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [1, 0.7, 1],
-                    }}
+                    animate={
+                      isVisible
+                        ? {
+                            scale: [1, 1.2, 1],
+                            opacity: [1, 0.7, 1],
+                          }
+                        : {
+                            scale: 1,
+                            opacity: 1,
+                          }
+                    }
                     transition={{
                       duration: 2,
-                      repeat: Infinity,
+                      repeat: isVisible ? Infinity : 0,
                       ease: "easeInOut",
                     }}
                   />
@@ -303,7 +327,11 @@ const Service = () => {
                 {/* Service Title */}
                 <motion.h3
                   className="text-white text-xl md:text-2xl font-bold mb-4 leading-tight"
-                  animate={activeCard === service.id ? { x: [0, 5, 0] } : {}}
+                  animate={
+                    isVisible && activeCard === service.id 
+                      ? { x: [0, 5, 0] } 
+                      : { x: 0 }
+                  }
                 >
                   {service.title}
                 </motion.h3>
@@ -312,9 +340,14 @@ const Service = () => {
                 <motion.p
                   className="text-gray-300 text-base leading-relaxed mb-6 flex-grow"
                   animate={
-                    activeCard === service.id ? { opacity: [0.7, 1, 0.7] } : {}
+                    isVisible && activeCard === service.id
+                      ? { opacity: [0.7, 1, 0.7] }
+                      : { opacity: 0.7 }
                   }
-                  transition={{ duration: 2, repeat: Infinity }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: isVisible && activeCard === service.id ? Infinity : 0 
+                  }}
                 >
                   {service.description}
                 </motion.p>
@@ -332,25 +365,19 @@ const Service = () => {
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
                     animate={
-                      activeCard === service.id
+                      isVisible && activeCard === service.id
                         ? { opacity: [0.5, 0.8, 0.5] }
-                        : {}
+                        : { opacity: 0.5 }
                     }
-                    transition={{ duration: 2, repeat: Infinity }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: isVisible && activeCard === service.id ? Infinity : 0 
+                    }}
                   />
 
                   {/* Image Overlay Elements */}
                   <motion.div
                     className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
-                    // animate={{
-                    //   scale: [1, 1.5, 1],
-                    //   opacity: [1, 0.5, 1],
-                    // }}
-                    // transition={{
-                    //   duration: 3,
-                    //   repeat: Infinity,
-                    //   ease: "easeInOut",
-                    // }}
                   />
                 </motion.div>
 
@@ -362,8 +389,15 @@ const Service = () => {
                 >
                   <span>{translations.service_secondary_cta}</span>
                   <motion.span
-                    animate={activeCard === service.id ? { x: [0, 5, 0] } : {}}
-                    transition={{ duration: 1, repeat: Infinity }}
+                    animate={
+                      isVisible && activeCard === service.id 
+                        ? { x: [0, 5, 0] } 
+                        : { x: 0 }
+                    }
+                    transition={{ 
+                      duration: 1, 
+                      repeat: isVisible && activeCard === service.id ? Infinity : 0 
+                    }}
                     className="group-hover/btn:translate-x-1 transition-transform"
                   >
                     →
@@ -375,37 +409,19 @@ const Service = () => {
               <motion.div
                 className={`absolute inset-0 border-2 border-${service.accentColor} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 animate={
-                  activeCard === service.id
+                  isVisible && activeCard === service.id
                     ? {
                         borderRadius: ["24px", "32px", "24px"],
                       }
-                    : {}
+                    : {
+                        borderRadius: "24px",
+                      }
                 }
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: isVisible && activeCard === service.id ? Infinity : 0 
+                }}
               />
-
-              {/* Floating Elements Inside Card */}
-              {/* {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className={`absolute w-2 h-2 bg-${service.accentColor} rounded-full opacity-40`}
-                  style={{
-                    left: `${20 + i * 30}%`,
-                    top: `${20 + i * 20}%`,
-                  }}
-                  animate={{
-                    y: [-10, 10, -10],
-                    opacity: [0.2, 0.6, 0.2],
-                    scale: [1, 1.3, 1],
-                  }}
-                  transition={{
-                    duration: 3 + i,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.5,
-                  }}
-                />
-              ))} */}
             </motion.div>
           ))}
         </div>
@@ -454,13 +470,20 @@ const Service = () => {
                       </div>
                       <motion.div
                         className={`w-8 h-8 bg-${service.accentColor} rounded-full`}
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [1, 0.7, 1],
-                        }}
+                        animate={
+                          isVisible
+                            ? {
+                                scale: [1, 1.2, 1],
+                                opacity: [1, 0.7, 1],
+                              }
+                            : {
+                                scale: 1,
+                                opacity: 1,
+                              }
+                        }
                         transition={{
                           duration: 2,
-                          repeat: Infinity,
+                          repeat: isVisible ? Infinity : 0,
                           ease: "easeInOut",
                         }}
                       />
@@ -487,15 +510,6 @@ const Service = () => {
 
                       <motion.div
                         className={`absolute top-4 right-4 w-6 h-6 bg-${service.accentColor} rounded-full`}
-                        // animate={{
-                        //   scale: [1, 1.5, 1],
-                        //   opacity: [1, 0.5, 1],
-                        // }}
-                        // transition={{
-                        //   duration: 3,
-                        //   repeat: Infinity,
-                        //   ease: "easeInOut",
-                        // }}
                       />
                     </div>
 
@@ -507,29 +521,6 @@ const Service = () => {
                       <span>→</span>
                     </button>
                   </div>
-
-                  {/* Floating Elements Inside Card */}
-                  {/* {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className={`absolute w-2 h-2 bg-${service.accentColor} rounded-full opacity-40`}
-                      style={{
-                        left: `${20 + i * 30}%`,
-                        top: `${20 + i * 20}%`,
-                      }}
-                      animate={{
-                        y: [-10, 10, -10],
-                        opacity: [0.2, 0.6, 0.2],
-                        scale: [1, 1.3, 1],
-                      }}
-                      transition={{
-                        duration: 3 + i,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: i * 0.5,
-                      }}
-                    />
-                  ))} */}
                 </motion.div>
               );
             })}
@@ -572,73 +563,6 @@ const Service = () => {
           </div>
         </div>
       </motion.div>
-
-      {/* Bottom Section with Services Banner */}
-      {/* <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-        transition={{ duration: 1, delay: 0.8 }}
-        className="relative z-10 mt-16 px-4 md:px-8 lg:px-16"
-      >
-        <div className="bg-gradient-to-r from-lime-400 via-yellow-400 to-lime-400 rounded-3xl p-2 shadow-2xl">
-          <motion.div
-            className="bg-gray-900 rounded-2xl p-8 flex flex-wrap items-center justify-center gap-8 text-center"
-            animate={{
-              boxShadow: [
-                "0 0 30px rgba(163, 230, 53, 0.3)",
-                "0 0 60px rgba(163, 230, 53, 0.5)",
-                "0 0 30px rgba(163, 230, 53, 0.3)",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            {["BRANDING", "GRAPHIC DESIGN", "WEB DESIGN", "DIGITAL"].map((service, index) => (
-              <motion.div
-                key={service}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 1 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="flex items-center space-x-4 group cursor-pointer"
-              >
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center"
-                >
-                  <span className="text-gray-900 font-bold">+</span>
-                </motion.div>
-                <span className="text-white font-bold text-lg md:text-xl tracking-wider group-hover:text-lime-400 transition-colors">
-                  {service}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.div> */}
-
-      {/* Additional Floating Elements */}
-      {/* {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={`extra-${i}`}
-          className="absolute w-1 h-1 bg-lime-400 rounded-full opacity-60"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            x: [0, Math.random() * 50 - 25, 0],
-            y: [0, Math.random() * 50 - 25, 0],
-            scale: [1, 2, 1],
-            opacity: [0.6, 1, 0.6],
-          }}
-          transition={{
-            duration: Math.random() * 4 + 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))} */}
     </section>
   );
 };

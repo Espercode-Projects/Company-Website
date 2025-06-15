@@ -1,11 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
 import TeamCard from "./TeamCard";
 
 const WhoWeAre = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
+  
+  // Refs untuk intersection observer
+  const mainRef = useRef(null);
+  const projectsRef = useRef(null);
+  const backgroundRef = useRef(null);
+  
+  // Check if elements are in view
+  const isMainInView = useInView(mainRef, { margin: "-100px" });
+  const isProjectsInView = useInView(projectsRef, { margin: "-100px" });
+  const isBackgroundInView = useInView(backgroundRef, { margin: "-200px" });
 
   const projects = [
     {
@@ -85,7 +95,7 @@ const WhoWeAre = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen py-20 px-4 relative overflow-hidden">
+    <div ref={mainRef} className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen py-20 px-4 relative overflow-hidden">
       {/* Enhanced Geometric Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -100,20 +110,7 @@ const WhoWeAre = () => {
             )`,
           }}
         ></div>
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 40px,
-              #10b981 40px,
-              #10b981 42px
-            )`,
-          }}
-        ></motion.div>
+       
       </div>
 
       <div className="max-w-7xl mx-auto mt-10 relative z-10 py-8">
@@ -121,6 +118,7 @@ const WhoWeAre = () => {
 
         {/* Project Preview Section */}
         <motion.div
+          ref={projectsRef}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -136,7 +134,8 @@ const WhoWeAre = () => {
               className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-6 py-2 mb-6"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(16, 185, 129, 0.15)" }}
             >
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              {/* Pulse animation hanya jika terlihat */}
+              <div className={`w-2 h-2 bg-green-400 rounded-full ${isProjectsInView ? 'animate-pulse' : ''}`}></div>
               <span className="text-green-400 font-medium text-sm uppercase tracking-wider">
                 Our Latest Work
               </span>
@@ -144,9 +143,7 @@ const WhoWeAre = () => {
             
             <motion.h2 
               className="text-5xl md:text-6xl font-bold mb-6"
-              // initial={{ opacity: 0, y: 30 }}
-              // whileInView={{ opacity: 1, y: 0 }}
-              // transition={{ delay: 0.2, duration: 0.8 }}
+              
             >
               <span className="text-white">FEATURED </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
@@ -305,10 +302,11 @@ const WhoWeAre = () => {
               
               <span className="relative z-10">View All Projects</span>
               
+              {/* Arrow animation hanya jika projects section terlihat */}
               <motion.div
                 className="relative z-10"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                animate={isProjectsInView ? { x: [0, 5, 0] } : { x: 0 }}
+                transition={{ duration: 1.5, repeat: isProjectsInView ? Infinity : 0 }}
               >
                 <svg 
                   className="w-5 h-5" 
@@ -337,47 +335,57 @@ const WhoWeAre = () => {
           </motion.div>
         </motion.div>
 
-        {/* Enhanced Animated Background Elements */}
-        <motion.div
-          animate={{
-            rotate: 360,
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="absolute top-20 right-20 w-3 h-3 bg-green-400 rounded-full opacity-60"
-        ></motion.div>
+        {/* Enhanced Animated Background Elements - Hanya animate jika terlihat */}
+        <div ref={backgroundRef}>
+          <motion.div
+            animate={isBackgroundInView ? {
+              rotate: 360,
+              scale: [1, 1.5, 1],
+            } : {
+              rotate: 0,
+              scale: 1,
+            }}
+            transition={{
+              rotate: { duration: 15, repeat: isBackgroundInView ? Infinity : 0, ease: "linear" },
+              scale: { duration: 4, repeat: isBackgroundInView ? Infinity : 0, ease: "easeInOut" },
+            }}
+            className="absolute top-20 right-20 w-3 h-3 bg-green-400 rounded-full opacity-60"
+          ></motion.div>
 
-        <motion.div
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.8, 0.3],
-            rotate: [0, 45, 90, 135, 180],
-          }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-32 left-20 w-4 h-4 bg-green-400 transform rotate-45 opacity-30"
-        ></motion.div>
+          <motion.div
+            animate={isBackgroundInView ? {
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.8, 0.3],
+              rotate: [0, 45, 90, 135, 180],
+            } : {
+              scale: 1,
+              opacity: 0.3,
+              rotate: 0,
+            }}
+            transition={{ 
+              duration: 5, 
+              repeat: isBackgroundInView ? Infinity : 0, 
+              ease: "easeInOut" 
+            }}
+            className="absolute bottom-32 left-20 w-4 h-4 bg-green-400 transform rotate-45 opacity-30"
+          ></motion.div>
 
-        {/* Additional Floating Elements for Projects Section */}
-        {/* <motion.div
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.4, 0.8, 0.4],
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-10 w-2 h-2 bg-blue-400 rounded-full"
-        ></motion.div> */}
-
-        <motion.div
-          animate={{
-            x: [0, 30, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="absolute top-3/4 right-16 w-3 h-3 border-2 border-green-400 rotate-45 opacity-40"
-        ></motion.div>
+          <motion.div
+            animate={isBackgroundInView ? {
+              x: [0, 30, 0],
+              rotate: [0, 180, 360],
+            } : {
+              x: 0,
+              rotate: 0,
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: isBackgroundInView ? Infinity : 0, 
+              ease: "linear" 
+            }}
+            className="absolute top-3/4 right-16 w-3 h-3 border-2 border-green-400 rotate-45 opacity-40"
+          ></motion.div>
+        </div>
       </div>
     </div>
   );

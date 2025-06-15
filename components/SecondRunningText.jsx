@@ -2,11 +2,44 @@
 
 import { useLocale } from "@/app/ClientRootLayout";
 import { motion } from "framer-motion";
-
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function SecondRunningText() {
   const { translations } = useLocale();
+  const [isVisible, setIsVisible] = useState(false);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    // Intersection Observer untuk mendeteksi visibility
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            // Delay sebelum benar-benar menghentikan animasi untuk menghindari flickering
+            setTimeout(() => {
+              if (!entry.isIntersecting) {
+                setIsVisible(false);
+              }
+            }, 300);
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger saat 10% komponen terlihat
+        rootMargin: "100px", // Mulai animasi 100px sebelum masuk viewport
+      }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const techServices = translations.second_running_text || [
     "We Are Espercode",
@@ -23,6 +56,7 @@ function SecondRunningText() {
 
   return (
     <motion.div
+      ref={componentRef}
       className="absolute -bottom-14  right-0 left-0 z-10 mt-20 mb-8 overflow-hidden "
       style={{ transform: "rotate(-2deg)", transformOrigin: "center" }}
       initial={{ opacity: 0, y: 50 }}
@@ -35,20 +69,37 @@ function SecondRunningText() {
           boxShadow:
             "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
         }}
-        animate={{
-          boxShadow: [
-            "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
-            "0 0 40px rgba(34, 197, 94, 0.7), 0 0 80px rgba(34, 197, 94, 0.4)",
-            "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
-          ],
+        animate={
+          isVisible
+            ? {
+                boxShadow: [
+                  "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
+                  "0 0 40px rgba(34, 197, 94, 0.7), 0 0 80px rgba(34, 197, 94, 0.4)",
+                  "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
+                ],
+              }
+            : {
+                boxShadow: "0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)",
+              }
+        }
+        transition={{ 
+          duration: 2, 
+          repeat: isVisible ? Infinity : 0 
         }}
-        transition={{ duration: 2, repeat: Infinity }}
       >
         <motion.div
           className="flex whitespace-nowrap"
           style={{ transform: "rotate(2deg)" }}
-          animate={{ x: [0, -2000] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          animate={
+            isVisible
+              ? { x: [0, -2000] }
+              : { x: 0 }
+          }
+          transition={{ 
+            duration: 30, 
+            repeat: isVisible ? Infinity : 0, 
+            ease: "linear" 
+          }}
         >
           {[...techServices, ...techServices, ...techServices].map(
             (service, index) => (
