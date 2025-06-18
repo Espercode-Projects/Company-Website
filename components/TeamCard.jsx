@@ -93,7 +93,7 @@ const TeamCard = () => {
       role: "Digital Marketing",
       image: "/img/adi_profile.avif",
       skills: ["Facebook", "Instagram", "Whatsapp", "Canva"],
-      bio: "Experienced digital marketer focused on creating impactful social media campaigns across Facebook, Instagram, and WhatsApp. Skilled in using Canva to design engaging content that boosts brand visibility and audience interaction.",
+      bio: `${translations.team_members?.[0].bio}`,
       link: "#",
     },
     {
@@ -102,7 +102,7 @@ const TeamCard = () => {
       role: "Backend Developer",
       image: "/img/rifal_profile.avif",
       skills: ["PHP", "Java", "Kotlin", "Python"],
-      bio: "Backend developer skilled in building robust APIs and server-side systems.",
+      bio: `${translations.team_members?.[1].bio}`,
       link: "https://portofolio-rifalalis-projects.vercel.app/",
     },
     {
@@ -111,7 +111,7 @@ const TeamCard = () => {
       role: "Frontend Developer",
       image: "/img/nando_profile.avif",
       skills: ["React", "NextJs", "Tailwinds", "PHP"],
-      bio: "Frontend developer focused on building fast and responsive web interfaces.",
+      bio: `${translations.team_members?.[2].bio}`,
       link: "https://nando-abdillah-profile.vercel.app/",
     },
   ];
@@ -581,7 +581,7 @@ const TeamCard = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>View Portfolio</span>
+                      <span>{translations.team_main_cta}</span>
                       <FaArrowRight className="w-4 h-4" />
                     </motion.a>
                   </motion.div>

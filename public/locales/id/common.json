@@ -1,10 +1,4 @@
 {
-  "head_title": "SOLUSI DIGITAL",
-  "nav_home": "BERANDA", 
-  "nav_about": "TENTANG", 
-  "nav_service": "LAYANAN KAMI", 
-  "nav_portofolio": "PORTOFOLIO", 
-  "nav_contact": "KONTAK", 
   "hero_header": "DIGITAL", 
   "hero_animated_texts": ["INOVASI", "SOLUSI", "KEUNGGULAN", "MASA DEPAN"], 
   "hero_subheader": "Ubah ide-ide Anda menjadi produk digital yang kuat. ", 
@@ -34,16 +28,41 @@
   "second_running_text": [
     "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode", "Kami Adalah Espercode"
   ], 
+  "creativity_information": "KARYA TERBARU KAMI", 
+  "creativity_title": ["PROYEK", "UNGGULAN"], 
+  "creativity_description": "Temukan solusi inovatif yang kami buat untuk klien, menampilkan teknologi canggih dan desain luar biasa.", 
+  "creativity_projects": [
+    {
+      "title": "Zphere Social", 
+      "description": "Media sosial web untuk berbagi foto/video dan transaksi jual/beli."
+    }, 
+    {
+      "title": "Flowise", 
+      "description": "Aplikasi mobile untuk mencatat transaksi dan melacak keuangan."
+    }, 
+    {
+      "title": "Voice Chat Translator", 
+      "description": "Memfasilitasi komunikasi lintas bahasa melalui ruang virtual."
+    }
+  ], 
+  "creativity_main_cta": "Lihat Semua Proyek", 
   "team_persuasive": "TEMUI AHLI", 
   "team_title": ["TIM", "AHLI"], 
   "team_description": "Tim kami yang bersemangat, terdiri dari pengembang, desainer, dan inovator, menciptakan pengalaman digital luar biasa untuk mendorong pertumbuhan bisnis dan memenuhi harapan klien.", 
   "team_stats_label": ["PROYEK", "AHLI", "TAHUN"], 
+  "team_members": [
+    {
+      "bio": "Pemasar digital berpengalaman yang fokus pada pembuatan kampanye media sosial yang berdampak di Facebook, Instagram, dan WhatsApp. Terampil dalam menggunakan Canva untuk merancang konten menarik yang meningkatkan visibilitas merek dan interaksi audiens."
+    }, 
+    {
+      "bio": "Pengembang backend yang terampil dalam membangun API yang kuat dan sistem sisi server."
+    }, 
+    {
+      "bio": "Pengembang frontend yang fokus membangun antarmuka web yang cepat dan responsif."
+    }
+  ], 
+  "team_main_cta": "Lihat Portofolio", 
   "weare_main_text": "KAMI ADALAH KREATOR INOVATOR, DAN PENCERITA YANG BERKOMITMEN MEMAHAMI IDENTITAS UNIK SETIAP MEREK. KAMI MENYELAMI VISI ANDA, MEMADUKAN STRATEGI DAN KREATIVITAS UNTUK MEMBANGUN MEREK YANG TIDAK HANYA ADA, TETAPI JUGA BERKESAN DI HATI AUDIENS.", 
   "weare_highlighted_words": ["KREATOR", "INOVATOR", "PENCERITA", "KREATIVITAS", "MEMBANGUN MEREK", "AUDIENS"], 
-  "weare_icon_label": ["Alam", "Premium", "Energi", "Daya", "Kreatif", "Inovasi", "Keunggulan", "Fokus"], 
-  "footer_title": ["HALAMAN", "TERHUBUNG DENGAN KAMI"], 
-  "footer_pages_nav": ["Tentang Kami", "Portofolio", "FAQ"], 
-  "footer_contact_title": ["NOMOR TELEPON", "ALAMAT EMAIL"], 
-  "footer_description": "Dengan tim desainer, pemasar, dan inovator yang penuh semangat, kami hadirkan solusi unik yang mengangkat brand Anda dan menarik perhatian audiens.", 
-  "footer_bottom_section": ["Kebijakan Privasi", "Syarat Layanan"]
+  "weare_icon_label": ["Alam", "Premium", "Energi", "Daya", "Kreatif", "Inovasi", "Keunggulan", "Fokus"]
 }

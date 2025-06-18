@@ -3,8 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import TeamCard from "./TeamCard";
+import { useLocale } from "@/app/ClientRootLayout";
 
 const WhoWeAre = () => {
+  const { translations } = useLocale();
   const [hoveredProject, setHoveredProject] = useState(null);
   
   // Refs untuk intersection observer
@@ -22,7 +24,7 @@ const WhoWeAre = () => {
       id: 1,
       title: "Zphere Social ",
       category: "Web Development",
-      description: "Modern e-commerce solution with advanced AI recommendations",
+      description: `${translations.creativity_projects?.[0].description}`,
       image: "/img/zphere.png",
       tech: ["React", "Node.js", "AI/ML"],
       status: "Completed"
@@ -31,7 +33,7 @@ const WhoWeAre = () => {
       id: 2,
       title: "Flowise",
       category: "Mobile Development",
-      description: "Secure and intuitive banking experience for millions of users",
+      description: `${translations.creativity_projects?.[1].description}`,
       image: "/img/flowise.png",
       tech: ["React Native", "Blockchain", "Security"],
       status: "Completed"
@@ -40,7 +42,7 @@ const WhoWeAre = () => {
       id: 3,
       title: "Voice Chat Translator",
       category: "Web Development & AI/ML",
-      description: "Revolutionary healthcare diagnostics powered by machine learning",
+      description: `${translations.creativity_projects?.[2].description}`,
       image: "/img/call.png",
       tech: ["Python", "TensorFlow", "Healthcare"],
       status: "In Progress"
@@ -137,7 +139,7 @@ const WhoWeAre = () => {
               {/* Pulse animation hanya jika terlihat */}
               <div className={`w-2 h-2 bg-green-400 rounded-full ${isProjectsInView ? 'animate-pulse' : ''}`}></div>
               <span className="text-green-400 font-medium text-sm uppercase tracking-wider">
-                Our Latest Work
+                {translations.creativity_information}
               </span>
             </motion.div>
             
@@ -145,9 +147,9 @@ const WhoWeAre = () => {
               className="text-5xl md:text-6xl font-bold mb-6"
               
             >
-              <span className="text-white">FEATURED </span>
+              <span className="text-white">{translations.creativity_title?.[0]}{""}</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                PROJECTS
+                {translations.creativity_title?.[1]}
               </span>
             </motion.h2>
             
@@ -157,8 +159,7 @@ const WhoWeAre = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Discover the innovative solutions we've crafted for our clients, 
-              showcasing cutting-edge technology and exceptional design.
+              {translations.creativity_description}
             </motion.p>
           </motion.div>
 
@@ -300,7 +301,7 @@ const WhoWeAre = () => {
                 transition={{ duration: 0.3 }}
               />
               
-              <span className="relative z-10">View All Projects</span>
+              <span className="relative z-10">{translations.creativity_main_cta}</span>
               
               {/* Arrow animation hanya jika projects section terlihat */}
               <motion.div

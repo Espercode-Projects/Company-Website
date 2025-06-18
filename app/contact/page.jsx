@@ -74,13 +74,13 @@ const Contact = () => {
     },
   };
 
-  const { setCurrentLocale, translations } = useLocale();
+  const { currentLocale, setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("EN");
+  const [currentLanguage, setCurrentLanguage] = useState(currentLocale.toUpperCase());
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const { scrollY } = useScroll();
@@ -108,8 +108,22 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const [isInitialRender, setIsInitialRender] = useState(true);
+  
   useEffect(() => {
+    if (isInitialRender) {
+      setIsInitialRender(false);
+      const lang = localStorage.getItem('lang')
+      if (lang) {
+        setCurrentLanguage(lang.toUpperCase())
+      }
+      return;
+    }
+
     setCurrentLocale(currentLanguage.toLowerCase());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('lang', currentLanguage.toLowerCase());
+    }
   }, [currentLanguage]);
 
   return (

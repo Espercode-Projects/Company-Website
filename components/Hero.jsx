@@ -122,7 +122,7 @@ export const MobileMenu = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
-  const { translations } = useLocale();
+  const { headers } = useLocale();
 
   const languages = [
     { code: "EN", name: "English", country: "US" },
@@ -130,6 +130,14 @@ export const MobileMenu = ({
     { code: "DE", name: "Deutsch", country: "DE" },
     { code: "JP", name: "日本語", country: "JP" },
     { code: "CN", name: "中文", country: "CN" },
+  ];
+  
+  const navigations = [
+    { label: headers.nav_home, target: '/'}, 
+    { label: headers.nav_about, target: '/about'}, 
+    { label: headers.nav_service, target: '/services'}, 
+    { label: headers.nav_portofolio, target: '/portfolio'}, 
+    { label: headers.nav_contact, target: '/contact'}, 
   ];
 
   return (
@@ -179,16 +187,10 @@ export const MobileMenu = ({
               </div>
 
               <nav className="space-y-6">
-                {[
-                  translations.nav_home,
-                  translations.nav_about,
-                  translations.nav_service,
-                  translations.nav_portofolio,
-                  translations.nav_contact,
-                ].map((item, index) => (
+                {navigations.map((item, index) => (
                   <motion.a
-                    key={item}
-                    href="#"
+                    key={item.label}
+                    href={item.target}
                     className="block text-white text-lg font-medium hover:text-green-400 transition-colors duration-300"
                     onClick={() => setIsMobileMenuOpen(false)}
                     initial={{ x: 50, opacity: 0 }}
@@ -199,7 +201,7 @@ export const MobileMenu = ({
                       textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
                     }}
                   >
-                    {item}
+                    {item.label}
                   </motion.a>
                 ))}
               </nav>
@@ -363,43 +365,81 @@ export const RunningText = () => {
 
 // Hero Content Component
 const HeroContent = ({ mousePosition, currentTextIndex }) => {
-  const { translations } = useLocale();
+  const { currentLocale, translations } = useLocale();
   const animatedTexts = translations.hero_animated_texts || "[]";
 
   return (
     <div className="flex-1 max-w-4xl mb-12 lg:mb-0 lg:pr-12">
       {/* Main Title */}
-      <div className="mb-8">
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500 leading-tight mb-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{
-            filter: "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
-          }}
-        >
-          {translations.hero_header}
-        </motion.h1>
 
-        {/* Animated changing text */}
-        <div className="relative h-24 lg:h-32 overflow-hidden">
-          <AnimatePresence mode="wait">
+      <div className="mb-8">
+        {currentLocale && currentLocale === 'id' ? (
+          <>
+            {/* Animated changing text */}
+            <div className="relative h-24 lg:h-32 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={currentTextIndex}
+                  className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
+                  }}
+                >
+                  {animatedTexts[currentTextIndex]}
+                </motion.h1>
+              </AnimatePresence>
+            </div>
+
             <motion.h1
-              key={currentTextIndex}
-              className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500 leading-tight mb-4"
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                filter: "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
+                filter: "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
               }}
             >
-              {animatedTexts[currentTextIndex]}
+              {translations.hero_header}
             </motion.h1>
-          </AnimatePresence>
-        </div>
+          </>
+        ) : (
+          <>
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500 leading-tight mb-4"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                filter: "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
+              }}
+            >
+              {translations.hero_header}
+            </motion.h1>
+            
+            {/* Animated changing text */}
+            <div className="relative h-24 lg:h-32 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={currentTextIndex}
+                  className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
+                  }}
+                >
+                  {animatedTexts[currentTextIndex]}
+                </motion.h1>
+              </AnimatePresence>
+            </div>
+          </>
+        )}
 
         <motion.div
           className="text-xl md:text-2xl text-white/80 font-light mt-4"
@@ -738,6 +778,10 @@ const Hero = () => {
   useEffect(() => {
     if (isInitialRender) {
       setIsInitialRender(false);
+      const lang = localStorage.getItem('lang')
+      if (lang) {
+        setCurrentLanguage(lang.toUpperCase())
+      }
       return;
     }
 

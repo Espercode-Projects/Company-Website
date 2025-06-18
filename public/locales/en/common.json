@@ -1,16 +1,10 @@
 {
-  "head_title": "DIGITAL SOLUTIONS",
-  "nav_home": "HOME", 
-  "nav_about": "ABOUT", 
-  "nav_service": "OUR SERVICES", 
-  "nav_portofolio": "PORTOFOLIO", 
-  "nav_contact": "CONTACT", 
   "hero_header": "DIGITAL", 
   "hero_animated_texts": ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"], 
   "hero_subheader": "Transform your ideas into powerful digital products ", 
   "hero_description": "Whether you need a website, mobile app, or complete digital solution — we’re here to design, develop, and deliver experiences that elevate your brand and grow your business.", 
   "hero_main_cta": "Get Started", 
-  "hero_secondary_cta": "View Portofolio", 
+  "hero_secondary_cta": "View Portfolio", 
   "hero_hint": "Scroll Down", 
   "service_question": "WHAT WE DO?", 
   "service_first_title": "SPECIALIZING IN HIGH PERFORMANCE WEB AND", 
@@ -34,15 +28,45 @@
   "second_running_text": [
     "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode", "We Are Espercode"
   ], 
+  "creativity_information": "OUR LATEST WORK", 
+  "creativity_title": ["FEATURED", "PROJECTS"], 
+  "creativity_description": "Discover the innovative solutions we've crafted for our clients, showcasing cutting-edge technology and exceptional design.", 
+  "creativity_projects": [
+    {
+      "title": "Zphere Social", 
+      "description": "Web social media for sharing photos/videos and buying or selling transactions."
+    }, 
+    {
+      "title": "Flowise", 
+      "description": "Mobile application for recording transactions and tracking finances."
+    }, 
+    {
+      "title": "Voice Chat Translator", 
+      "description": "Facilitating cross-language communication through virtual spaces."
+    }
+  ], 
+  "creativity_main_cta": "View All Projects", 
   "team_persuasive": "MEET THE EXPERT", 
   "team_title": ["TEAM OF", "EXPERT"], 
   "team_description": "Our passionate team of developers, designers, and innovators work together to create extraordinary digital experiences that drive business growth and exceed client expectations.", 
   "team_stats_label": ["PROJECTS", "EXPERTS", "YEARS"], 
+  "team_members": [
+    {
+      "bio": "Experienced digital marketer focused on creating impactful social media campaigns across Facebook, Instagram, and WhatsApp. Skilled in using Canva to design engaging content that boosts brand visibility and audience interaction."
+    }, 
+    {
+      "bio": "Backend developer skilled in building robust APIs and server-side systems."
+    }, 
+    {
+      "bio": "Frontend developer focused on building fast and responsive web interfaces."
+    }
+  ], 
+  "team_main_cta": "View Portfolio", 
   "weare_main_text": "WE ARE CREATORS, INNOVATORS, AND STORYTELLERS COMMITTED TO UNDERSTANDING EACH BRAND'S UNIQUE IDENTITY. WE IMMERSE OURSELVES IN YOUR VISION, BLENDING STRATEGY WITH CREATIVITY TO BUILD BRANDS THAT DON'T JUST EXIST BUT THRIVE IN THE HEARTS OF THEIR AUDIENCES.", 
   "weare_highlighted_words": ["CREATORS", "INNOVATORS", "STORYTELLERS", "CREATIVITY", "BUILD BRANDS", "AUDIENCES"], 
   "weare_icon_label": ["Nature", "Premium", "Energy", "Power", "Creative", "Innovation", "Exellence", "Focus"], 
   "footer_title": ["PAGES", "CONNECT WITH US"], 
-  "footer_pages_nav": ["About Us", "Portofolio", "FAQs"], 
+  "footer_pages_nav": ["About Us", "Portfolio", "FAQs"], 
   "footer_contact_title": ["PHONE NUMBER", "EMAIL ADDRESS"], 
   "footer_description": "With a team of passionate designers, marketers, and innovators, we specialize in delivering unique solutions that elevate your brand and captivate your audience.", 
   "footer_bottom_section": ["Privacy Policy", "Terms of Service"]

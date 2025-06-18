@@ -517,7 +517,7 @@ const Service = () => {
                     <button
                       className={`self-start bg-${service.accentColor} text-gray-900 px-6 py-3 rounded-full font-bold text-sm flex items-center space-x-2 shadow-lg`}
                     >
-                      <span>LEARN MORE</span>
+                      <span>{translations.service_secondary_cta}</span>
                       <span>→</span>
                     </button>
                   </div>

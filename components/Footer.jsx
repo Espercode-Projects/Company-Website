@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  const { translations } = useLocale()
+  const { footers } = useLocale()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +81,7 @@ const Footer = () => {
     },
   ];
 
-  const pages = translations.footer_pages_nav || ["About Us", "Portfolio", "FAQs"];
+  const pages = footers.footer_pages_nav || ["About Us", "Portfolio", "FAQs"];
 
   return (
     <motion.footer
@@ -128,7 +128,7 @@ const Footer = () => {
           {/* Pages Section */}
           <motion.div className="lg:col-span-1" variants={itemVariants}>
             <h3 className="text-lime-400 text-lg font-semibold mb-6 tracking-wider">
-              {translations?.footer_title?.[0]}
+              {footers?.footer_title?.[0]}
             </h3>
             <ul className="space-y-4">
               {pages.map((page, index) => (
@@ -149,7 +149,7 @@ const Footer = () => {
           {/* Connect Section */}
           <motion.div className="lg:col-span-1" variants={itemVariants}>
             <h3 className="text-lime-400 text-lg font-semibold mb-6 tracking-wider">
-              {translations.footer_title?.[1]}
+              {footers.footer_title?.[1]}
             </h3>
             <div className="space-y-4">
               {socialIcons.map(({ Icon, label }, index) => (
@@ -182,7 +182,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-2">
                   <FaPhone className="text-lime-400" />
-                  <span className="text-gray-400 text-sm">{translations.footer_contact_title?.[0]}</span>
+                  <span className="text-gray-400 text-sm">{footers.footer_contact_title?.[0]}</span>
                 </div>
                 <a
                   href="https://wa.me/+6281226577201"
@@ -198,7 +198,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-2">
                   <FaEnvelope className="text-lime-400" />
-                  <span className="text-gray-400 text-sm">{translations.footer_contact_title?.[1]}</span>
+                  <span className="text-gray-400 text-sm">{footers.footer_contact_title?.[1]}</span>
                 </div>
                 <a
                   href="mailto:info@espercode.com"
@@ -212,7 +212,7 @@ const Footer = () => {
                 className="text-gray-400 text-sm leading-relaxed mt-6"
                 variants={itemVariants}
               >
-                {translations.footer_description}
+                {footers.footer_description}
               </motion.p>
             </div>
           </motion.div>
@@ -235,14 +235,14 @@ const Footer = () => {
               className="text-gray-500 hover:text-lime-400 transition-colors duration-300 text-sm"
               whileHover={{ y: -2 }}
             >
-              {translations.footer_bottom_section?.[0]}
+              {footers.footer_bottom_section?.[0]}
             </motion.a>
             <motion.a
               href="#"
               className="text-gray-500 hover:text-lime-400 transition-colors duration-300 text-sm"
               whileHover={{ y: -2 }}
             >
-              {translations.footer_bottom_section?.[1]}
+              {footers.footer_bottom_section?.[1]}
             </motion.a>
           </div>
         </motion.div>

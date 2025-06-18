@@ -21,7 +21,7 @@ export const Navbar = ({
   currentLanguage,
   setCurrentLanguage,
 }) => {
-  const { currentLocale, translations } = useLocale();
+  const { currentLocale, headers } = useLocale();
   const pathname = usePathname(); // Hook untuk mendapatkan path saat ini
 
   // Fungsi untuk mengecek apakah path sedang aktif
@@ -88,7 +88,7 @@ export const Navbar = ({
               textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
             }}
           >
-            {translations.head_title}
+            {headers.head_title}
           </motion.div>
         </div>
       </motion.div>
@@ -116,7 +116,7 @@ export const Navbar = ({
               : undefined,
           }}
         >
-          {translations.nav_home}
+          {headers.nav_home}
           <motion.span
             className="absolute -bottom-1 left-0 h-0.5 bg-green-400"
             initial={{ width: 0 }}
@@ -150,7 +150,7 @@ export const Navbar = ({
               : undefined,
           }}
         >
-          {translations.nav_about}
+          {headers.nav_about}
           <motion.span
             className="absolute -bottom-1 left-0 h-0.5 bg-green-400"
             initial={{ width: 0 }}
@@ -183,7 +183,7 @@ export const Navbar = ({
                 : undefined,
             }}
           >
-            <span>{translations.nav_service}</span>
+            <span>{headers.nav_service}</span>
             <motion.span
               animate={{ rotate: isServiceHovered ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -264,7 +264,7 @@ export const Navbar = ({
               : undefined,
           }}
         >
-          {translations.nav_portofolio}
+          {headers.nav_portofolio}
           <motion.span
             className="absolute -bottom-1 left-0 h-0.5 bg-green-400"
             initial={{ width: 0 }}
@@ -298,7 +298,7 @@ export const Navbar = ({
               : undefined,
           }}
         >
-          {translations.nav_contact}
+          {headers.nav_contact}
           <motion.span
             className="absolute -bottom-1 left-0 h-0.5 bg-green-400"
             initial={{ width: 0 }}

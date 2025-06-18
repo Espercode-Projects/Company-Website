@@ -1,10 +1,4 @@
 {
-  "head_title": "数字解决方案",
-  "nav_home": "首页", 
-  "nav_about": "关于我们", 
-  "nav_service": "我们的服务", 
-  "nav_portofolio": "投资组合", 
-  "nav_contact": "联系我们", 
   "hero_header": "数字", 
   "hero_animated_texts": ["创新", "解决方案", "卓越", "未来"], 
   "hero_subheader": "将你的想法转化为强大的数字产品。", 
@@ -34,16 +28,41 @@
   "second_running_text": [
     "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode", "我们是Espercode"
   ], 
+  "creativity_information": "我们的最新作品", 
+  "creativity_title": ["精选", "项目"], 
+  "creativity_description": "发现我们为客户打造的创新解决方案，展示尖端技术和设计。", 
+  "creativity_projects": [
+    {
+      "title": "Zphere Social", 
+      "description": "用于分享照片/视频以及买卖交易的网络社交媒体"
+    }, 
+    {
+      "title": "Flowise", 
+      "description": "用于记录交易和跟踪财务的移动应用程序"
+    }, 
+    {
+      "title": "Voice Chat Translator", 
+      "description": "通过虚拟空间促进跨语言沟通"
+    }
+  ], 
+  "creativity_main_cta": "查看所有项目", 
   "team_persuasive": "见见专家", 
   "team_title": ["专家", "团队"], 
   "team_description": "我们充满热情的开发者、设计师和创新者团队创造出卓越的数字体验，推动业务增长，满足客户期望。", 
   "team_stats_label": ["项目", "专家", "年"], 
+  "team_members": [
+    {
+      "bio": "经验丰富的数字营销人员，专注于在Facebook、Instagram和WhatsApp上创建有影响力的社交媒体活动。擅长使用Canva设计引人入胜的内容，以提升品牌知名度和观众互动。"
+    }, 
+    {
+      "bio": "擅长构建强大API和服务器端系统的后端开发人员。"
+    }, 
+    {
+      "bio": "注于构建快速且响应式网页界面的前端开发人员。"
+    }
+  ], 
+  "team_main_cta": "查看作品集", 
   "weare_main_text": "我们是 创造者、创新者 和 故事讲述者，致力于理解每个品牌独特的身份。我们沉浸在您的愿景中，将战略与 创造力 融合，打造不仅存在，而且在 受众 心中蓬勃发展的品牌。", 
   "weare_highlighted_words": ["创造者", "创新者", "故事讲述者", "创造力", "打造品牌", "受众"], 
-  "weare_icon_label": ["自然", "优质", "能源", "力量", "创造性", "创新", "卓越", "焦点"], 
-  "footer_title": ["页面", "联系我们"], 
-  "footer_pages_nav": ["关于我们", "投资组合", "FAQs"], 
-  "footer_contact_title": ["电话号码", "电子邮件地址"], 
-  "footer_description": "我们由热情的设计师、营销人员和创新者组成的团队，专注于提供能提升品牌、吸引受众的独特解决方案。", 
-  "footer_bottom_section": ["隐私政策", "服务条款"]
+  "weare_icon_label": ["自然", "优质", "能源", "力量", "创造性", "创新", "卓越", "焦点"]
 }

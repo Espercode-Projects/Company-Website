@@ -1,10 +1,4 @@
 {
-  "head_title": "DIGITALE LÖSUNGEN",
-  "nav_home": "STARTSEITE", 
-  "nav_about": "ÜBER UNS", 
-  "nav_service": "UNSERE DIENSTLEISTUNGEN", 
-  "nav_portofolio": "PORTFOLIO", 
-  "nav_contact": "KONTAKT", 
   "hero_header": "DIGITAL", 
   "hero_animated_texts": ["INNOVATION", "Lösungen", "Exzellenz", "Zukunft"], 
   "hero_subheader": "Verwandle deine Ideen in leistungsstarke digitale Produkte. ", 
@@ -34,16 +28,41 @@
   "second_running_text": [
     "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode", "Wir sind Espercode"
   ], 
+  "creativity_information": "UNSERE NEUESTE ARBEIT", 
+  "creativity_title": ["VORGESTELLTE", "PROJEKTE"], 
+  "creativity_description": "Entdecken Sie die innovativen Lösungen, die wir für unsere Kunden entwickelt haben, mit modernster Technologie und außergewöhnlichem Design.", 
+  "creativity_projects": [
+    {
+      "title": "Zphere Social", 
+      "description": "Web-Soziale Medien zum Teilen von Fotos/Videos und für Kauf- oder"
+    }, 
+    {
+      "title": "Flowise", 
+      "description": "Mobile Anwendung zur Aufzeichnung von Transaktionen und zur Verfolgung von Finanzen."
+    }, 
+    {
+      "title": "Voice Chat Translator", 
+      "description": "Ermöglichung der sprachübergreifenden Kommunikation durch virtuelle Räume."
+    }
+  ], 
+  "creativity_main_cta": "Alle Projekte Ansehen", 
   "team_persuasive": "TREFFEN SIE DEN EXPERTEN", 
   "team_title": ["TEAM VON", "EXPERTEN"], 
   "team_description": "Unser engagiertes Team aus Entwicklern, Designern und Innovatoren schafft außergewöhnliche digitale Erlebnisse, die das Unternehmenswachstum fördern und die Kundenerwartungen erfüllen.", 
   "team_stats_label": ["PROJEKTE", "EXPERTEN", "JAHRE"], 
+  "team_members": [
+    {
+      "bio": "Erfahrener Digitalmarketer, der sich auf die Erstellung wirkungsvoller Social-Media-Kampagnen auf Facebook, Instagram und WhatsApp konzentriert. Versiert im Umgang mit Canva zur Gestaltung ansprechender Inhalte, die die Markenbekanntheit und die Interaktion mit dem Publikum steigern."
+    }, 
+    {
+      "bio": "Backend-Entwickler, der in der Erstellung robuster APIs und serverseitiger Systeme erfahren ist."
+    }, 
+    {
+      "bio": "Frontend-Entwickler, der sich auf die Erstellung schneller und responsiver Weboberflächen spezialisiert hat."
+    }
+  ], 
+  "team_main_cta": "Portfolio Ansehen", 
   "weare_main_text": "WIR SIND SCHÖPFER, INNOVATOREN UND GESCHICHTENERZÄHLER, DIE SICH DER EINZIGARTIGEN IDENTITÄT JEDER MARKE VERSCHRIEBEN HABEN. WIR TAUCHEN IN IHRE VISION EIN UND VERBINDEN STRATEGIE MIT KREATIVITÄT, UM MARKEN AUFZUBAUEN, DIE NICHT NUR EXISTIEREN, SONDERN IM HERZEN IHRER ZIELGRUPPE LEBEN.", 
   "weare_highlighted_words": ["SCHÖPFER", "INNOVATOREN", "GESCHICHTENERZÄHLER", "KREATIVITÄT", "MARKEN AUFZUBAUEN", "ZIELGRUPPE"], 
-  "weare_icon_label": ["Natur", "Premium", "Energie", "Kraft", "Kreativ", "Innovation", "Exzellenz", "Fokus"], 
-  "footer_title": ["Seiten", "VERBINDEN SIE SICH MIT UNS"], 
-  "footer_pages_nav": ["Über uns", "Portfolio", "FAQs"], 
-  "footer_contact_title": ["TELEFONNUMMER", "E-MAIL-ADRESSE"], 
-  "footer_description": "Mit einem leidenschaftlichen Team aus Designern, Marketern und Innovatoren liefern wir einzigartige Lösungen, die Ihre Marke stärken und Ihr Publikum begeistern.", 
-  "footer_bottom_section": ["Datenschutzrichtlinie", "Nutzungsbedingungen"]
+  "weare_icon_label": ["Natur", "Premium", "Energie", "Kraft", "Kreativ", "Innovation", "Exzellenz", "Fokus"]
 }
