@@ -1,3 +1,118 @@
 {
-    "about_information": "Our Portfolio"
+    "hero_information": "Our Portfolio", 
+    "hero_title": ["Our", "Digital", "Masterpieces"], 
+    "hero_description": "Explore the collection of digital projects that we have worked on with high dedication. Each project reflects our commitment to delivering cutting-edge technology solutions.", 
+    "hero_attributes": ["Projects Completed", "Projects On Progress", "Years Experience"], 
+    "content_categories": ["All Projects", "Web Development", "Mobile App Development", "UI/UX Design", "Backend Development"], 
+    "content_completed": "✅ Completed", 
+    "content_progress": "🚧 In Progress", 
+    "content_client_label": "Client", 
+    "content_feature_label": "Key Features", 
+    "content_main_cta": "View Details", 
+    "content_detail_label": "Project Details", 
+    "content_detail_overview_label": "Project Overview", 
+    "content_detail_technology_label": "Technologies Used", 
+    "content_detail_challenge_label": "Result Achieved", 
+    "content_detail_result_label": "Result Achieved", 
+    "content_detail_timeline_label": "Timeline", 
+    "content_detail_team_label": "Team Size", 
+    "content_detail_category_label": "Category", 
+    "content_detail_main_cta": "Visit Live Site", 
+    "content_detail_secondary_cta": "Contact Us", 
+    "content_projects": [
+        {
+            "title": "ZphereSocial", 
+            "description": "Web social media for sharing photos/videos and buying or selling transactions.", 
+            "full_description": "A web-based social media platform that allows users to share their photos and videos. It includes common features found in social media, such as a homepage, explore section, and the ability to add friends. Additionally, there is a marketplace that can be used for buying and selling within this web application.", 
+            "features": [
+                "Payment Gateway",
+                "Real-time Inventory",
+                "Admin Dashboard", 
+                "Mobile Responsive",
+                "Multi-language Support",
+                "Analytics Dashboard",
+                "Email Notifications",
+                "Product Reviews System"
+            ], 
+            "timeline": "3 months", 
+            "team_size": "4 developers", 
+            "challenges": [
+                "Integrating multiple payment gateways",
+                "Real-time inventory synchronization",
+                "Optimizing database queries for large product catalogs",
+                "Implementing secure user authentication"
+            ],
+            "results": [
+                "40% increase in conversion rate",
+                "60% reduction in page load time",
+                "99.9% uptime achieved",
+                "500+ concurrent users supported"
+            ]
+        }, 
+        {
+            "title": "ZphereRent", 
+            "description": "Car rental app for booking vehicles and managing rental payments.", 
+            "full_description": "A mobile application used for renting vehicles. Users can easily browse and book cars available for rent. There is also a feature to track rental history and view available vehicles in different locations. The application includes payment integration for seamless transactions.", 
+            "features": [
+                "Biometric Login",
+                "QR Payment",
+                "Investment Portfolio",
+                "Bill Payment",
+                "Fund Transfer",
+                "Transaction History",
+                "Budgeting Tools",
+                "Customer Support Chat"
+            ], 
+            "timeline": "3 months", 
+            "team_size": "4 developers", 
+            "challenges": [
+                "Implementing bank-grade security measures",
+                "Ensuring cross-platform compatibility",
+                "Optimizing performance for low-end devices",
+                "Meeting regulatory compliance requirements"
+            ],
+            "results": [
+                "200,000+ downloads in first month",
+                "4.8/5 app store rating",
+                "Zero security breaches",
+                "30% reduction in customer support tickets"
+            ]
+        }, 
+        {
+            "title": "FloWise", 
+            "description": "Mobile application for recording transactions and tracking finances.", 
+            "full_description": "A mobile application used for tracking incoming and outgoing money. Users can easily record any transactions they have made. There is also a reporting feature to understand how a user manages their finances over a certain period.", 
+            "features": [
+                "Modern Design",
+                "SEO Optimized",
+                "Performance Boost",
+                "Brand Consistency",
+                "Responsive Design",
+                "Content Management System",
+                "Multi-language Support",
+                "Analytics Integration"
+            ], 
+            "timeline": "2 months", 
+            "team_size": "3 designers", 
+            "challenges": [
+                "Balancing modern design with brand heritage",
+                "Improving site speed without compromising visuals",
+                "Creating intuitive navigation for complex content",
+                "Ensuring accessibility compliance"
+            ],
+            "results": [
+                "75% increase in organic traffic",
+                "50% reduction in bounce rate",
+                "90+ PageSpeed Insights score",
+                "25% increase in lead generation"
+            ]
+        }
+    ], 
+    "content_empty_title": "No Projects Found", 
+    "content_empty_description": "No projects match the selected filter. Try selecting a different category.", 
+    "content_empty_cta": "Show All Projects", 
+    "card_title": ["Ready to Start Your", "Digital Journey", "?"], 
+    "card_description": "Let's discuss your project and bring your best digital ideas to life with the experienced team at Espercode.", 
+    "card_main_cta": "Start Your Project", 
+    "card_secondary_cta": "View Our Services"
 }

@@ -37,7 +37,7 @@
       "description": "Web social media for sharing photos/videos and buying or selling transactions."
     }, 
     {
-      "title": "Flowise", 
+      "title": "FloWise", 
       "description": "Mobile application for recording transactions and tracking finances."
     }, 
     {
@@ -50,6 +50,7 @@
   "team_title": ["TEAM OF", "EXPERT"], 
   "team_description": "Our passionate team of developers, designers, and innovators work together to create extraordinary digital experiences that drive business growth and exceed client expectations.", 
   "team_stats_label": ["PROJECTS", "EXPERTS", "YEARS"], 
+  "team_skills_label": "Skills & Expertise", 
   "team_members": [
     {
       "bio": "Experienced digital marketer focused on creating impactful social media campaigns across Facebook, Instagram, and WhatsApp. Skilled in using Canva to design engaging content that boosts brand visibility and audience interaction."

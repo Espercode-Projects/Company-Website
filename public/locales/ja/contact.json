@@ -1,0 +1,23 @@
+{
+    "hero_information": "お問い合わせ",
+    "hero_title": ["ご連絡", "ください"],
+    "hero_description": "デジタルプロジェクトを始める準備はできていますか？革新的なアイデアを先進的な技術ソリューションに変えるために、私たちと協力しましょう。",
+    "contact_title": ["会話を", "始めましょう"],
+    "contact_description": "私たちは常にあなたの素晴らしいアイデアを聞く準備ができています。以下のさまざまな方法でご連絡いただき、夢のプロジェクトについての議論を始めましょう。",
+    "contact_email_title": "メール",
+    "contact_email_description": "24時間以内にお返事します",
+    "contact_phone_title": "電話",
+    "contact_phone_description": "月〜金 9AM-6PM WIB",
+    "contact_location_title": "所在地",
+    "contact_location_content": "シドアルジョ県、東ジャワ",
+    "form_title": "メッセージを送信",
+    "form_name_label": "フルネーム",
+    "form_name_placeholder": "あなたのフルネーム",
+    "form_email_label": "メールアドレス",
+    "form_email_placeholder": "your@email.com",
+    "form_subject_label": "件名",
+    "form_subject_placeholder": "プロジェクトの議論",
+    "form_message_label": "メッセージ",
+    "form_message_placeholder": "プロジェクトについて教えてください...",
+    "form_main_cta": "メッセージを送信"
+}

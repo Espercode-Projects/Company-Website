@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -20,17 +20,17 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
-
- 
+  
+  const { currentLocale, setCurrentLocale, translations } = useLocale();
   
   const projects = [
     {
       id: 1,
-      title: "ZphereSocial",
+      title: `${translations?.content_projects?.[0]?.title}` || 'Abc',
       description:
-        "Platform e-commerce modern dengan fitur pembayaran terintegrasi dan manajemen inventory real-time",
+        `${translations.content_projects?.[0].description}`,
       fullDescription:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rerum praesentium voluptatum aut sint incidunt necessitatibus fugiat perspiciatis, sapiente, accusantium quod ducimus. Iste consequatur repellendus deleniti, veniam labore tenetur laboriosam Corporis architecto fugiat nobis ad? Alias possimus tempora, optio impedit asperiores, amet porro rerum illo velit culpa rem esse quibusdam ullam dolore recusandae, dolorum libero a consequatur consectetur quasi. Delectus.",
+        `${translations.content_projects?.[0].full_description}`,
       image: "/api/placeholder/400/300",
       category: "web-development",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
@@ -39,38 +39,38 @@ const Portfolio = () => {
       status: "completed",
       link: "https://techstore.example.com",
       features: [
-        "Payment Gateway",
-        "Real-time Inventory",
-        "Admin Dashboard",
-        "Mobile Responsive",
-        "Multi-language Support",
-        "Analytics Dashboard",
-        "Email Notifications",
-        "Product Reviews System"
+        `${translations.content_projects?.[0].features?.[0]}`, 
+        `${translations.content_projects?.[0].features?.[1]}`, 
+        `${translations.content_projects?.[0].features?.[2]}`, 
+        `${translations.content_projects?.[0].features?.[3]}`, 
+        `${translations.content_projects?.[0].features?.[4]}`, 
+        `${translations.content_projects?.[0].features?.[5]}`, 
+        `${translations.content_projects?.[0].features?.[6]}`, 
+        `${translations.content_projects?.[0].features?.[7]}`, 
       ],
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe API", "Socket.io", "JWT Authentication", "Cloudinary"],
-      timeline: "3 months",
-      teamSize: "4 developers",
+      timeline: `${translations.content_projects?.[0].timeline}`,
+      teamSize: `${translations.content_projects?.[0].team_size}`, 
       challenges: [
-        "Integrating multiple payment gateways",
-        "Real-time inventory synchronization",
-        "Optimizing database queries for large product catalogs",
-        "Implementing secure user authentication"
+        `${translations.content_projects?.[0].challenges?.[0]}`, 
+        `${translations.content_projects?.[0].challenges?.[1]}`, 
+        `${translations.content_projects?.[0].challenges?.[2]}`, 
+        `${translations.content_projects?.[0].challenges?.[3]}`, 
       ],
       results: [
-        "40% increase in conversion rate",
-        "60% reduction in page load time",
-        "99.9% uptime achieved",
-        "500+ concurrent users supported"
+        `${translations.content_projects?.[0].results?.[0]}`, 
+        `${translations.content_projects?.[0].results?.[1]}`, 
+        `${translations.content_projects?.[0].results?.[2]}`, 
+        `${translations.content_projects?.[0].results?.[3]}`, 
       ]
     },
     {
       id: 2,
-      title: "ZphereRent",
+      title: `${translations.content_projects?.[1].title}`,
       description:
-        "Aplikasi mobile banking dengan keamanan tinggi dan user experience yang intuitif",
+        `${translations.content_projects?.[1].description}`,
       fullDescription:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rerum praesentium voluptatum aut sint incidunt necessitatibus fugiat perspiciatis, sapiente, accusantium quod ducimus. Iste consequatur repellendus deleniti, veniam labore tenetur laboriosam Corporis architecto fugiat nobis ad? Alias possimus tempora, optio impedit asperiores, amet porro rerum illo velit culpa rem esse quibusdam ullam dolore recusandae, dolorum libero a consequatur consectetur quasi. Delectus.",
+        `${translations.content_projects?.[1].full_description}`,
       image: "/api/placeholder/400/300",
       category: "mobile-app-development",
       tags: [
@@ -84,38 +84,38 @@ const Portfolio = () => {
       status: "completed",
       link: "#",
       features: [
-        "Biometric Login",
-        "QR Payment",
-        "Investment Portfolio",
-        "Bill Payment",
-        "Fund Transfer",
-        "Transaction History",
-        "Budgeting Tools",
-        "Customer Support Chat"
+        `${translations.content_projects?.[1].features?.[0]}`, 
+        `${translations.content_projects?.[1].features?.[1]}`, 
+        `${translations.content_projects?.[1].features?.[2]}`, 
+        `${translations.content_projects?.[1].features?.[3]}`, 
+        `${translations.content_projects?.[1].features?.[4]}`, 
+        `${translations.content_projects?.[1].features?.[5]}`, 
+        `${translations.content_projects?.[1].features?.[6]}`, 
+        `${translations.content_projects?.[1].features?.[7]}`, 
       ],
       technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "Redis", "JWT", "Biometric SDK", "Push Notifications"],
-      timeline: "6 months",
-      teamSize: "6 developers",
+      timeline: `${translations.content_projects?.[1].timeline}`,
+      teamSize: `${translations.content_projects?.[1].team_size}`, 
       challenges: [
-        "Implementing bank-grade security measures",
-        "Ensuring cross-platform compatibility",
-        "Optimizing performance for low-end devices",
-        "Meeting regulatory compliance requirements"
+        `${translations.content_projects?.[1].challenges?.[0]}`, 
+        `${translations.content_projects?.[1].challenges?.[1]}`, 
+        `${translations.content_projects?.[1].challenges?.[2]}`, 
+        `${translations.content_projects?.[1].challenges?.[3]}`, 
       ],
       results: [
-        "200,000+ downloads in first month",
-        "4.8/5 app store rating",
-        "Zero security breaches",
-        "30% reduction in customer support tickets"
+        `${translations.content_projects?.[1].results?.[0]}`, 
+        `${translations.content_projects?.[1].results?.[1]}`, 
+        `${translations.content_projects?.[1].results?.[2]}`, 
+        `${translations.content_projects?.[1].results?.[3]}`, 
       ]
     },
     {
       id: 3,
-      title: "Flowise",
+      title: `${translations.content_projects?.[2].title}`,
       description:
-        "Redesign website korporat dengan fokus pada user experience dan brand identity",
-        fullDescription:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rerum praesentium voluptatum aut sint incidunt necessitatibus fugiat perspiciatis, sapiente, accusantium quod ducimus. Iste consequatur repellendus deleniti, veniam labore tenetur laboriosam Corporis architecto fugiat nobis ad? Alias possimus tempora, optio impedit asperiores, amet porro rerum illo velit culpa rem esse quibusdam ullam dolore recusandae, dolorum libero a consequatur consectetur quasi. Delectus.",
+        `${translations.content_projects?.[2].description}`,
+      fullDescription:
+        `${translations.content_projects?.[2].full_description}`,
       image: "/api/placeholder/400/300",
       category: "ui-ux-design",
       tags: ["Figma", "Adobe XD", "User Research", "Prototyping"],
@@ -124,43 +124,41 @@ const Portfolio = () => {
       status: "completed",
       link: "https://majubersama.example.com",
       features: [
-        "Modern Design",
-        "SEO Optimized",
-        "Performance Boost",
-        "Brand Consistency",
-        "Responsive Design",
-        "Content Management System",
-        "Multi-language Support",
-        "Analytics Integration"
+        `${translations.content_projects?.[2].features?.[0]}`, 
+        `${translations.content_projects?.[2].features?.[1]}`, 
+        `${translations.content_projects?.[2].features?.[2]}`, 
+        `${translations.content_projects?.[2].features?.[3]}`, 
+        `${translations.content_projects?.[2].features?.[4]}`, 
+        `${translations.content_projects?.[2].features?.[5]}`, 
+        `${translations.content_projects?.[2].features?.[6]}`, 
+        `${translations.content_projects?.[2].features?.[7]}`, 
       ],
       technologies: ["Figma", "Adobe XD", "HTML5", "CSS3", "JavaScript", "WordPress", "Google Analytics", "Search Console"],
-      timeline: "2 months",
-      teamSize: "3 designers",
+      timeline: `${translations.content_projects?.[2].timeline}`,
+      teamSize: `${translations.content_projects?.[2].team_size}`, 
       challenges: [
-        "Balancing modern design with brand heritage",
-        "Improving site speed without compromising visuals",
-        "Creating intuitive navigation for complex content",
-        "Ensuring accessibility compliance"
+        `${translations.content_projects?.[2].challenges?.[0]}`, 
+        `${translations.content_projects?.[2].challenges?.[1]}`, 
+        `${translations.content_projects?.[2].challenges?.[2]}`, 
+        `${translations.content_projects?.[2].challenges?.[3]}`, 
       ],
       results: [
-        "75% increase in organic traffic",
-        "50% reduction in bounce rate",
-        "90+ PageSpeed Insights score",
-        "25% increase in lead generation"
+        `${translations.content_projects?.[2].results?.[0]}`, 
+        `${translations.content_projects?.[2].results?.[1]}`, 
+        `${translations.content_projects?.[2].results?.[2]}`, 
+        `${translations.content_projects?.[2].results?.[3]}`, 
       ]
     }
   ];
+  
+  const prevProjectsRef = useRef(projects);
 
   const filterCategories = [
-    { id: "all", label: "All Projects", icon: "🎯" },
-    { id: "web-development", label: "Web Development", icon: "🌐" },
-    {
-      id: "mobile-app-development",
-      label: "Mobile App Development",
-      icon: "📱",
-    },
-    { id: "ui-ux-design", label: "UI/UX Design", icon: "🎨" },
-    { id: "backend-development", label: "Backend Development", icon: "⚙️" },
+    { id: "all", label: `${translations.content_categories?.[0]}`, icon: "🎯" },
+    { id: "web-development", label: `${translations.content_categories?.[1]}`, icon: "🌐" },
+    { id: "mobile-app-development", label: `${translations.content_categories?.[2]}`, icon: "📱", },
+    { id: "ui-ux-design", label: `${translations.content_categories?.[3]}`, icon: "🎨" },
+    { id: "backend-development", label: `${translations.content_categories?.[4]}`, icon: "⚙️" },
     // { id: "tech-consulting", label: "Tech Consulting", icon: "💡" },
   ];
 
@@ -193,20 +191,19 @@ const Portfolio = () => {
   }, [isProjectModalOpen]);
 
   useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      if (activeFilter === "all") {
-        setFilteredProjects(projects);
-      } else {
-        setFilteredProjects(
-          projects.filter((project) => project.category === activeFilter)
-        );
+    setIsLoading(true)
+    if (JSON.stringify(projects) !== JSON.stringify(prevProjectsRef.current)) {
+      if (projects.length > 0 && projects[0].title !== undefined) {
+        const filtered = projects.filter((project) => {
+          if (activeFilter === "all") return true;
+          return project.category === activeFilter;
+        });
+        setFilteredProjects(filtered);
       }
-      setIsLoading(false);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [activeFilter]);
+      prevProjectsRef.current = projects;
+    }
+    setIsLoading(false)
+  }, [projects, activeFilter]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -308,8 +305,6 @@ const Portfolio = () => {
     visible: { opacity: 1 },
     exit: { opacity: 0 },
   };
-
-  const { currentLocale, setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
@@ -439,7 +434,7 @@ const Portfolio = () => {
                       {selectedProject.year}
                     </span>
                     <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full font-medium">
-                      {selectedProject.status === "completed" ? "✅ Completed" : "🚧 In Progress"}
+                      {selectedProject.status === "completed" ? `${translations.content_completed}` : `${translations.content_progress}`}
                     </span>
                   </div>
                 </div>
@@ -451,7 +446,7 @@ const Portfolio = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3 flex items-center">
                         <span className="mr-2">📋</span>
-                        Project Overview
+                        {translations.content_detail_overview_label}
                       </h3>
                       <p className="text-gray-300 leading-relaxed">
                         {selectedProject.fullDescription}
@@ -462,7 +457,7 @@ const Portfolio = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3 flex items-center">
                         <span className="mr-2">⚙️</span>
-                        Technologies Used
+                        {translations.content_detail_technology_label}
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies.map((tech, index) => (
@@ -480,7 +475,7 @@ const Portfolio = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3 flex items-center">
                         <span className="mr-2">🎯</span>
-                        Key Challenges
+                        {translations.content_detail_challenge_label}
                       </h3>
                       <div className="space-y-2">
                         {selectedProject.challenges.map((challenge, index) => (
@@ -496,7 +491,7 @@ const Portfolio = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3 flex items-center">
                         <span className="mr-2">📈</span>
-                        Results Achieved
+                        {translations.content_detail_result_label}
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {selectedProject.results.map((result, index) => (
@@ -513,22 +508,22 @@ const Portfolio = () => {
                   <div className="space-y-6">
                     {/* Project Info */}
                     <div className="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30">
-                      <h3 className="text-lg font-bold text-white mb-4">Project Details</h3>
+                      <h3 className="text-lg font-bold text-white mb-4">{translations.content_detail_label}</h3>
                       <div className="space-y-4">
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Client</p>
+                          <p className="text-sm text-gray-400 mb-1">{translations.content_client_label}</p>
                           <p className="text-white font-medium">{selectedProject.client}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Timeline</p>
+                          <p className="text-sm text-gray-400 mb-1">{translations.content_detail_timeline_label}</p>
                           <p className="text-white font-medium">{selectedProject.timeline}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Team Size</p>
+                          <p className="text-sm text-gray-400 mb-1">{translations.content_detail_team_label}</p>
                           <p className="text-white font-medium">{selectedProject.teamSize}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Category</p>
+                          <p className="text-sm text-gray-400 mb-1">{translations.content_detail_category_label}</p>
                           <p className="text-white font-medium capitalize">
                             {selectedProject.category.replace('-', ' ')}
                           </p>
@@ -538,7 +533,7 @@ const Portfolio = () => {
 
                     {/* Key Features */}
                     <div className="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30">
-                      <h3 className="text-lg font-bold text-white mb-4">Key Features</h3>
+                      <h3 className="text-lg font-bold text-white mb-4">{translations.content_feature_label}</h3>
                       <div className="space-y-2">
                         {selectedProject.features.map((feature, index) => (
                           <div key={index} className="flex items-center">
@@ -563,7 +558,7 @@ const Portfolio = () => {
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
-                          Visit Live Site
+                          {translations.content_detail_main_cta}
                         </motion.a>
                       )}
                       <motion.button
@@ -574,7 +569,7 @@ const Portfolio = () => {
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.001 8.001 0 01-7.75-6M3 12c0-4.418 3.582-8 8-8s8 3.582 8 8" />
                         </svg>
-                        Contact Us
+                        {translations.content_detail_secondary_cta}
                       </motion.button>
                     </div>
                   </div>
@@ -595,15 +590,13 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto text-center">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium mb-4">
-              Our Portfolio
+              {translations.hero_information}
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Our <span className="text-green-400">Digital</span> Masterpieces
+              {translations.hero_title?.[0]} <span className="text-green-400">{translations.hero_title?.[1]}</span> {translations.hero_title?.[2]}
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Jelajahi koleksi proyek digital yang telah kami kerjakan dengan
-              dedikasi tinggi. Setiap proyek mencerminkan komitmen kami dalam
-              menghadirkan solusi teknologi terdepan.
+              {translations.hero_description}
             </p>
           </motion.div>
 
@@ -613,9 +606,9 @@ const Portfolio = () => {
             className="grid grid-cols-3 md:grid-cols-3 gap-8 mt-16"
           >
             {[
-              { number: "5", label: "Projects Completed" },
-              { number: "1", label: "Projects On Progress" },
-              { number: "4+", label: "Years Experience" }
+              { number: "5", label: `${translations.hero_attributes?.[0]}` },
+              { number: "1", label: `${translations.hero_attributes?.[1]}` },
+              { number: "4+", label: `${translations.hero_attributes?.[2]}` }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -735,8 +728,8 @@ const Portfolio = () => {
                         <div className="absolute bottom-4 left-4">
                           <span className="px-2 py-1 bg-black/50 text-white text-xs rounded backdrop-blur-sm">
                             {project.status === "completed"
-                              ? "✅ Completed"
-                              : "🚧 In Progress"}
+                              ? `${translations.content_completed}`
+                              : `${translations.content_progress}`}
                           </span>
                         </div>
                       </div>
@@ -774,7 +767,7 @@ const Portfolio = () => {
 
                         <div className="mb-4">
                           <p className="text-xs font-medium text-green-400 mb-2">
-                            Client:
+                            {translations.content_client_label}{":"}
                           </p>
                           <p className="text-sm text-white">{project.client}</p>
                         </div>
@@ -799,7 +792,7 @@ const Portfolio = () => {
                         {/* Features */}
                         <div className="mb-4">
                           <p className="text-xs font-medium text-gray-400 mb-2">
-                            Key Features:
+                            {translations.content_feature_label}{":"}
                           </p>
                           <div className="space-y-1">
                             {project.features
@@ -824,7 +817,7 @@ const Portfolio = () => {
                             whileTap={{ scale: 0.95 }}
                             className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors duration-200"
                           >
-                            View Details
+                            {translations.content_main_cta}
                           </motion.button>
                           {project.link !== "#" && (
                             <motion.button
@@ -865,11 +858,10 @@ const Portfolio = () => {
             >
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                No Projects Found
+                {translations.content_empty_title}
               </h3>
               <p className="text-gray-400">
-                No projects match the selected filter. Try selecting a different
-                category.
+                {translations.content_empty_description}
               </p>
               <motion.button
                 onClick={() => setActiveFilter("all")}
@@ -877,7 +869,7 @@ const Portfolio = () => {
                 whileTap={{ scale: 0.95 }}
                 className="mt-6 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors duration-200"
               >
-                Show All Projects
+                {translations.content_empty_cta}
               </motion.button>
             </motion.div>
           )}
@@ -897,12 +889,11 @@ const Portfolio = () => {
           className="max-w-4xl mx-auto text-center bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm rounded-3xl p-12 border border-green-400/20"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Start Your{" "}
-            <span className="text-green-400">Digital Journey</span>?
+            {translations.card_title?.[0]}{" "}
+            <span className="text-green-400">{translations.card_title?.[1]}</span>{translations.card_title?.[2]}
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Mari diskusikan proyek Anda dan wujudkan ide digital terbaikmu
-            bersama tim Espercode yang berpengalaman.
+            {translations.card_description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
@@ -910,14 +901,14 @@ const Portfolio = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold transition-all duration-200 shadow-lg shadow-green-500/25"
             >
-              Start Your Project
+              {translations.card_main_cta}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-full font-semibold transition-all duration-200"
             >
-              View Our Services
+              {translations.card_secondary_cta}
             </motion.button>
           </div>
         </motion.div>

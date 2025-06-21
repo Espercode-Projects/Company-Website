@@ -1,0 +1,146 @@
+{
+    "hero_information": "Layanan Kami", 
+    "hero_title": ["Jelajahi", "Layanan Kami"], 
+    "hero_description": "Transformasi digital dimulai di sini. Kami menyediakan solusi teknologi terdepan untuk mengembangkan bisnis Anda melalui situs web yang kuat, aplikasi mobile, dan sistem.", 
+    "content_services": [
+        {
+            "title": "Pengembangan Web",
+            "subtitle": "Situs Web Modern & Responsif",
+            "description": "Membangun situs web modern dengan teknologi mutakhir seperti React, Next.js, dan Node.js. Fokus pada kinerja optimal dan pengalaman pengguna.",
+            "features": [
+                "Desain Responsif untuk semua perangkat",
+                "Pemuatan Cepat dengan Core Web Vitals",
+                "Aplikasi Web Progresif (PWA)",
+                "Solusi E-commerce"
+            ],
+            "price": "Mulai dari Rp 500,000",
+            "duration": "2-4 minggu"
+        },
+        {
+            "title": "Pengembangan Aplikasi Mobile",
+            "subtitle": "Aplikasi Android",
+            "description": "Mengembangkan aplikasi mobile native yang ramah pengguna dengan kinerja tinggi dan fitur canggih.",
+            "features": [
+                "Pengembangan Android",
+                "Desain UI/UX Intuitif",
+                "Notifikasi Push",
+                "Fungsi Offline",
+                "Optimasi Toko Aplikasi"
+            ],
+            "price": "Mulai dari Rp 500,000",
+            "duration": "6-12 minggu"
+        },
+        {
+            "title": "Desain UI/UX",
+            "subtitle": "Desain yang Indah & Fungsional",
+            "description": "Menciptakan desain yang tidak hanya indah secara visual tetapi juga fungsional dan memberikan pengalaman pengguna yang luar biasa.",
+            "features": [
+                "Riset & Analisis Pengguna",
+                "Wireframing & Prototyping",
+                "Desain Visual & Branding",
+                "Pengujian Kegunaan",
+                "Pembuatan Sistem Desain",
+                "Pedoman Desain Responsif"
+            ],
+            "price": "Mulai dari Rp 500,000",
+            "duration": "1-3 minggu"
+        },
+        {
+            "title": "Pengembangan Backend",
+            "subtitle": "Solusi Server yang Scalable",
+            "description": "Membangun backend yang kuat, scalable, dan aman untuk mendukung aplikasi web dan mobile berkinerja tinggi.",
+            "features": [
+                "Pengembangan RESTful API",
+                "Implementasi GraphQL",
+                "Desain & Optimasi Database",
+                "Autentikasi & Otorisasi",
+                "Arsitektur Microservices",
+                "Fitur Real-time"
+            ],
+            "price": "Mulai dari Rp 1,000,000",
+            "duration": "3-6 minggu"
+        }
+    ], 
+    "content_feature_label": "Fitur Utama",
+    "content_technology_label": "Teknologi",
+    "content_price_label": "Harga Mulai",
+    "content_duration_label": "Jadwal", 
+    "content_main_cta": "Pesan Layanan Ini",
+    "form_title": "Mari bekerja bersama",
+    "form_description": "Silakan isi formulir di bawah ini untuk menghubungi kami.",
+    "form_firstname_placeholder": "Nama Depan",
+    "form_lastname_placeholder": "Nama Belakang",
+    "form_email_placeholder": "Email",
+    "form_phone_placeholder": "Telepon",
+    "form_service_placeholder": "Pilih layanan",
+    "form_message_placeholder": "Ketik pesan Anda di sini",
+    "form_main_cta": "Kirim Pesan", 
+    "process_title": ["Proses", "Kami"], 
+    "process_description": "Proses kerja yang terstruktur dan transparan untuk hasil yang optimal", 
+    "process_steps": [
+        {
+            "title": "Penemuan & Perencanaan", 
+            "description": "Memahami kebutuhan bisnis Anda dan merencanakan solusi terbaik"
+        }, 
+        {
+            "title": "Desain & Prototipe", 
+            "description": "Membuat mockup desain dan prototipe untuk validasi konsep"
+        }, 
+        {
+            "title": "Pengembangan", 
+            "description": "Implementasi dengan teknologi mutakhir dan praktik terbaik"
+        }, 
+        {
+            "title": "Pengujian & Peluncuran", 
+            "description": "Jaminan kualitas yang komprehensif dan penerapan ke produksi"
+        }
+    ], 
+    "review_title": ["Apa yang", "Klien Kami Katakan"], 
+    "review_description": "Kepuasan klien adalah prioritas utama kami", 
+    "feature_title": ["Mengapa Memilih", "Kami?"], 
+    "feature_description": "Keunggulan yang membedakan kami dari yang lain", 
+    "review_testimonials": [
+        {
+            "content": "Website yang dibuat sangat profesional dan kecepatan loadingnya sangat cepat. Tim sangat responsif dan memahami kebutuhan bisnis kami."
+        },
+        {
+            "content": "Aplikasi mobile yang dikembangkan sangat ramah pengguna dan telah meningkatkan keterlibatan pelanggan kami sebesar 300%. Sangat direkomendasikan!"
+        },
+        {
+            "content": "Desain UI/UX yang modern dan fungsional. Tingkat konversi toko online kami meningkat secara signifikan setelah desain ulang."
+        },
+        {
+            "content": "Sistem backend yang kuat dan skalabel. Dapat menangani lalu lintas tinggi tanpa masalah. Kerja yang sangat baik!"
+        }
+    ], 
+    "feature_features": [
+        {
+          "title": "Cepat & Efisien",
+          "description": "Eksekusi cepat tanpa mengorbankan kualitas menggunakan metodologi pengembangan agile."
+        },
+        {
+          "title": "Aman & Andal",
+          "description": "Keamanan tingkat perusahaan dengan cadangan dan pemantauan 24/7"
+        },
+        {
+          "title": "Dukungan Khusus",
+          "description": "Tim dukungan responsif dan pemeliharaan rutin untuk kinerja optimal"
+        },
+        {
+          "title": "Berbasis Data",
+          "description": "Solusi berbasis data dan analitik untuk optimasi kinerja bisnis"
+        },
+        {
+          "title": "Solusi yang Dapat Diskalakan",
+          "description": "Arsitektur yang dapat tumbuh bersama bisnis Anda"
+        },
+        {
+          "title": "Berorientasi Tujuan",
+          "description": "Fokus pada pencapaian target bisnis yang terukur"
+        }
+    ], 
+    "card_title": "Siap untuk Mengubah Bisnis Anda?", 
+    "card_description": "Mari wujudkan ide digital Anda bersama tim ahli kami. Dapatkan konsultasi gratis untuk membahas kebutuhan proyek Anda.", 
+    "card_main_cta": "Mulai Proyek Anda", 
+    "card_secondary_cta": "Hubungi Kami Sekarang"
+}

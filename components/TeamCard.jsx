@@ -548,7 +548,7 @@ const TeamCard = () => {
                       transition={{ delay: 0.6, duration: 0.3 }}
                     >
                       <h3 className="text-white font-semibold mb-4 text-lg">
-                        Skills & Expertise
+                        {translations.team_skills_label}
                       </h3>
                       <div className="grid grid-cols-2 gap-3">
                         {selectedMember.skills.map((skill, index) => (

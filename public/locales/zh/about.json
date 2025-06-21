@@ -1,0 +1,52 @@
+{
+    "hero_information": "关于我们", 
+    "hero_title": ["将创意转化为", "数字现实"], 
+    "hero_description": "Espercode是一家致力于提供创新数字解决方案的科技公司。我们专注于网页开发、移动应用程序和技术咨询，以帮助您的企业在数字时代蓬勃发展。", 
+    "objective_title": "我们的使命与愿景", 
+    "objective_mission_title": "使命", 
+    "objective_mission_description": "提供前沿的技术解决方案，改变企业的运营方式，专注于创新、质量和客户满意度，以在数字化转型中创造积极影响。", 
+    "objective_vision_title": "愿景", 
+    "objective_vision_description": "成为值得信赖的技术合作伙伴，引领印度尼西亚的数字创新，赋能企业通过智能和可持续的技术解决方案实现其最大潜力。", 
+    "objective_commitment_title": "质量承诺", 
+    "objective_commitment_description": "我们所做的每个项目都反映了对质量和最新技术创新的高度承诺。", 
+    "founder_title": "创始团队", 
+    "founder_description": "在Espercode的成功背后，有一个经验丰富的创始团队，致力于提供最佳服务。", 
+    "founder_experience_title": "经验丰富的领导", 
+    "founder_experience_description": "我们的创始团队由三位经验丰富的专业人士组成，他们在技术、商业和创新领域具有扎实的背景。", 
+    "founder_experiences": [
+        "在技术行业超过4年的综合经验。", 
+        "在多个行业构建解决方案的成功记录", 
+        "对可持续创新和质量的承诺"
+    ], 
+    "founder_philosophy_title": "团队哲学", 
+    "founder_philosophy_description": "我们相信，最好的技术不仅先进，而且易于使用，并为用户提供真正的价值。", 
+    "value_title": "我们的价值观", 
+    "value_description": "指导我们每一步旅程的原则", 
+    "value_values": [
+        {
+            "title": "创新", 
+            "description": "在每个项目中始终使用最新技术和创新方法，以提供前沿解决方案。"
+        }, 
+        {
+            "title": "质量保证", 
+            "description": "致力于高质量，进行全面测试和严格的编码标准。"
+        }, 
+        {
+            "title": "效率", 
+            "description": "优化每个开发过程，以在高效的时间框架内提供最佳结果。"
+        }, 
+        {
+            "title": "以客户为中心", 
+            "description": "通过透明的沟通和响应迅速的服务优先考虑客户满意度。"
+        }
+    ], 
+    "achievement_title": "我们的成就", 
+    "achievement_description": "我们在构建最佳技术解决方案的旅程中取得的里程碑。", 
+    "achievement_achievements": [
+        "成功完成50多个数字项目，客户满意度达到100%。", 
+        "成为各行业值得信赖的技术合作伙伴。", 
+        "开发创新解决方案，使客户的业务效率提高最多40%。", 
+        "建立一个具有多平台专业知识的经验丰富的开发团队。", 
+        "与领先的云技术建立战略合作伙伴关系。"
+    ]
+}

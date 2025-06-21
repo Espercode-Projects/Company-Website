@@ -1,0 +1,52 @@
+{
+    "hero_information": "Über uns", 
+    "hero_title": ["Ideen in", "digitale Realität umwandeln"], 
+    "hero_description": "Espercode ist ein Technologieunternehmen, das sich der Bereitstellung innovativer digitaler Lösungen widmet. Wir sind auf Webentwicklung, mobile Anwendungen und Technologieberatung spezialisiert, um Ihrem Unternehmen im digitalen Zeitalter zum Erfolg zu verhelfen.", 
+    "objective_title": "Unsere Mission & Vision", 
+    "objective_mission_title": "Mission", 
+    "objective_mission_description": "Bereitstellung von fortschrittlichen Technologielösungen, die die Art und Weise, wie Unternehmen arbeiten, verändern, mit einem Fokus auf Innovation, Qualität und Kundenzufriedenheit, um einen positiven Einfluss auf die digitale Transformation zu schaffen.", 
+    "objective_vision_title": "Vision", 
+    "objective_vision_description": "Ein vertrauenswürdiger Technologiepartner zu werden, der die digitale Innovation in Indonesien anführt und Unternehmen befähigt, ihr maximales Potenzial durch intelligente und nachhaltige Technologielösungen zu erreichen.", 
+    "objective_commitment_title": "Qualitätsverpflichtung", 
+    "objective_commitment_description": "Jedes Projekt, das wir durchführen, spiegelt ein hohes Engagement für Qualität und die neuesten technologischen Innovationen wider.", 
+    "founder_title": "Gründerteam", 
+    "founder_description": "Hinter dem Erfolg von Espercode steht ein erfahrenes Gründerteam, das sich verpflichtet hat, das Beste zu liefern.", 
+    "founder_experience_title": "Erfahrene Führung", 
+    "founder_experience_description": "Unser Gründerteam besteht aus drei erfahrenen Fachleuten mit starken Hintergründen in den Bereichen Technologie, Geschäft und Innovation.", 
+    "founder_experiences": [
+        "Kombinierte Erfahrung von über 4 Jahren in der Technologiebranche.", 
+        "Nachweisliche Erfolge beim Aufbau von Lösungen für verschiedene Branchen", 
+        "Engagement für nachhaltige Innovation und Qualität"
+    ], 
+    "founder_philosophy_title": "Teamphilosophie", 
+    "founder_philosophy_description": "Wir glauben, dass die beste Technologie nicht nur fortschrittlich, sondern auch benutzerfreundlich ist und den Nutzern einen echten Mehrwert bietet.", 
+    "value_title": "Unsere Werte", 
+    "value_description": "Prinzipien, die jeden Schritt unserer Reise leiten", 
+    "value_values": [
+        {
+            "title": "Innovation", 
+            "description": "Immer die neueste Technologie und innovative Ansätze in jedem Projekt nutzen, um führende Lösungen zu bieten."
+        }, 
+        {
+            "title": "Qualitätssicherung", 
+            "description": "Engagiert für hohe Qualität mit umfassenden Tests und strengen Codierungsstandards."
+        }, 
+        {
+            "title": "Effizienz", 
+            "description": "Jeden Entwicklungsprozess optimieren, um die besten Ergebnisse in einem effizienten Zeitrahmen zu liefern."
+        }, 
+        {
+            "title": "Kundenorientiert", 
+            "description": "Die Kundenzufriedenheit durch transparente Kommunikation und reaktionsschnellen Service priorisieren."
+        }
+    ], 
+    "achievement_title": "Unsere Erfolge", 
+    "achievement_description": "Meilensteine, die wir auf unserem Weg zur Entwicklung der besten Technologielösungen erreicht haben.", 
+    "achievement_achievements": [
+        "Erfolgreich über 50 digitale Projekte mit einer Kundenzufriedenheitsrate von 100 % abgeschlossen.", 
+        "Ein vertrauenswürdiger Technologiepartner für verschiedene Branchen werden.", 
+        "Entwicklung innovativer Lösungen, die die Effizienz der Kundenunternehmen um bis zu 40 % steigern.", 
+        "Ein erfahrenes Entwicklungsteam mit Multi-Plattform-Expertise aufbauen.", 
+        "Strategische Partnerschaften mit führender Cloud-Technologie aufbauen."
+    ]
+}

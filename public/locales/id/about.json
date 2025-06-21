@@ -1,0 +1,52 @@
+{
+    "hero_information": "Tentang Kami", 
+    "hero_title": ["Mengubah Ide Menjadi", "Realitas Digital"], 
+    "hero_description": "Espercode adalah perusahaan teknologi yang berdedikasi untuk menghadirkan solusi digital inovatif. Kami mengkhususkan diri dalam pengembangan web, aplikasi mobile, dan konsultasi teknologi untuk membantu bisnis Anda berkembang di era digital.", 
+    "objective_title": "Misi & Visi Kami", 
+    "objective_mission_title": "Misi", 
+    "objective_mission_description": "Memberikan solusi teknologi terdepan yang mengubah cara bisnis beroperasi, dengan fokus pada inovasi, kualitas, dan kepuasan klien untuk menciptakan dampak positif dalam transformasi digital.", 
+    "objective_vision_title": "Visi", 
+    "objective_vision_description": "Menjadi mitra teknologi terpercaya yang memimpin inovasi digital di Indonesia, memberdayakan bisnis untuk mencapai potensi maksimal mereka melalui solusi teknologi yang cerdas dan berkelanjutan.", 
+    "objective_commitment_title": "Komitmen Kualitas", 
+    "objective_commitment_description": "Setiap proyek yang kami kerjakan mencerminkan dedikasi tinggi terhadap kualitas dan inovasi teknologi terbaru.", 
+    "founder_title": "Tim Founder", 
+    "founder_description": "Dibalik kesuksesan Espercode, terdapat tim founder berpengalaman yang berkomitmen untuk memberikan yang terbaik.", 
+    "founder_experience_title": "Kepemimpinan Berpengalaman", 
+    "founder_experience_description": "Tim founder kami terdiri dari tiga profesional berpengalaman dengan latar belakang yang kuat di bidang teknologi, bisnis, dan inovasi.", 
+    "founder_experiences": [
+        "Pengalaman gabungan lebih dari 4 tahun di industri teknologi.", 
+        "Rekam jejak yang terbukti dalam membangun solusi untuk berbagai industri", 
+        "Komitmen pada inovasi dan kualitas yang berkelanjutan"
+    ], 
+    "founder_philosophy_title": "Filosofi Tim", 
+    "founder_philosophy_description": "Kami percaya bahwa teknologi terbaik adalah yang tidak hanya canggih, tetapi juga mudah digunakan dan memberikan nilai nyata bagi pengguna.", 
+    "value_title": "Nilai-Nilai Kami", 
+    "value_description": "Prinsip-prinsip yang memandu setiap langkah perjalanan kami", 
+    "value_values": [
+        {
+            "title": "Inovasi", 
+            "description": "Selalu menggunakan teknologi terbaru dan pendekatan inovatif dalam setiap proyek untuk memberikan solusi terdepan."
+        }, 
+        {
+            "title": "Jaminan Kualitas", 
+            "description": "Berkomitmen pada kualitas tinggi dengan testing menyeluruh dan standar coding yang ketat."
+        }, 
+        {
+            "title": "Efisiensi", 
+            "description": "Mengoptimalkan setiap proses pengembangan untuk memberikan hasil terbaik dalam waktu yang efisien."
+        }, 
+        {
+            "title": "Berorientasi Klien", 
+            "description": "Mengutamakan kepuasan klien dengan komunikasi yang transparan dan layanan yang responsif."
+        }
+    ], 
+    "achievement_title": "Pencapaian Kami", 
+    "achievement_description": "Milestone yang telah kami raih dalam perjalanan membangun solusi teknologi terbaik.", 
+    "achievement_achievements": [
+        "Berhasil menyelesaikan 50+ proyek digital dengan tingkat kepuasan klien 100%.", 
+        "Menjadi partner teknologi terpercaya untuk berbagai industri.", 
+        "Mengembangkan solusi inovatif yang meningkatkan efisiensi bisnis klien hingga 40%.", 
+        "Membangun tim developer berpengalaman dengan keahlian multi-platform", 
+        "Menjalin kemitraan strategis dengan teknologi cloud terdepan."
+    ]
+}

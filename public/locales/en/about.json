@@ -1,3 +1,52 @@
 {
-    "about_information": "About Us"
+    "hero_information": "About Us", 
+    "hero_title": ["Transforming Ideas Into", "Digital Reality"], 
+    "hero_description": "Espercode is a technology company dedicated to delivering innovative digital solutions. We specialize in web development, mobile applications, and technology consulting to help your business thrive in the digital era.", 
+    "objective_title": "Our Mission & Vision", 
+    "objective_mission_title": "Mission", 
+    "objective_mission_description": "Providing cutting-edge technology solutions that transform the way businesses operate, with a focus on innovation, quality, and client satisfaction to create a positive impact in digital transformation.", 
+    "objective_vision_title": "Vision", 
+    "objective_vision_description": "To become a trusted technology partner that leads digital innovation in Indonesia, empowering businesses to reach their maximum potential through smart and sustainable technology solutions.", 
+    "objective_commitment_title": "Quality Commitment", 
+    "objective_commitment_description": "Every project we undertake reflects a high dedication to quality and the latest technological innovations.", 
+    "founder_title": "Founder Team", 
+    "founder_description": "Behind the success of Espercode, there is an experienced founder team committed to delivering the best.", 
+    "founder_experience_title": "Experienced Leadership", 
+    "founder_experience_description": "Our founder team consists of three experienced professionals with strong backgrounds in technology, business, and innovation.", 
+    "founder_experiences": [
+        "Combined experience of over 4 years in the technology industry", 
+        "Proven track record of building solutions for various industries", 
+        "Commitment to sustainable innovation and quality"
+    ], 
+    "founder_philosophy_title": "Team Philosophy", 
+    "founder_philosophy_description": "We believe that the best technology is not only advanced but also easy to use and provides real value to users.", 
+    "value_title": "Our Values", 
+    "value_description": "Principles that guide every step of our journey", 
+    "value_values": [
+        {
+            "title": "Innovation", 
+            "description": "Always using the latest technology and innovative approaches in every project to provide cutting-edge solutions."
+        }, 
+        {
+            "title": "Quality Assurance", 
+            "description": "Committed to high quality with thorough testing and strict coding standards."
+        }, 
+        {
+            "title": "Efficiency", 
+            "description": "Optimizing every development process to deliver the best results in an efficient timeframe."
+        }, 
+        {
+            "title": "Client-Centric", 
+            "description": "Prioritizing client satisfaction through transparent communication and responsive service."
+        }
+    ], 
+    "achievement_title": "Our Achievements", 
+    "achievement_description": "Milestones we have achieved in our journey to build the best technology solutions.", 
+    "achievement_achievements": [
+        "Successfully completed 50+ digital projects with a client satisfaction rate of 100%.", 
+        "Becoming a trusted technology partner for various industries.", 
+        "Developing innovative solutions that increase client business efficiency by up to 40%.", 
+        "Building an experienced development team with multi-platform expertise.", 
+        "Establishing strategic partnerships with leading cloud technology."
+    ]
 }

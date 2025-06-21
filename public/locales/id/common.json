@@ -50,6 +50,7 @@
   "team_title": ["TIM", "AHLI"], 
   "team_description": "Tim kami yang bersemangat, terdiri dari pengembang, desainer, dan inovator, menciptakan pengalaman digital luar biasa untuk mendorong pertumbuhan bisnis dan memenuhi harapan klien.", 
   "team_stats_label": ["PROYEK", "AHLI", "TAHUN"], 
+  "team_skills_label": "Keahlian & Kompetensi", 
   "team_members": [
     {
       "bio": "Pemasar digital berpengalaman yang fokus pada pembuatan kampanye media sosial yang berdampak di Facebook, Instagram, dan WhatsApp. Terampil dalam menggunakan Canva untuk merancang konten menarik yang meningkatkan visibilitas merek dan interaksi audiens."

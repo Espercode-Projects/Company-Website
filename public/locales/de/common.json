@@ -50,6 +50,7 @@
   "team_title": ["TEAM VON", "EXPERTEN"], 
   "team_description": "Unser engagiertes Team aus Entwicklern, Designern und Innovatoren schafft außergewöhnliche digitale Erlebnisse, die das Unternehmenswachstum fördern und die Kundenerwartungen erfüllen.", 
   "team_stats_label": ["PROJEKTE", "EXPERTEN", "JAHRE"], 
+  "team_skills_label": "Fähigkeiten & Expertise", 
   "team_members": [
     {
       "bio": "Erfahrener Digitalmarketer, der sich auf die Erstellung wirkungsvoller Social-Media-Kampagnen auf Facebook, Instagram und WhatsApp konzentriert. Versiert im Umgang mit Canva zur Gestaltung ansprechender Inhalte, die die Markenbekanntheit und die Interaktion mit dem Publikum steigern."

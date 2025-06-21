@@ -217,7 +217,7 @@ export const MobileMenu = ({
                   className="text-green-400 text-sm mb-4"
                   style={{ textShadow: "0 0 8px rgba(34, 197, 94, 0.8)" }}
                 >
-                  Select Language
+                  {headers.lang_select}
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {languages.map((lang, index) => (

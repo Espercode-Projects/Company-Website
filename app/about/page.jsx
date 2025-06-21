@@ -38,6 +38,8 @@ const About = () => {
   const missionRef = useRef(null);
   const ctaRef = useRef(null);
 
+  const { currentLocale, setCurrentLocale, translations } = useLocale();
+
   const isHeroInView = useInView(heroRef, { once: true, threshold: 0.1 });
   const isStatsInView = useInView(statsRef, { once: true, threshold: 0.1 });
   const isServicesInView = useInView(servicesRef, {
@@ -187,39 +189,36 @@ const About = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Innovation",
+      title: `${translations.value_values?.[0].title}`,
       description:
-        "Selalu menggunakan teknologi terbaru dan pendekatan inovatif dalam setiap proyek untuk memberikan solusi terdepan.",
+        `${translations.value_values?.[0].description}`,
     },
     {
       icon: Shield,
-      title: "Quality Assurance",
+      title: `${translations.value_values?.[1].title}`,
       description:
-        "Berkomitmen pada kualitas tinggi dengan testing menyeluruh dan standar coding yang ketat.",
+        `${translations.value_values?.[1].description}`,
     },
     {
       icon: Zap,
-      title: "Efficiency",
+      title: `${translations.value_values?.[2].title}`,
       description:
-        "Mengoptimalkan setiap proses pengembangan untuk memberikan hasil terbaik dalam waktu yang efisien.",
+        `${translations.value_values?.[2].description}`,
     },
     {
       icon: Heart,
-      title: "Client-Centric",
+      title: `${translations.value_values?.[3].title}`,
       description:
-        "Mengutamakan kepuasan klien dengan komunikasi yang transparan dan layanan yang responsif.",
+        `${translations.value_values?.[3].description}`,
     },
   ];
 
   const achievements = [
-    "Berhasil menyelesaikan 50+ proyek digital dengan tingkat kepuasan klien 100%",
-    "Menjadi partner teknologi terpercaya untuk berbagai industri",
-    "Mengembangkan solusi inovatif yang meningkatkan efisiensi bisnis klien hingga 40%",
-    "Membangun tim developer berpengalaman dengan keahlian multi-platform",
-    "Menjalin kemitraan strategis dengan teknologi cloud terdepan",
+    `${translations.achievement_achievements?.[0]}`,
+    `${translations.achievement_achievements?.[1]}`,
+    `${translations.achievement_achievements?.[2]}`,
+    `${translations.achievement_achievements?.[3]}`, 
   ];
-
-  const { currentLocale, setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
@@ -319,16 +318,16 @@ const About = () => {
               variants={itemVariants}
               className="inline-block px-4 py-2 bg-emerald-500/20 rounded-full border border-emerald-500/30 mb-6"
             >
-              <span className="text-emerald-400 font-medium">About Us</span>
+              <span className="text-emerald-400 font-medium">{translations.hero_information}</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Transforming Ideas Into{" "}
+              {translations.hero_title?.[0]}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
-                Digital Reality
+                {translations.hero_title?.[1]}
               </span>
             </motion.h1>
 
@@ -336,10 +335,7 @@ const About = () => {
               variants={itemVariants}
               className="text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed"
             >
-              Espercode adalah perusahaan teknologi yang berdedikasi untuk
-              menghadirkan solusi digital inovatif. Kami mengkhususkan diri
-              dalam pengembangan web, aplikasi mobile, dan konsultasi teknologi
-              untuk membantu bisnis Anda berkembang di era digital.
+              {translations.hero_description}
             </motion.p>
 
             {/* <motion.div
@@ -367,29 +363,23 @@ const About = () => {
               variants={slideInFromLeft}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Misi & Visi Kami
+                {translations.objective_title}
               </h2>
 
               <div className="space-y-8">
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
                   <h3 className="text-xl font-bold text-emerald-400 mb-4">
-                    Misi
+                    {translations.objective_mission_title}
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Memberikan solusi teknologi terdepan yang mengubah cara
-                    bisnis beroperasi, dengan fokus pada inovasi, kualitas, dan
-                    kepuasan klien untuk menciptakan dampak positif dalam
-                    transformasi digital.
+                    {translations.objective_mission_description}
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-blue-400 mb-4">Visi</h3>
+                  <h3 className="text-xl font-bold text-blue-400 mb-4">{translations.objective_vision_title}</h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Menjadi mitra teknologi terpercaya yang memimpin inovasi
-                    digital di Indonesia, memberdayakan bisnis untuk mencapai
-                    potensi maksimal mereka melalui solusi teknologi yang cerdas
-                    dan berkelanjutan.
+                    {translations.objective_vision_description}
                   </p>
                 </div>
               </div>
@@ -411,11 +401,10 @@ const About = () => {
                     <Target className="w-10 h-10 text-emerald-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">
-                    Komitmen Kualitas
+                    {translations.objective_commitment_title}
                   </h3>
                   <p className="text-slate-300 mb-6">
-                    Setiap proyek yang kami kerjakan mencerminkan dedikasi
-                    tinggi terhadap kualitas dan inovasi teknologi terbaru.
+                    {translations.objective_commitment_description}
                   </p>
                   <div className="flex justify-center space-x-2">
                     {[...Array(5)].map((_, i) => (
@@ -442,11 +431,10 @@ const About = () => {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Tim Founder
+                {translations.founder_title}
               </h2>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                Dibalik kesuksesan Espercode, terdapat tim founder berpengalaman
-                yang berkomitmen untuk memberikan yang terbaik
+                {translations.founder_description}
               </p>
             </motion.div>
 
@@ -466,31 +454,28 @@ const About = () => {
               <motion.div variants={slideInFromRight} className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
                   <h3 className="text-xl font-bold text-white mb-4">
-                    Kepemimpinan Berpengalaman
+                    {translations.founder_experience_title}
                   </h3>
                   <p className="text-slate-300 leading-relaxed mb-4">
-                    Tim founder kami terdiri dari tiga profesional berpengalaman
-                    dengan latar belakang yang kuat di bidang teknologi, bisnis,
-                    dan inovasi.
+                    {translations.founder_experience_description}
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-slate-300">
                       <CheckCircle className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0" />
                       <span>
-                        Pengalaman gabungan lebih dari 4 tahun di industri
-                        teknologi
+                        {translations.founder_experiences?.[0]}
                       </span>
                     </li>
                     <li className="flex items-center text-slate-300">
                       <CheckCircle className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0" />
                       <span>
-                        Track record membangun solusi untuk berbagai industri
+                        {translations.founder_experiences?.[1]}
                       </span>
                     </li>
                     <li className="flex items-center text-slate-300">
                       <CheckCircle className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0" />
                       <span>
-                        Komitmen pada inovasi dan kualitas yang berkelanjutan
+                        {translations.founder_experiences?.[2]}
                       </span>
                     </li>
                   </ul>
@@ -498,12 +483,10 @@ const About = () => {
 
                 <div className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/20 rounded-2xl p-6">
                   <h4 className="text-lg font-semibold text-emerald-400 mb-3">
-                    Filosofi Tim
+                    {translations.founder_philosophy_title}
                   </h4>
                   <p className="text-slate-300 leading-relaxed">
-                    "Kami percaya bahwa teknologi terbaik adalah yang tidak
-                    hanya canggih, tetapi juga mudah digunakan dan memberikan
-                    nilai nyata bagi pengguna."
+                    {"\""}{translations.founder_philosophy_description}{"\""}
                   </p>
                 </div>
               </motion.div>
@@ -522,10 +505,10 @@ const About = () => {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Nilai-Nilai Kami
+                {translations.value_title}
               </h2>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                Prinsip-prinsip yang memandu setiap langkah perjalanan kami
+                {translations.value_description}
               </p>
             </motion.div>
 
@@ -562,11 +545,10 @@ const About = () => {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Pencapaian Kami
+                {translations.achievement_title}
               </h2>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                Milestone yang telah kami raih dalam perjalanan membangun solusi
-                teknologi terbaik
+                {translations.achievement_description}
               </p>
             </motion.div>
 

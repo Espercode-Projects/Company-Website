@@ -1,0 +1,118 @@
+{
+    "hero_information": "Portofolio Kami", 
+    "hero_title": ["Karya", "Digital", "Kami"], 
+    "hero_description": "Jelajahi koleksi proyek digital yang telah kami kerjakan dengan dedikasi tinggi. Setiap proyek mencerminkan komitmen kami untuk memberikan solusi teknologi mutakhir.", 
+    "hero_attributes": ["Proyek Selesai", "Proyek Dalam Proses", "Tahun Pengalaman"], 
+    "content_categories": ["Semua Proyek", "Pengembangan Web", "Pengembangan Aplikasi Mobile", "Desain UI/UX", "Pengembangan Backend"], 
+    "content_completed": "✅ Selesai", 
+    "content_progress": "🚧 Dalam Proses", 
+    "content_client_label": "Klien", 
+    "content_feature_label": "Fitur Utama", 
+    "content_main_cta": "Lihat Detail", 
+    "content_detail_label": "Detail Proyek", 
+    "content_detail_overview_label": "Ikhtisar Proyek", 
+    "content_detail_technology_label": "Teknologi yang Digunakan", 
+    "content_detail_challenge_label": "Hasil yang Dicapai", 
+    "content_detail_result_label": "Hasil yang Dicapai", 
+    "content_detail_timeline_label": "Jadwal", 
+    "content_detail_team_label": "Ukuran Tim", 
+    "content_detail_category_label": "Kategori", 
+    "content_detail_main_cta": "Kunjungi Situs Langsung", 
+    "content_detail_secondary_cta": "Hubungi Kami", 
+    "content_projects": [
+        {
+            "title": "ZphereSocial", 
+            "description": "Media sosial web untuk berbagi foto/video dan transaksi jual beli.", 
+            "full_description": "Platform media sosial berbasis web yang memungkinkan pengguna untuk berbagi foto dan video mereka. Ini mencakup fitur umum yang ditemukan di media sosial, seperti beranda, bagian eksplorasi, dan kemampuan untuk menambahkan teman. Selain itu, ada pasar yang dapat digunakan untuk membeli dan menjual dalam aplikasi web ini.", 
+            "features": [
+                "Gerbang Pembayaran",
+                "Inventaris Waktu Nyata",
+                "Dasbor Admin", 
+                "Responsif Mobile",
+                "Dukungan Multi-bahasa",
+                "Dasbor Analitik",
+                "Notifikasi Email",
+                "Sistem Ulasan Produk"
+            ], 
+            "timeline": "3 bulan", 
+            "team_size": "4 pengembang", 
+            "challenges": [
+                "Mengintegrasikan beberapa gerbang pembayaran",
+                "Sinkronisasi inventaris waktu nyata",
+                "Mengoptimalkan kueri database untuk katalog produk besar",
+                "Menerapkan autentikasi pengguna yang aman"
+            ],
+            "results": [
+                "40% peningkatan dalam tingkat konversi",
+                "60% pengurangan waktu muat halaman",
+                "99,9% waktu aktif tercapai",
+                "500+ pengguna bersamaan didukung"
+            ]
+        }, 
+        {
+            "title": "ZphereRent", 
+            "description": "Aplikasi penyewaan mobil untuk memesan kendaraan dan mengelola pembayaran sewa.", 
+            "full_description": "Aplikasi mobile yang digunakan untuk menyewa kendaraan. Pengguna dapat dengan mudah menjelajahi dan memesan mobil yang tersedia untuk disewa. Ada juga fitur untuk melacak riwayat sewa dan melihat kendaraan yang tersedia di lokasi yang berbeda. Aplikasi ini mencakup integrasi pembayaran untuk transaksi yang lancar.", 
+            "features": [
+                "Login Biometrik",
+                "Pembayaran QR",
+                "Portofolio Investasi",
+                "Pembayaran Tagihan",
+                "Transfer Dana",
+                "Riwayat Transaksi",
+                "Alat Penganggaran",
+                "Obrolan Dukungan Pelanggan"
+            ], 
+            "timeline": "3 bulan", 
+            "team_size": "4 pengembang", 
+            "challenges": [
+                "Menerapkan langkah-langkah keamanan setara bank",
+                "Memastikan kompatibilitas lintas platform",
+                "Mengoptimalkan kinerja untuk perangkat kelas bawah",
+                "Memenuhi persyaratan kepatuhan regulasi"
+            ],
+            "results": [
+                "200,000+ unduhan dalam bulan pertama",
+                "4.8/5 peringkat toko aplikasi",
+                "Tidak ada pelanggaran keamanan",
+                "30% pengurangan tiket dukungan pelanggan"
+            ]
+        }, 
+        {
+            "title": "FloWise", 
+            "description": "Aplikasi mobile untuk mencatat transaksi dan melacak keuangan.", 
+            "full_description": "Aplikasi mobile yang digunakan untuk melacak uang masuk dan keluar. Pengguna dapat dengan mudah mencatat transaksi yang telah mereka lakukan. Ada juga fitur pelaporan untuk memahami bagaimana pengguna mengelola keuangan mereka selama periode tertentu.", 
+            "features": [
+                "Desain Modern",
+                "SEO Dioptimalkan",
+                "Peningkatan Kinerja",
+                "Konsistensi Merek",
+                "Desain Responsif",
+                "Sistem Manajemen Konten",
+                "Dukungan Multi-bahasa",
+                "Integrasi Analitik"
+            ], 
+            "timeline": "2 bulan", 
+            "team_size": "3 desainer", 
+            "challenges": [
+                "Menyeimbangkan desain modern dengan warisan merek",
+                "Meningkatkan kecepatan situs tanpa mengorbankan visual",
+                "Menciptakan navigasi intuitif untuk konten kompleks",
+                "Memastikan kepatuhan aksesibilitas"
+            ],
+            "results": [
+                "75% peningkatan dalam lalu lintas organik",
+                "50% pengurangan dalam tingkat pentalan",
+                "Skor 90+ di PageSpeed Insights",
+                "25% peningkatan dalam generasi prospek"
+            ]
+        }
+    ], 
+    "content_empty_title": "Tidak Ada Proyek Ditemukan", 
+    "content_empty_description": "Tidak ada proyek yang cocok dengan filter yang dipilih. Coba pilih kategori yang berbeda.", 
+    "content_empty_cta": "Tampilkan Semua Proyek", 
+    "card_title": ["Siap Untuk Memulai", "Perjalanan Digital", "?"], 
+    "card_description": "Mari diskusikan proyek Anda dan wujudkan ide digital terbaik Anda bersama tim berpengalaman di Espercode.", 
+    "card_main_cta": "Mulai Proyek Anda", 
+    "card_secondary_cta": "Lihat Layanan Kami"
+}

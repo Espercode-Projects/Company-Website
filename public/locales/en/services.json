@@ -1,3 +1,146 @@
 {
-    "about_information": "Our Services"
+    "hero_information": "Our Services", 
+    "hero_title": ["Explore Our", "Services"], 
+    "hero_description": "Digital transformation starts here. We provide leading technology solutions to grow your business through powerful websites, mobile applications, and systems.", 
+    "content_services": [
+        {
+            "title": "Web Development",
+            "subtitle": "Modern & Responsive Websites",
+            "description": "Building modern websites with cutting-edge technologies such as React, Next.js, and Node.js. Focused on optimal performance and user experience.",
+            "features": [
+                "Responsive Design for all devices",
+                "Fast Loading with Core Web Vitals",
+                "Progressive Web App (PWA)",
+                "E-commerce Solutions"
+            ],
+            "price": "Starting from Rp 500,000",
+            "duration": "2-4 weeks"
+        },
+        {
+            "title": "Mobile App Development",
+            "subtitle": "Android Applications",
+            "description": "Developing native mobile applications that are user-friendly with high performance and advanced features.",
+            "features": [
+                "Android Development",
+                "Intuitive UI/UX Design",
+                "Push Notifications",
+                "Offline Functionality",
+                "App Store Optimization"
+            ],
+            "price": "Starting from Rp 500,000",
+            "duration": "6-12 weeks"
+        },
+        {
+            "title": "UI/UX Design",
+            "subtitle": "Beautiful & Functional Designs",
+            "description": "Creating designs that are not only visually beautiful but also functional and provide an outstanding user experience.",
+            "features": [
+                "User  Research & Analysis",
+                "Wireframing & Prototyping",
+                "Visual Design & Branding",
+                "Usability Testing",
+                "Design System Creation",
+                "Responsive Design Guidelines"
+            ],
+            "price": "Starting from Rp 500,000",
+            "duration": "1-3 weeks"
+        },
+        {
+            "title": "Backend Development",
+            "subtitle": "Scalable Server Solutions",
+            "description": "Building robust, scalable, and secure backends to support high-performance web and mobile applications.",
+            "features": [
+                "RESTful API Development",
+                "GraphQL Implementation",
+                "Database Design & Optimization",
+                "Authentication & Authorization",
+                "Microservices Architecture",
+                "Real-time Features"
+            ],
+            "price": "Starting from Rp 1,000,000",
+            "duration": "3-6 weeks"
+        }
+    ], 
+    "content_feature_label": "Key Features", 
+    "content_technology_label": "Technologies", 
+    "content_price_label": "Starting Price", 
+    "content_duration_label": "Timeline", 
+    "content_main_cta": "Order This Service", 
+    "form_title": "Let's work together", 
+    "form_description": "Please fill out the form below to contact us.", 
+    "form_firstname_placeholder": "Firstname", 
+    "form_lastname_placeholder": "Lastname", 
+    "form_email_placeholder": "Email", 
+    "form_phone_placeholder": "Phone", 
+    "form_service_placeholder": "Select a service", 
+    "form_message_placeholder": "Type your message here", 
+    "form_main_cta": "Send Message", 
+    "process_title": ["Our", "Process"], 
+    "process_description": "A structured and transparent work process for optimal results", 
+    "process_steps": [
+        {
+            "title": "Discovery & Planning", 
+            "description": "Understanding your business needs and planning the best solutions"
+        }, 
+        {
+            "title": "Design & Prototype", 
+            "description": "Creating design mockups and prototypes for concept validation"
+        }, 
+        {
+            "title": "Development", 
+            "description": "Implementation with cutting-edge technology and best practices"
+        }, 
+        {
+            "title": "Testing & Launch", 
+            "description": "Comprehensive quality assurance and deployment to production"
+        }
+    ], 
+    "review_title": ["What Our", "Clients Say"], 
+    "review_description": "Client satisfaction is our top priority", 
+    "review_testimonials": [
+        {
+            "content": "The website created is very professional and the loading speed is incredibly fast. The team is very responsive and understands our business needs."
+        },
+        {
+            "content": "The mobile application developed is very user-friendly and has increased our customer engagement by 300%. Highly recommended!"
+        },
+        {
+            "content": "Modern and functional UI/UX design. Our online store's conversion rate significantly increased after the redesign."
+        },
+        {
+            "content": "A robust and scalable backend system. It can handle high traffic without any issues. Excellent work!"
+        }
+    ], 
+    "feature_title": ["Why Choose", "Us?"], 
+    "feature_description": "The advantages that set us apart from others", 
+    "feature_features": [
+        {
+          "title": "Fast & Efficient",
+          "description": "Fast execution without compromising quality using agile development methodology."
+        },
+        {
+          "title": "Secure & Reliable",
+          "description": "Enterprise-level security with 24/7 backup and monitoring"
+        },
+        {
+          "title": "Dedicated Support",
+          "description": "Responsive support team and regular maintenance for optimal performance"
+        },
+        {
+          "title": "Data-Driven",
+          "description": "Data-driven and analytics solutions for business performance optimization"
+        },
+        {
+          "title": "Scalable Solutions",
+          "description": "Architecture that can grow with your business"
+        },
+        {
+          "title": "Goal Oriented",
+          "description": "Focus on achieving measurable business targets"
+        }
+    ], 
+    "card_title": "Ready to Transform Your Business?", 
+    "card_description": "Let's bring your digital ideas to life with our team of experts. Get a free consultation to discuss your project needs.", 
+    "card_main_cta": "Start Your Project", 
+    "card_secondary_cta": "Call Us Now"
 }

@@ -1,0 +1,118 @@
+{
+    "hero_information": "我们的作品集", 
+    "hero_title": ["我们的", "数字", "杰作"], 
+    "hero_description": "探索我们以高度奉献精神完成的数字项目集合。每个项目都反映了我们提供尖端技术解决方案的承诺。", 
+    "hero_attributes": ["已完成项目", "进行中的项目", "经验年数"], 
+    "content_categories": ["所有项目", "网站开发", "移动应用开发", "UI/UX设计", "后端开发"], 
+    "content_completed": "✅ 完成", 
+    "content_progress": "🚧 进行中", 
+    "content_client_label": "客户", 
+    "content_feature_label": "主要特点", 
+    "content_main_cta": "查看详情", 
+    "content_detail_label": "项目详情", 
+    "content_detail_overview_label": "项目概述", 
+    "content_detail_technology_label": "使用的技术", 
+    "content_detail_challenge_label": "取得的成果", 
+    "content_detail_result_label": "取得的成果", 
+    "content_detail_timeline_label": "时间线", 
+    "content_detail_team_label": "团队规模", 
+    "content_detail_category_label": "类别", 
+    "content_detail_main_cta": "访问现场", 
+    "content_detail_secondary_cta": "联系我们", 
+    "content_projects": [
+        {
+            "title": "ZphereSocial", 
+            "description": "用于分享照片/视频和进行买卖交易的网络社交媒体。", 
+            "full_description": "一个基于网络的社交媒体平台，允许用户分享他们的照片和视频。它包括社交媒体中常见的功能，如主页、探索部分和添加朋友的功能。此外，还有一个市场可以在这个网络应用程序内用于买卖。", 
+            "features": [
+                "支付网关",
+                "实时库存",
+                "管理仪表板", 
+                "移动响应式",
+                "多语言支持",
+                "分析仪表板",
+                "电子邮件通知",
+                "产品评价系统"
+            ], 
+            "timeline": "3个月", 
+            "team_size": "4名开发人员", 
+            "challenges": [
+                "集成多个支付网关",
+                "实时库存同步",
+                "优化大型产品目录的数据库查询",
+                "实施安全的用户认证"
+            ],
+            "results": [
+                "转化率提高40%",
+                "页面加载时间减少60%",
+                "达到99.9%的运行时间",
+                "支持500+并发用户"
+            ]
+        }, 
+        {
+            "title": "ZphereRent", 
+            "description": "用于预订车辆和管理租金的租车应用程序。", 
+            "full_description": "用于租赁车辆的移动应用程序。用户可以轻松浏览和预订可供租赁的汽车。还有一个功能可以跟踪租赁历史并查看不同位置的可用车辆。该应用程序包括用于无缝交易的支付集成。", 
+            "features": [
+                "生物识别登录",
+                "二维码支付",
+                "投资组合",
+                "账单支付",
+                "资金转账",
+                "交易历史",
+                "预算工具",
+                "客户支持聊天"
+            ], 
+            "timeline": "3个月", 
+            "team_size": "4名开发人员", 
+            "challenges": [
+                "实施银行级安全措施",
+                "确保跨平台兼容性",
+                "优化低端设备的性能",
+                "满足监管合规要求"
+            ],
+            "results": [
+                "首月下载量20万+",
+                "应用商店评分4.8/5",
+                "零安全漏洞",
+                "客户支持工单减少30%"
+            ]
+        }, 
+        {
+            "title": "FloWise", 
+            "description": "用于记录交易和跟踪财务的移动应用程序。", 
+            "full_description": "用于跟踪收入和支出的移动应用程序。用户可以轻松记录他们进行的任何交易。还有一个报告功能可以了解用户如何在一定时期内管理他们的财务。", 
+            "features": [
+                "现代设计",
+                "SEO优化",
+                "性能提升",
+                "品牌一致性",
+                "响应式设计",
+                "内容管理系统",
+                "多语言支持",
+                "分析集成"
+            ], 
+            "timeline": "2个月", 
+            "team_size": "3名设计师", 
+            "challenges": [
+                "平衡现代设计与品牌传统",
+                "在不影响视觉效果的情况下提高网站速度",
+                "为复杂内容创建直观导航",
+                "确保可访问性合规"
+            ],
+            "results": [
+                "自然流量增加75%",
+                "跳出率降低50%",
+                "PageSpeed Insights得分90+",
+                "潜在客户生成增加25%"
+            ]
+        }
+    ], 
+    "content_empty_title": "未找到项目", 
+    "content_empty_description": "没有与所选过滤器匹配的项目。尝试选择其他类别。", 
+    "content_empty_cta": "显示所有项目", 
+    "card_title": ["准备好开始您的", "数字旅程", "吗？"], 
+    "card_description": "让我们讨论您的项目，并与Espercode经验丰富的团队一起实现您的最佳数字创意。", 
+    "card_main_cta": "开始您的项目", 
+    "card_secondary_cta": "查看我们的服务"
+}

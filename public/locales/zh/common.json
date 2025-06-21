@@ -50,6 +50,7 @@
   "team_title": ["专家", "团队"], 
   "team_description": "我们充满热情的开发者、设计师和创新者团队创造出卓越的数字体验，推动业务增长，满足客户期望。", 
   "team_stats_label": ["项目", "专家", "年"], 
+  "team_skills_label": "技能与专长", 
   "team_members": [
     {
       "bio": "经验丰富的数字营销人员，专注于在Facebook、Instagram和WhatsApp上创建有影响力的社交媒体活动。擅长使用Canva设计引人入胜的内容，以提升品牌知名度和观众互动。"

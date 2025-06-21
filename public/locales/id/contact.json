@@ -1,0 +1,23 @@
+{
+    "hero_information": "Hubungi Kami",
+    "hero_title": ["Hubungi", "Kami"],
+    "hero_description": "Siap untuk memulai proyek digital Anda? Mari berkolaborasi dan wujudkan ide-ide inovatif menjadi solusi teknologi terdepan.",
+    "contact_title": ["Mari Mulai", "Percakapan"],
+    "contact_description": "Kami selalu siap mendengarkan ide-ide brilian Anda. Hubungi kami melalui berbagai cara di bawah ini untuk memulai diskusi tentang proyek impian Anda.",
+    "contact_email_title": "Email",
+    "contact_email_description": "Kami akan merespons dalam 24 jam",
+    "contact_phone_title": "Telepon",
+    "contact_phone_description": "Senin-Jumat 9AM-6PM WIB",
+    "contact_location_title": "Lokasi",
+    "contact_location_content": "Kabupaten Sidoarjo, Jawa Timur",
+    "form_title": "Kirim Pesan kepada Kami",
+    "form_name_label": "Nama Lengkap",
+    "form_name_placeholder": "Nama lengkap Anda",
+    "form_email_label": "Alamat Email",
+    "form_email_placeholder": "your@email.com",
+    "form_subject_label": "Subjek",
+    "form_subject_placeholder": "Diskusi proyek",
+    "form_message_label": "Pesan",
+    "form_message_placeholder": "Ceritakan tentang proyek Anda...",
+    "form_main_cta": "Kirim Pesan"
+}

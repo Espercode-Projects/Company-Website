@@ -1,0 +1,146 @@
+{
+    "hero_information": "Unsere Dienstleistungen", 
+    "hero_title": ["Entdecken Sie", "Unsere Dienstleistungen"], 
+    "hero_description": "Die digitale Transformation beginnt hier. Wir bieten führende Technologielösungen, um Ihr Geschäft durch leistungsstarke Websites, mobile Anwendungen und Systeme zu wachsen.", 
+    "content_services": [
+        {
+            "title": "Webentwicklung",
+            "subtitle": "Moderne & Responsive Websites",
+            "description": "Erstellung moderner Websites mit modernsten Technologien wie React, Next.js und Node.js. Fokus auf optimale Leistung und Benutzererfahrung.",
+            "features": [
+                "Responsive Design für alle Geräte",
+                "Schnelle Ladezeiten mit Core Web Vitals",
+                "Progressive Web App (PWA)",
+                "E-Commerce-Lösungen"
+            ],
+            "price": "Ab Rp 500,000",
+            "duration": "2-4 Wochen"
+        },
+        {
+            "title": "Mobile App Entwicklung",
+            "subtitle": "Android-Anwendungen",
+            "description": "Entwicklung nativer mobiler Anwendungen, die benutzerfreundlich sind und eine hohe Leistung sowie fortschrittliche Funktionen bieten.",
+            "features": [
+                "Android-Entwicklung",
+                "Intuitive UI/UX-Design",
+                "Push-Benachrichtigungen",
+                "Offline-Funktionalität",
+                "App Store-Optimierung"
+            ],
+            "price": "Ab Rp 500,000",
+            "duration": "6-12 Wochen"
+        },
+        {
+            "title": "UI/UX Design",
+            "subtitle": "Schöne & Funktionale Designs",
+            "description": "Erstellung von Designs, die nicht nur visuell ansprechend, sondern auch funktional sind und eine herausragende Benutzererfahrung bieten.",
+            "features": [
+                "Benutzerforschung & Analyse",
+                "Wireframing & Prototyping",
+                "Visuelles Design & Branding",
+                "Usability-Tests",
+                "Erstellung von Design-Systemen",
+                "Richtlinien für responsives Design"
+            ],
+            "price": "Ab Rp 500,000",
+            "duration": "1-3 Wochen"
+        },
+        {
+            "title": "Backend-Entwicklung",
+            "subtitle": "Scalable Serverlösungen",
+            "description": "Aufbau robuster, skalierbarer und sicherer Backends zur Unterstützung leistungsstarker Web- und mobiler Anwendungen.",
+            "features": [
+                "RESTful API-Entwicklung",
+                "GraphQL-Implementierung",
+                "Datenbankdesign & -optimierung",
+                "Authentifizierung & Autorisierung",
+                "Microservices-Architektur",
+                "Echtzeit-Funktionen"
+            ],
+            "price": "Ab Rp 1,000,000",
+            "duration": "3-6 Wochen"
+        }
+    ], 
+    "content_feature_label": "Hauptmerkmale",
+    "content_technology_label": "Technologien",
+    "content_price_label": "Startpreis",
+    "content_duration_label": "Zeitplan", 
+    "content_main_cta": "Diesen Service bestellen",
+    "form_title": "Lass uns zusammenarbeiten",
+    "form_description": "Bitte füllen Sie das untenstehende Formular aus, um uns zu kontaktieren.",
+    "form_firstname_placeholder": "Vorname",
+    "form_lastname_placeholder": "Nachname",
+    "form_email_placeholder": "E-Mail",
+    "form_phone_placeholder": "Telefon",
+    "form_service_placeholder": "Wählen Sie einen Service",
+    "form_message_placeholder": "Geben Sie hier Ihre Nachricht ein",
+    "form_main_cta": "Nachricht senden", 
+    "process_title": ["Unser", "Prozess"], 
+    "process_description": "Ein strukturierter und transparenter Arbeitsprozess für optimale Ergebnisse", 
+    "process_steps": [
+        {
+            "title": "Entdeckung & Planung", 
+            "description": "Verstehen Ihrer Geschäftsbedürfnisse und Planung der besten Lösungen"
+        }, 
+        {
+            "title": "Design & Prototyp", 
+            "description": "Erstellung von Design-Mockups und Prototypen zur Konzeptvalidierung"
+        }, 
+        {
+            "title": "Entwicklung", 
+            "description": "Implementierung mit modernster Technologie und Best Practices"
+        }, 
+        {
+            "title": "Testen & Start", 
+            "description": "Umfassende Qualitätssicherung und Bereitstellung in der Produktion"
+        }
+    ], 
+    "review_title": ["Was", "Unsere Kunden Sagen"], 
+    "review_description": "Die Zufriedenheit der Kunden hat für uns oberste Priorität", 
+    "review_testimonials": [
+        {
+            "content": "Die erstellte Website ist sehr professionell und die Ladegeschwindigkeit ist unglaublich schnell. Das Team ist sehr reaktionsschnell und versteht unsere Geschäftsbedürfnisse."
+        },
+        {
+            "content": "Die entwickelte mobile Anwendung ist sehr benutzerfreundlich und hat unser Kundenengagement um 300% erhöht. Sehr zu empfehlen!"
+        },
+        {
+            "content": "Modernes und funktionales UI/UX-Design. Die Konversionsrate unseres Online-Shops hat sich nach dem Redesign erheblich erhöht."
+        },
+        {
+            "content": "Ein robustes und skalierbares Backend-System. Es kann hohen Traffic ohne Probleme bewältigen. Ausgezeichnete Arbeit!"
+        }
+    ], 
+    "feature_title": ["Warum", "Uns Wählen?"], 
+    "feature_description": "Die Vorteile, die uns von anderen abheben", 
+    "feature_features": [
+        {
+          "title": "Schnell & Effizient",
+          "description": "Schnelle Ausführung ohne Kompromisse bei der Qualität unter Verwendung der agilen Entwicklungsmethodik."
+        },
+        {
+          "title": "Sicher & Zuverlässig",
+          "description": "Sicherheit auf Unternehmensniveau mit 24/7 Backup und Überwachung"
+        },
+        {
+          "title": "Engagierter Support",
+          "description": "Reaktionsschnelles Support-Team und regelmäßige Wartung für optimale Leistung"
+        },
+        {
+          "title": "Datengetrieben",
+          "description": "Datengetriebene und analytische Lösungen zur Optimierung der Unternehmensleistung"
+        },
+        {
+          "title": "Skalierbare Lösungen",
+          "description": "Architektur, die mit Ihrem Unternehmen wachsen kann"
+        },
+        {
+          "title": "Zielorientiert",
+          "description": "Fokus auf die Erreichung messbarer Geschäftsziele"
+        }
+    ], 
+    "card_title": "Bereit, Ihr Geschäft zu Transformieren?", 
+    "card_description": "Lassen Sie uns Ihre digitalen Ideen mit unserem Expertenteam zum Leben erwecken. Holen Sie sich eine kostenlose Beratung, um Ihre Projektbedürfnisse zu besprechen.", 
+    "card_main_cta": "Starten Sie Ihr Projekt", 
+    "card_secondary_cta": "Rufen Sie Uns Jetzt An"
+}

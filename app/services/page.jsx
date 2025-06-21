@@ -45,6 +45,7 @@ import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Services = () => {
+  const { currentLocale, setCurrentLocale, translations } = useLocale();
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [formData, setFormData] = useState({
@@ -70,15 +71,15 @@ const Services = () => {
     {
       id: "web",
       icon: <Globe className="w-8 h-8" />,
-      title: "Web Development",
-      subtitle: "Modern & Responsive Websites",
+      title: `${translations.content_services?.[0].title}`,
+      subtitle: `${translations.content_services?.[0].subtitle}`, 
       description:
-        "Membangun website modern dengan teknologi terdepan seperti React, Next.js, dan Node.js. Fokus pada performa dan user experience yang optimal.",
+        `${translations.content_services?.[0].description}`, 
       features: [
-        "Responsive Design untuk semua device",
-        "Fast Loading dengan Core Web Vitals",
-        "Progressive Web App (PWA)",
-        "E-commerce Solutions",
+        `${translations.content_services?.[0].features?.[0]}`, 
+        `${translations.content_services?.[0].features?.[1]}`, 
+        `${translations.content_services?.[0].features?.[2]}`, 
+        `${translations.content_services?.[0].features?.[3]}`, 
       ],
       technologies: [
         "React",
@@ -88,24 +89,24 @@ const Services = () => {
         "SQL",
         "Tailwind CSS",
       ],
-      price: "Mulai dari Rp 500.000",
-      duration: "2-4 minggu",
+      price: `${translations.content_services?.[0].price}`, 
+      duration: `${translations.content_services?.[0].duration}`, 
       image:
         "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg",
     },
     {
       id: "mobile",
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile App Development",
-      subtitle: "iOS & Android Applications",
+      title: `${translations.content_services?.[1].title}`,
+      subtitle: `${translations.content_services?.[1].subtitle}`, 
       description:
-        "Mengembangkan aplikasi mobile native dan cross-platform yang user-friendly dengan performa tinggi dan fitur-fitur canggih.",
+        `${translations.content_services?.[1].description}`, 
       features: [
-        "Android Development",
-        "UI/UX Design yang Intuitive",
-        "Push Notifications",
-        "Offline Functionality",
-        "App Store Optimization",
+        `${translations.content_services?.[1].features?.[0]}`, 
+        `${translations.content_services?.[1].features?.[1]}`, 
+        `${translations.content_services?.[1].features?.[2]}`, 
+        `${translations.content_services?.[1].features?.[3]}`, 
+        `${translations.content_services?.[1].features?.[4]}`, 
       ],
       technologies: [
         // "React Native",
@@ -115,46 +116,46 @@ const Services = () => {
         "Firebase",
         "Flutter",
       ],
-      price: "Mulai dari Rp 500.000",
-      duration: "6-12 minggu",
+      price: `${translations.content_services?.[1].price}`, 
+      duration: `${translations.content_services?.[1].duration}`, 
       image:
         "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg",
     },
     {
       id: "design",
       icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      subtitle: "Beautiful & Functional Designs",
+      title: `${translations.content_services?.[2].title}`,
+      subtitle: `${translations.content_services?.[2].subtitle}`, 
       description:
-        "Menciptakan desain yang tidak hanya indah secara visual tetapi juga fungsional dan memberikan pengalaman pengguna yang luar biasa.",
+        `${translations.content_services?.[1].description}`, 
       features: [
-        "User Research & Analysis",
-        "Wireframing & Prototyping",
-        "Visual Design & Branding",
-        "Usability Testing",
-        "Design System Creation",
-        "Responsive Design Guidelines",
+        `${translations.content_services?.[2].features?.[0]}`, 
+        `${translations.content_services?.[2].features?.[1]}`, 
+        `${translations.content_services?.[2].features?.[2]}`, 
+        `${translations.content_services?.[2].features?.[3]}`, 
+        `${translations.content_services?.[2].features?.[4]}`, 
+        `${translations.content_services?.[2].features?.[5]}`, 
       ],
       technologies: ["Figma"],
-      price: "Mulai dari Rp 500.000",
-      duration: "1-3 minggu",
+      price: `${translations.content_services?.[2].price}`, 
+      duration: `${translations.content_services?.[2].duration}`, 
       image:
         "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg",
     },
     {
       id: "backend",
       icon: <Database className="w-8 h-8" />,
-      title: "Backend Development",
-      subtitle: "Scalable Server Solutions",
+      title: `${translations.content_services?.[3].title}`,
+      subtitle: `${translations.content_services?.[3].subtitle}`, 
       description:
-        "Membangun backend yang robust, scalable, dan secure untuk mendukung aplikasi web dan mobile dengan performa tinggi.",
+        `${translations.content_services?.[3].description}`, 
       features: [
-        "RESTful API Development",
-        "GraphQL Implementation",
-        "Database Design & Optimization",
-        "Authentication & Authorization",
-        "Microservices Architecture",
-        "Real-time Features",
+        `${translations.content_services?.[3].features?.[0]}`, 
+        `${translations.content_services?.[3].features?.[1]}`, 
+        `${translations.content_services?.[3].features?.[2]}`, 
+        `${translations.content_services?.[3].features?.[3]}`, 
+        `${translations.content_services?.[3].features?.[4]}`, 
+        `${translations.content_services?.[3].features?.[5]}`, 
       ],
       technologies: [
         "Node.js",
@@ -164,8 +165,8 @@ const Services = () => {
         "PostgreSQL",
         "Laravel",
       ],
-      price: "Mulai dari Rp 1.000.000",
-      duration: "3-6 minggu",
+      price: `${translations.content_services?.[3].price}`, 
+      duration: `${translations.content_services?.[3].duration}`, 
       image:
         "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg",
     },
@@ -228,7 +229,7 @@ const Services = () => {
       name: "Budi Santoso",
       position: "CEO, Tech Startup",
       content:
-        "Website yang dibuat sangat profesional dan loading speednya luar biasa cepat. Tim sangat responsif dan memahami kebutuhan bisnis kami.",
+        `${translations.review_testimonials?.[0].content}`, 
       rating: 5,
       avatar: "/api/placeholder/60/60",
     },
@@ -236,7 +237,7 @@ const Services = () => {
       name: "Sari Indrawati",
       position: "Marketing Director",
       content:
-        "Aplikasi mobile yang dikembangkan sangat user-friendly dan meningkatkan engagement customer kami hingga 300%. Highly recommended!",
+        `${translations.review_testimonials?.[1].content}`, 
       rating: 5,
       avatar: "/api/placeholder/60/60",
     },
@@ -244,7 +245,7 @@ const Services = () => {
       name: "Ahmad Rahman",
       position: "Founder, E-commerce",
       content:
-        "Desain UI/UX yang modern dan fungsional. Conversion rate toko online kami meningkat signifikan setelah redesign.",
+        `${translations.review_testimonials?.[2].content}`, 
       rating: 5,
       avatar: "/api/placeholder/60/60",
     },
@@ -252,7 +253,7 @@ const Services = () => {
       name: "Linda Kusuma",
       position: "CTO, Fintech",
       content:
-        "Backend system yang robust dan scalable. Mampu handle traffic tinggi tanpa masalah. Excellent work!",
+        `${translations.review_testimonials?.[3].content}`, 
       rating: 5,
       avatar: "/api/placeholder/60/60",
     },
@@ -284,27 +285,30 @@ const Services = () => {
   const processSteps = [
     {
       step: 1,
-      title: "Discovery & Planning",
+      title: `${translations.process_steps?.[0].title}`,
       description:
-        "Memahami kebutuhan bisnis Anda dan merencanakan solusi terbaik",
+        `${translations.process_steps?.[0].description}`,
       icon: <Lightbulb className="w-6 h-6" />,
     },
     {
       step: 2,
-      title: "Design & Prototype",
-      description: "Membuat design mockup dan prototype untuk validasi konsep",
+      title: `${translations.process_steps?.[1].title}`,
+      description:
+        `${translations.process_steps?.[1].description}`,
       icon: <Palette className="w-6 h-6" />,
     },
     {
       step: 3,
-      title: "Development",
-      description: "Implementasi dengan teknologi terdepan dan best practices",
+      title: `${translations.process_steps?.[2].title}`,
+      description:
+        `${translations.process_steps?.[2].description}`,
       icon: <Code className="w-6 h-6" />,
     },
     {
       step: 4,
-      title: "Testing & Launch",
-      description: "Quality assurance menyeluruh dan deployment ke production",
+      title: `${translations.process_steps?.[3].title}`,
+      description:
+        `${translations.process_steps?.[3].description}`,
       icon: <Rocket className="w-6 h-6" />,
     },
   ];
@@ -374,8 +378,6 @@ const Services = () => {
       transition: { duration: 0.2 },
     },
   };
-
-  const { currentLocale, setCurrentLocale, translations } = useLocale();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isServiceHovered, setIsServiceHovered] = useState(false);
@@ -469,15 +471,13 @@ const Services = () => {
         <div className="max-w-7xl mx-auto text-center">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium mb-4">
-              Our Services
+              {translations.hero_information}
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Explore Our <span className="text-green-400">Services</span>
+              {translations.hero_title?.[0]} <span className="text-green-400">{translations.hero_title?.[1]}</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Digital transformation starts here. We provide leading technology
-              solutions to grow your business through powerful websites, mobile
-              applications, and systems.
+              {translations.hero_description}
             </p>
           </motion.div>
 
@@ -596,7 +596,7 @@ const Services = () => {
 
                         <div className="mb-8">
                           <h4 className="text-xl font-semibold text-white mb-4">
-                            Key Features:
+                            {translations.content_feature_label}{":"}
                           </h4>
                           <div className="grid sm:grid-cols-2 gap-3">
                             {service.features.map((feature, index) => (
@@ -619,7 +619,7 @@ const Services = () => {
 
                         <div className="mb-8">
                           <h4 className="text-xl font-semibold text-white mb-4">
-                            Technologies:
+                            {translations.content_technology_label}{":"}
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {service.technologies.map((tech, index) => (
@@ -642,7 +642,7 @@ const Services = () => {
                         <div className="grid sm:grid-cols-2 gap-6 mb-8">
                           <div className="bg-slate-700 p-4 rounded-xl">
                             <div className="text-lime-400 font-semibold mb-1">
-                              Starting Price
+                              {translations.content_price_label}
                             </div>
                             <div className="text-white text-lg">
                               {service.price}
@@ -650,7 +650,7 @@ const Services = () => {
                           </div>
                           <div className="bg-slate-700 p-4 rounded-xl">
                             <div className="text-lime-400 font-semibold mb-1">
-                              Timeline
+                              {translations.content_duration_label}
                             </div>
                             <div className="text-white text-lg">
                               {service.duration}
@@ -664,7 +664,7 @@ const Services = () => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          <span>Order This Service</span>
+                          <span>{translations.content_main_cta}</span>
                           <ArrowRight className="w-5 h-5" />
                         </motion.button>
                       </div>
@@ -717,14 +717,13 @@ const Services = () => {
               className="text-4xl md:text-5xl font-bold text-white mb-6"
               variants={itemVariants}
             >
-              Our <span className="text-lime-400">Process</span>
+              {translations.process_title?.[0]} <span className="text-lime-400">{translations.process_title?.[1]}</span>
             </motion.h2>
             <motion.p
               className="text-xl text-gray-300 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              Proses kerja yang terstruktur dan transparan untuk hasil yang
-              optimal
+              {translations.process_description}
             </motion.p>
           </motion.div>
 
@@ -799,13 +798,13 @@ const Services = () => {
               className="text-4xl md:text-5xl font-bold text-white mb-6"
               variants={itemVariants}
             >
-              What Our <span className="text-lime-400">Clients Say</span>
+              {translations.review_title?.[0]} <span className="text-lime-400">{translations.review_title?.[1]}</span>
             </motion.h2>
             <motion.p
               className="text-xl text-gray-300 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              Kepuasan client adalah prioritas utama kami
+              {translations.review_title}
             </motion.p>
           </motion.div>
 
@@ -892,13 +891,13 @@ const Services = () => {
               className="text-4xl md:text-5xl font-bold text-white mb-6"
               variants={itemVariants}
             >
-              Why Choose <span className="text-lime-400">Us?</span>
+              {translations.feature_title?.[0]} <span className="text-lime-400">{translations.feature_title?.[1]}</span>
             </motion.h2>
             <motion.p
               className="text-xl text-gray-300 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              Keunggulan yang membedakan kami dari yang lain
+              {translations.feature_description}
             </motion.p>
           </motion.div>
 
@@ -906,39 +905,39 @@ const Services = () => {
             {[
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: "Fast & Efficient",
+                title: `${translations.feature_features?.[0].title}`,
                 description:
-                  "Pengerjaan cepat tanpa mengurangi kualitas dengan metodologi agile development",
+                  `${translations.feature_features?.[0].description}`,
               },
               {
                 icon: <Shield className="w-8 h-8" />,
-                title: "Secure & Reliable",
+                title: `${translations.feature_features?.[1].title}`,
                 description:
-                  "Keamanan tingkat enterprise dengan backup dan monitoring 24/7",
+                  `${translations.feature_features?.[1].description}`,
               },
               {
                 icon: <HeartHandshake className="w-8 h-8" />,
-                title: "Dedicated Support",
+                title: `${translations.feature_features?.[2].title}`,
                 description:
-                  "Tim support yang responsif dan maintenance berkala untuk performa optimal",
+                  `${translations.feature_features?.[2].description}`,
               },
               {
                 icon: <BarChart3 className="w-8 h-8" />,
-                title: "Data-Driven",
+                title: `${translations.feature_features?.[3].title}`,
                 description:
-                  "Solusi berbasis data dan analytics untuk optimasi performa bisnis",
+                  `${translations.feature_features?.[3].description}`,
               },
               {
                 icon: <Rocket className="w-8 h-8" />,
-                title: "Scalable Solutions",
+                title: `${translations.feature_features?.[4].title}`,
                 description:
-                  "Arsitektur yang dapat berkembang seiring pertumbuhan bisnis Anda",
+                  `${translations.feature_features?.[4].description}`,
               },
               {
                 icon: <Target className="w-8 h-8" />,
-                title: "Goal Oriented",
+                title: `${translations.feature_features?.[5].title}`,
                 description:
-                  "Fokus pada pencapaian target bisnis dengan ROI yang terukur",
+                  `${translations.feature_features?.[5].description}`,
               },
             ].map((item, index) => (
               <motion.div
@@ -984,7 +983,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Ready to Transform Your Business?
+            {translations.card_title}
           </motion.h2>
 
           <motion.p
@@ -994,8 +993,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Mari wujudkan ide digital Anda bersama tim expert kami. Konsultasi
-            gratis untuk diskusi kebutuhan project Anda.
+            {translations.card_description}
           </motion.p>
 
           <motion.div
@@ -1012,7 +1010,7 @@ const Services = () => {
               whileTap={{ scale: 0.95 }}
             >
               <MessageSquare className="w-5 h-5" />
-              <span>Start Your Project</span>
+              <span>{translations.card_main_cta}</span>
             </motion.button>
 
             <motion.a
@@ -1022,7 +1020,7 @@ const Services = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-5 h-5" />
-              <span>Call Us Now</span>
+              <span>{translations.card_secondary_cta}</span>
             </motion.a>
           </motion.div>
         </div>
@@ -1077,10 +1075,10 @@ const Services = () => {
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <h2 className="text-3xl font-bold text-white mb-2">
-                      Let's work together
+                      {translations.form_title}
                     </h2>
                     <p className="text-gray-400">
-                      Please fill out the form below to contact me.
+                      {translations.form_description}
                     </p>
                   </div>
                   <motion.button
@@ -1104,7 +1102,7 @@ const Services = () => {
                       <input
                         type="text"
                         name="firstname"
-                        placeholder="Firstname"
+                        placeholder={translations.form_firstname_placeholder}
                         value={formData.firstname}
                         onChange={handleInputChange}
                         className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
@@ -1120,7 +1118,7 @@ const Services = () => {
                       <input
                         type="text"
                         name="lastname"
-                        placeholder="Lastname"
+                        placeholder={translations.form_lastname_placeholder}
                         value={formData.lastname}
                         onChange={handleInputChange}
                         className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
@@ -1138,7 +1136,7 @@ const Services = () => {
                       <input
                         type="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder={translations.form_email_placeholder}
                         value={formData.email}
                         onChange={handleInputChange}
                         className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
@@ -1154,7 +1152,7 @@ const Services = () => {
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="Phone"
+                        placeholder={translations.form_phone_placeholder}
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
@@ -1176,7 +1174,7 @@ const Services = () => {
                         className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white appearance-none focus:outline-none focus:border-lime-400 transition-colors duration-300"
                         required
                       >
-                        <option value="">Select a service</option>
+                        <option value="">{translations.form_service_placeholder}</option>
                         {services.map((service) => (
                           <option key={service.id} value={service.title}>
                             {service.title}
@@ -1194,7 +1192,7 @@ const Services = () => {
                   >
                     <textarea
                       name="message"
-                      placeholder="Type your message here"
+                      placeholder={translations.form_message_placeholder}
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={6}
@@ -1213,7 +1211,7 @@ const Services = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <MessageSquare className="w-5 h-5" />
-                    <span>Send Message</span>
+                    <span>{translations.form_main_cta}</span>
                   </motion.button>
                 </form>
               </div>

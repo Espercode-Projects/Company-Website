@@ -1,0 +1,146 @@
+{
+    "hero_information": "我们的服务", 
+    "hero_title": ["探索我们的", "服务"], 
+    "hero_description": "数字化转型从这里开始。我们提供先进的技术解决方案，通过强大的网站、移动应用程序和系统来推动业务增长。", 
+    "content_services": [
+        {
+            "title": "网站开发",
+            "subtitle": "现代与响应式网站",
+            "description": "使用React、Next.js和Node.js等尖端技术构建现代网站。专注于最佳性能和用户体验。",
+            "features": [
+                "适用于所有设备的响应式设计",
+                "通过Core Web Vitals实现快速加载",
+                "渐进式Web应用（PWA）",
+                "电子商务解决方案"
+            ],
+            "price": "起价Rp 500,000",
+            "duration": "2-4周"
+        },
+        {
+            "title": "移动应用开发",
+            "subtitle": "Android应用程序",
+            "description": "开发用户友好的原生移动应用程序，具有高性能和先进功能。",
+            "features": [
+                "Android开发",
+                "直观的UI/UX设计",
+                "推送通知",
+                "离线功能",
+                "应用商店优化"
+            ],
+            "price": "起价Rp 500,000",
+            "duration": "6-12周"
+        },
+        {
+            "title": "UI/UX设计",
+            "subtitle": "美丽与功能兼具的设计",
+            "description": "创建不仅视觉美观而且功能强大的设计，提供卓越的用户体验。",
+            "features": [
+                "用户研究与分析",
+                "线框图与原型设计",
+                "视觉设计与品牌建设",
+                "可用性测试",
+                "设计系统创建",
+                "响应式设计指南"
+            ],
+            "price": "起价Rp 500,000",
+            "duration": "1-3周"
+        },
+        {
+            "title": "后端开发",
+            "subtitle": "可扩展的服务器解决方案",
+            "description": "构建强大、可扩展和安全的后端，以支持高性能的Web和移动应用程序。",
+            "features": [
+                "RESTful API开发",
+                "GraphQL实现",
+                "数据库设计与优化",
+                "身份验证与授权",
+                "微服务架构",
+                "实时功能"
+            ],
+            "price": "起价Rp 1,000,000",
+            "duration": "3-6周"
+        }
+    ], 
+    "content_feature_label": "主要特点",
+    "content_technology_label": "技术",
+    "content_price_label": "起始价格",
+    "content_duration_label": "时间表", 
+    "content_main_cta": "订购此服务",
+    "form_title": "让我们一起合作",
+    "form_description": "请填写以下表格与我们联系。",
+    "form_firstname_placeholder": "名字",
+    "form_lastname_placeholder": "姓氏",
+    "form_email_placeholder": "电子邮件",
+    "form_phone_placeholder": "电话",
+    "form_service_placeholder": "选择服务",
+    "form_message_placeholder": "在此输入您的信息",
+    "form_main_cta": "发送信息", 
+    "process_title": ["我们的", "流程"], 
+    "process_description": "结构化透明的工作流程以获得最佳结果", 
+    "process_steps": [
+        {
+            "title": "发现与规划", 
+            "description": "理解业务需求并规划最佳解决方案"
+        }, 
+        {
+            "title": "设计与原型", 
+            "description": "创建设计模型和原型以验证概念"
+        }, 
+        {
+            "title": "开发", 
+            "description": "使用最新技术和最佳实践进行实施"
+        }, 
+        {
+            "title": "测试与上线", 
+            "description": "全面的质量保证和生产环境的部署"
+        }
+    ], 
+    "review_title": ["我们的", "客户说"], 
+    "review_description": "客户满意是我们的首要任务", 
+    "review_testimonials": [
+        {
+            "content": "创建的网站非常专业，加载速度极快。团队反应非常迅速，理解我们的业务需求。"
+        },
+        {
+            "content": "开发的移动应用程序非常用户友好，客户参与度提高了300%。强烈推荐！"
+        },
+        {
+            "content": "现代且功能齐全的UI/UX设计。我们在线商店的转化率在重新设计后显著提高。"
+        },
+        {
+            "content": "一个强大且可扩展的后端系统。它可以处理高流量而没有任何问题。出色的工作！"
+        }
+    ], 
+    "feature_title": ["为什么选择", "我们？"], 
+    "feature_description": "使我们与众不同的优势", 
+    "feature_features": [
+        {
+          "title": "快速高效",
+          "description": "采用敏捷开发方法快速执行而不妥协质量。"
+        },
+        {
+          "title": "安全可靠",
+          "description": "企业级安全，提供24/7的备份和监控"
+        },
+        {
+          "title": "专属支持",
+          "description": "快速的支持团队和定期维护以确保最佳性能"
+        },
+        {
+          "title": "数据驱动",
+          "description": "数据驱动和分析解决方案以优化业务表现"
+        },
+        {
+          "title": "可扩展解决方案",
+          "description": "能够与业务共同成长的架构"
+        },
+        {
+          "title": "目标导向",
+          "description": "专注于实现可衡量的业务目标"
+        }
+    ], 
+    "card_title": "准备好改变您的业务了吗？", 
+    "card_description": "与我们的专业团队一起实现数字化创意。请进行免费咨询以讨论项目需求。", 
+    "card_main_cta": "开始项目", 
+    "card_secondary_cta": "立即致电我们"
+}

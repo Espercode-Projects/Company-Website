@@ -168,20 +168,19 @@ const Contact = () => {
               className="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium mb-6"
               variants={itemVariants}
             >
-              Contact Us
+              {translations.hero_information}
             </motion.span>
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
               variants={itemVariants}
             >
-              Get In <span className="text-green-500">Touch</span>
+              {translations.hero_title?.[0]} <span className="text-green-500">{translations.hero_title?.[1]}</span>
             </motion.h1>
             <motion.p
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Siap untuk memulai proyek digital Anda? Mari berkolaborasi dan
-              wujudkan ide-ide inovatif menjadi solusi teknologi terdepan.
+              {translations.hero_description}
             </motion.p>
           </motion.div>
         </div>
@@ -200,13 +199,11 @@ const Contact = () => {
             <motion.div className="space-y-8" variants={itemVariants}>
               <div>
                 <h2 className="text-3xl font-bold text-white mb-6">
-                  Let's Start a{" "}
-                  <span className="text-green-500">Conversation</span>
+                  {translations.contact_title?.[0]}{" "}
+                  <span className="text-green-500">{translations.contact_title?.[1]}</span>
                 </h2>
                 <p className="text-gray-300 text-lg mb-8">
-                  Kami selalu siap mendengarkan ide-ide brilian Anda. Hubungi
-                  kami melalui berbagai cara di bawah ini untuk memulai diskusi
-                  tentang proyek impian Anda.
+                  {translations.contact_description}
                 </p>
               </div>
 
@@ -223,11 +220,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-1">
-                        Email
+                        {translations.contact_email_title}
                       </h3>
                       <p className="text-gray-300">espercode.main@gmail.com</p>
                       <p className="text-gray-400 text-sm mt-1">
-                        We'll respond within 24 hours
+                        {translations.contact_email_description}
                       </p>
                     </div>
                   </div>
@@ -244,11 +241,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-1">
-                        Phone
+                        {translations.contact_phone_title}
                       </h3>
                       <p className="text-gray-300">(+62) 812-2657-7201</p>
                       <p className="text-gray-400 text-sm mt-1">
-                        Mon-Fri 9AM-6PM WIB
+                        {translations.contact_phone_description}
                       </p>
                     </div>
                   </div>
@@ -265,9 +262,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-1">
-                        Location
+                        {translations.contact_location_title}
                       </h3>
-                      <p className="text-gray-300">Sidoarjo Regency, East Java</p>
+                      <p className="text-gray-300">{translations.contact_location_content}</p>
                       <p className="text-gray-400 text-sm mt-1">Indonesia</p>
                     </div>
                   </div>
@@ -309,14 +306,14 @@ const Contact = () => {
               variants={cardVariants}
             >
               <h3 className="text-2xl font-bold text-white mb-6">
-                Send us a Message
+                {translations.form_title}
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Full Name
+                      {translations.form_name_label}
                     </label>
                     <input
                       type="text"
@@ -324,13 +321,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Your full name"
+                      placeholder={translations.form_name_placeholder}
                       required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Email Address
+                      {translations.form_email_label}
                     </label>
                     <input
                       type="email"
@@ -338,7 +335,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
-                      placeholder="your@email.com"
+                      placeholder={translations.form_email_placeholder}
                       required
                     />
                   </div>
@@ -346,7 +343,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
+                    {translations.form_subject_label}
                   </label>
                   <input
                     type="text"
@@ -354,14 +351,14 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Project discussion"
+                    placeholder={translations.form_subject_placeholder}
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    {translations.form_message_label}
                   </label>
                   <textarea
                     name="message"
@@ -369,7 +366,7 @@ const Contact = () => {
                     onChange={handleChange}
                     rows={6}
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Tell us about your project..."
+                    placeholder={translations.form_message_placeholder}
                     required
                   />
                 </div>
@@ -381,7 +378,7 @@ const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Send className="w-5 h-5" />
-                  <span>Send Message</span>
+                  <span>{translations.form_main_cta}</span>
                 </motion.button>
               </form>
             </motion.div>

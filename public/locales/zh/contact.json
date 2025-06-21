@@ -1,0 +1,23 @@
+{
+    "hero_information": "联系我们",
+    "hero_title": ["与我们", "联系"],
+    "hero_description": "准备好开始您的数字项目了吗？让我们合作，将创新的想法转化为领先的技术解决方案。",
+    "contact_title": ["让我们", "开始对话"],
+    "contact_description": "我们始终准备倾听您的精彩想法。请通过以下多种方式与我们联系，开始讨论您的梦想项目。",
+    "contact_email_title": "电子邮件",
+    "contact_email_description": "我们将在24小时内回复",
+    "contact_phone_title": "电话",
+    "contact_phone_description": "周一至周五 9AM-6PM WIB",
+    "contact_location_title": "位置",
+    "contact_location_content": "东爪哇省西多拉尔乔县",
+    "form_title": "给我们发送消息",
+    "form_name_label": "全名",
+    "form_name_placeholder": "您的全名",
+    "form_email_label": "电子邮件地址",
+    "form_email_placeholder": "your@email.com",
+    "form_subject_label": "主题",
+    "form_subject_placeholder": "项目讨论",
+    "form_message_label": "消息",
+    "form_message_placeholder": "告诉我们关于您的项目...",
+    "form_main_cta": "发送消息"
+}
