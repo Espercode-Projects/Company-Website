@@ -45,9 +45,10 @@ export default function ClientRootLayout({children}) {
       break;
     }
 
-    let filename = path ? path : 'common'
-
+    
     useEffect(() => {
+      let filename = path ? path : 'common'
+
       const fetchHeaders = () => {
         fetch(`/locales/${parsedLocale}/headers.json`)
         .then((res) => {
@@ -93,7 +94,7 @@ export default function ClientRootLayout({children}) {
       fetchHeaders()
       fetchContents()
       fetchFooters()
-    }, [currentLocale]);
+    }, [currentLocale, path]);
 
     return (
         <LocaleContext.Provider value={{ currentLocale, setCurrentLocale, headers, translations, footers }}>
