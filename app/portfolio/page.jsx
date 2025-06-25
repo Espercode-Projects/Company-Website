@@ -900,6 +900,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold transition-all duration-200 shadow-lg shadow-green-500/25"
+              onClick={() => {window.open("https://wa.me/+6281226577201")}}
             >
               {translations.card_main_cta}
             </motion.button>
@@ -907,6 +908,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-full font-semibold transition-all duration-200"
+              onClick={() => {window.location.href = "/services"}}
             >
               {translations.card_secondary_cta}
             </motion.button>

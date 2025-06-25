@@ -68,6 +68,7 @@
     "content_main_cta": "Diesen Service bestellen",
     "form_title": "Lass uns zusammenarbeiten",
     "form_description": "Bitte füllen Sie das untenstehende Formular aus, um uns zu kontaktieren.",
+    "form_name_label": "Vollständiger Name",
     "form_firstname_placeholder": "Vorname",
     "form_lastname_placeholder": "Nachname",
     "form_email_placeholder": "E-Mail",

@@ -80,8 +80,21 @@ const Footer = () => {
       label: "Instagram",
     },
   ];
-
-  const pages = footers.footer_pages_nav || ["About Us", "Portfolio", "FAQs"];
+  
+  const pages = [
+    {
+      page: `${footers.footer_pages_nav?.[0]}`, 
+      href: "/about"
+    }, 
+    {
+      page: `${footers.footer_pages_nav?.[1]}`, 
+      href: "/portfolio"
+    }, 
+    {
+      page: `${footers.footer_pages_nav?.[2]}`, 
+      href: "#"
+    }
+  ]
 
   return (
     <motion.footer
@@ -131,10 +144,10 @@ const Footer = () => {
               {footers?.footer_title?.[0]}
             </h3>
             <ul className="space-y-4">
-              {pages.map((page, index) => (
-                <motion.li key={page}>
+              {pages.map(({page, href}, index) => (
+                <motion.li key={index}>
                   <motion.a
-                    href="#"
+                    href={href}
                     className="text-gray-300 hover:text-lime-400 transition-colors duration-300 block"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
@@ -152,7 +165,7 @@ const Footer = () => {
               {footers.footer_title?.[1]}
             </h3>
             <div className="space-y-4">
-              {socialIcons.map(({ Icon, label }, index) => (
+              {socialIcons.map(({ Icon, label, href }, index) => (
                 <motion.div key={label} className="flex items-center space-x-3">
                   <motion.div
                     className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center"
@@ -162,7 +175,7 @@ const Footer = () => {
                     <Icon className="text-gray-900 text-sm" />
                   </motion.div>
                   <motion.a
-                    href="#"
+                    href={href}
                     className="text-gray-300 hover:text-lime-400 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >

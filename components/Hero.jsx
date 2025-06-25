@@ -508,6 +508,7 @@ const HeroContent = ({ mousePosition, currentTextIndex }) => {
             textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
           }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => {window.location.href = "/portfolio"}}
         >
           <motion.div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="relative z-10">

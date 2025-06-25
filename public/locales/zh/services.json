@@ -68,6 +68,7 @@
     "content_main_cta": "订购此服务",
     "form_title": "让我们一起合作",
     "form_description": "请填写以下表格与我们联系。",
+    "form_name_placeholder": "您的全名",
     "form_firstname_placeholder": "名字",
     "form_lastname_placeholder": "姓氏",
     "form_email_placeholder": "电子邮件",

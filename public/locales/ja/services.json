@@ -68,6 +68,7 @@
     "content_main_cta": "このサービスを注文する",
     "form_title": "一緒に働きましょう",
     "form_description": "以下のフォームにご記入いただき、私たちにご連絡ください。",
+    "form_name_placeholder": "あなたのフルネーム",
     "form_firstname_placeholder": "名",
     "form_lastname_placeholder": "姓",
     "form_email_placeholder": "メールアドレス",

@@ -236,14 +236,14 @@ const Service = () => {
           </motion.h2>
         </motion.div>
 
-        <Link
+        <motion.a
           variants={itemVariants}
           href={"/services"}
           className="w-fit bg-transparent border-2 border-lime-400 text-lime-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-lime-400 hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 mx-auto group"
         >
           <span>{translations.service_main_cta}</span>
           <motion.span className="text-xl">⚡</motion.span>
-        </Link>
+        </motion.a>
       </motion.div>
 
       {/* Services Grid/Carousel */}
@@ -386,6 +386,7 @@ const Service = () => {
                   whileHover={{ scale: 1.05, x: 5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`self-start bg-${service.accentColor} text-gray-900 px-6 py-3 rounded-full font-bold text-sm flex items-center space-x-2 shadow-lg group/btn`}
+                  onClick={() => {window.location.href = "/services"}}
                 >
                   <span>{translations.service_secondary_cta}</span>
                   <motion.span

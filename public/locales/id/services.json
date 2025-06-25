@@ -68,6 +68,7 @@
     "content_main_cta": "Pesan Layanan Ini",
     "form_title": "Mari bekerja bersama",
     "form_description": "Silakan isi formulir di bawah ini untuk menghubungi kami.",
+    "form_name_placeholder": "Nama Lengkap",
     "form_firstname_placeholder": "Nama Depan",
     "form_lastname_placeholder": "Nama Belakang",
     "form_email_placeholder": "Email",

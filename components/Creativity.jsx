@@ -147,7 +147,7 @@ const WhoWeAre = () => {
               className="text-5xl md:text-6xl font-bold mb-6"
               
             >
-              <span className="text-white">{translations.creativity_title?.[0]}{""}</span>
+              <span className="text-white">{translations.creativity_title?.[0]}{" "}</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
                 {translations.creativity_title?.[1]}
               </span>
@@ -288,10 +288,7 @@ const WhoWeAre = () => {
                 boxShadow: "0 20px 40px -10px rgba(16, 185, 129, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                // Navigate to projects page
-                console.log("Navigate to projects page");
-              }}
+              onClick={() => {window.location.href = "/portfolio"}}
             >
               {/* Button Background Animation */}
               <motion.div

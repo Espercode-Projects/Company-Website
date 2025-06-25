@@ -68,6 +68,7 @@
     "content_main_cta": "Order This Service", 
     "form_title": "Let's work together", 
     "form_description": "Please fill out the form below to contact us.", 
+    "form_name_placeholder": "Full Name", 
     "form_firstname_placeholder": "Firstname", 
     "form_lastname_placeholder": "Lastname", 
     "form_email_placeholder": "Email", 

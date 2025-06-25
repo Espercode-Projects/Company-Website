@@ -323,21 +323,38 @@ const Services = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    // console.log("Form submitted:", formData);
     // Handle form submission here
-    alert(
-      "Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda."
-    );
+    window.open(`https://wa.me/+6281226577201?text=${generateMessage(formData)}`)
     setIsContactOpen(false);
     setFormData({
-      firstname: "",
-      lastname: "",
+      name: "", 
       email: "",
       phone: "",
       service: "",
       message: "",
     });
   };
+
+  const generateMessage = (formData) => {
+    let greeting = "Selamat "
+    const options = {
+        timeZone: "Asia/Jakarta",
+        hour: "numeric",
+        hour12: false
+    };
+    const hours = parseInt(new Date().toLocaleString("en-US", options))
+    if (hours >= 3 && hours < 11) {
+        greeting += "Pagi";
+    } else if (hours >= 11 && hours < 15) {
+        greeting += "Siang";
+    } else if (hours >= 16 && hours < 18) {
+        greeting += "Sore";
+    } else {
+        greeting += "Malam";
+    }
+    return encodeURIComponent(`Halo, ${greeting}. Saya ${formData.name} ingin bicara lebih lanjut tentang ${formData.service}, \n\n\"${formData.message}\"\n\nBerikut kontak saya yang bisa dihubungi: \nEmail: ${formData.email}\nNomor Telepon: ${formData.phone}`)
+  }
 
   const openContactModal = (serviceTitle = "") => {
     setSelectedService(serviceTitle);
@@ -835,11 +852,11 @@ const Services = () => {
                   </blockquote>
 
                   <div className="flex items-center justify-center space-x-4">
-                    <img
+                    {/* <img
                       src={testimonials[currentTestimonial].avatar}
                       alt={testimonials[currentTestimonial].name}
                       className="w-16 h-16 rounded-full object-cover"
-                    />
+                    /> */}
                     <div className="text-left">
                       <div className="text-white font-semibold text-lg">
                         {testimonials[currentTestimonial].name}
@@ -1093,39 +1110,21 @@ const Services = () => {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                      <input
-                        type="text"
-                        name="firstname"
-                        placeholder={translations.form_firstname_placeholder}
-                        value={formData.firstname}
-                        onChange={handleInputChange}
-                        className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
-                        required
-                      />
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                      <input
-                        type="text"
-                        name="lastname"
-                        placeholder={translations.form_lastname_placeholder}
-                        value={formData.lastname}
-                        onChange={handleInputChange}
-                        className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
-                        required
-                      />
-                    </motion.div>
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder={translations.form_name_placeholder}
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-lime-400 transition-colors duration-300"
+                      required
+                    />
+                  </motion.div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div

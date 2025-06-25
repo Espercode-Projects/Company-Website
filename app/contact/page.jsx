@@ -36,8 +36,35 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", formData);
+    // console.log("Form submitted:", formData);
+    window.open(`https://wa.me/+6281226577201?text=${generateMessage(formData)}`)
+    setFormData({
+      name: "", 
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
+
+  const generateMessage = (formData) => {
+    let greeting = "Selamat "
+    const options = {
+        timeZone: "Asia/Jakarta",
+        hour: "numeric",
+        hour12: false
+    };
+    const hours = parseInt(new Date().toLocaleString("en-US", options))
+    if (hours >= 3 && hours < 11) {
+        greeting += "Pagi";
+    } else if (hours >= 11 && hours < 15) {
+        greeting += "Siang";
+    } else if (hours >= 16 && hours < 18) {
+        greeting += "Sore";
+    } else {
+        greeting += "Malam";
+    }
+    return encodeURIComponent(`Halo, ${greeting}. Saya ${formData.name} ingin bicara tentang ${formData.subject}, \n\n\"${formData.message}\"\n\nBerikut email saya yang bisa dihubungi: ${formData.email}`)
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
