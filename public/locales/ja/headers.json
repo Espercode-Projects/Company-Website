@@ -3,6 +3,12 @@
   "nav_home": "ホーム", 
   "nav_about": "私たちについて", 
   "nav_service": "私たちのサービス", 
+  "nav_services": [
+    "ウェブ開発", 
+    "モバイルアプリ開発", 
+    "UI/UXデザイン", 
+     "バックエンド開発" 
+  ], 
   "nav_portofolio": "ポートフォリオ", 
   "nav_contact": "お問い合わせ", 
   "lang_select": "言語を選択"

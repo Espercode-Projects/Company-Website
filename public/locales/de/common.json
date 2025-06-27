@@ -34,14 +34,17 @@
   "creativity_projects": [
     {
       "title": "Zphere Social", 
+      "category": "Webentwicklung", 
       "description": "Web-Soziale Medien zum Teilen von Fotos/Videos und für Kauf- oder"
     }, 
     {
       "title": "Flowise", 
+      "category": "Mobile Entwicklung", 
       "description": "Mobile Anwendung zur Aufzeichnung von Transaktionen und zur Verfolgung von Finanzen."
     }, 
     {
       "title": "Voice Chat Translator", 
+      "category": "Webentwicklung", 
       "description": "Ermöglichung der sprachübergreifenden Kommunikation durch virtuelle Räume."
     }
   ], 
@@ -53,12 +56,15 @@
   "team_skills_label": "Fähigkeiten & Expertise", 
   "team_members": [
     {
+      "role": "Pengembang Frontend", 
       "bio": "Erfahrener Digitalmarketer, der sich auf die Erstellung wirkungsvoller Social-Media-Kampagnen auf Facebook, Instagram und WhatsApp konzentriert. Versiert im Umgang mit Canva zur Gestaltung ansprechender Inhalte, die die Markenbekanntheit und die Interaktion mit dem Publikum steigern."
     }, 
     {
+      "role": "Backend-Entwickler", 
       "bio": "Backend-Entwickler, der in der Erstellung robuster APIs und serverseitiger Systeme erfahren ist."
     }, 
     {
+      "role": "Frontend-Entwickler", 
       "bio": "Frontend-Entwickler, der sich auf die Erstellung schneller und responsiver Weboberflächen spezialisiert hat."
     }
   ], 

@@ -34,14 +34,17 @@
   "creativity_projects": [
     {
       "title": "Zphere Social", 
+      "category": "Web Development", 
       "description": "Web social media for sharing photos/videos and buying or selling transactions."
     }, 
     {
       "title": "FloWise", 
+      "category": "Mobile Development", 
       "description": "Mobile application for recording transactions and tracking finances."
     }, 
     {
       "title": "Voice Chat Translator", 
+      "category": "Web Development", 
       "description": "Facilitating cross-language communication through virtual spaces."
     }
   ], 
@@ -53,12 +56,15 @@
   "team_skills_label": "Skills & Expertise", 
   "team_members": [
     {
+      "role": "Digital Marketing", 
       "bio": "Experienced digital marketer focused on creating impactful social media campaigns across Facebook, Instagram, and WhatsApp. Skilled in using Canva to design engaging content that boosts brand visibility and audience interaction."
     }, 
     {
+      "role": "Backend Developer", 
       "bio": "Backend developer skilled in building robust APIs and server-side systems."
     }, 
     {
+      "role": "Frontend Developer", 
       "bio": "Frontend developer focused on building fast and responsive web interfaces."
     }
   ], 

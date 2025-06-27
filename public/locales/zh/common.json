@@ -34,14 +34,17 @@
   "creativity_projects": [
     {
       "title": "Zphere Social", 
+      "category": "ウェブ開発", 
       "description": "用于分享照片/视频以及买卖交易的网络社交媒体"
     }, 
     {
       "title": "Flowise", 
+      "category": "移动端开发", 
       "description": "用于记录交易和跟踪财务的移动应用程序"
     }, 
     {
       "title": "Voice Chat Translator", 
+      "category": "ウェブ開発", 
       "description": "通过虚拟空间促进跨语言沟通"
     }
   ], 
@@ -53,12 +56,15 @@
   "team_skills_label": "技能与专长", 
   "team_members": [
     {
+      "role": "数字营销", 
       "bio": "经验丰富的数字营销人员，专注于在Facebook、Instagram和WhatsApp上创建有影响力的社交媒体活动。擅长使用Canva设计引人入胜的内容，以提升品牌知名度和观众互动。"
     }, 
     {
+      "role": "后端开发者", 
       "bio": "擅长构建强大API和服务器端系统的后端开发人员。"
     }, 
     {
+      "role": "前端开发者", 
       "bio": "注于构建快速且响应式网页界面的前端开发人员。"
     }
   ], 

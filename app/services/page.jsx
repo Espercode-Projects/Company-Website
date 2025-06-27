@@ -67,6 +67,25 @@ const Services = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const categories = [
+    {
+      id: "web", 
+      label: ""
+    }, 
+    {
+      id: "mobile", 
+      label: ""
+    }, 
+    {
+      id: "design", 
+      label: ""
+    }, 
+    {
+      id: "backend", 
+      label: ""
+    }
+  ]
+
   const services = [
     {
       id: "web",

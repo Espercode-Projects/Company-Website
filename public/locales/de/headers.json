@@ -3,6 +3,12 @@
   "nav_home": "STARTSEITE", 
   "nav_about": "ÜBER UNS", 
   "nav_service": "UNSERE DIENSTLEISTUNGEN", 
+  "nav_services": [
+    "Webentwicklung", 
+    "Mobile App Entwicklung", 
+    "UI/UX Design", 
+    "Backend-Entwicklung"
+  ], 
   "nav_portofolio": "PORTFOLIO", 
   "nav_contact": "KONTAKT", 
   "lang_select": "Sprache auswählen"

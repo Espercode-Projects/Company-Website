@@ -3,6 +3,12 @@
   "nav_home": "HOME", 
   "nav_about": "ABOUT", 
   "nav_service": "OUR SERVICES", 
+  "nav_services": [
+    "Web Development", 
+    "Mobile App Development", 
+    "UI/UX Design", 
+    "Backend Development"
+  ], 
   "nav_portofolio": "PORTFOLIO", 
   "nav_contact": "CONTACT", 
   "lang_select": "Select Language"

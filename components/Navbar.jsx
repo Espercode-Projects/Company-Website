@@ -31,10 +31,10 @@ export const Navbar = ({
   };
 
   const services = [
-    { name: "Web Development", id: "web", icon: FaCode },
-    { name: "Mobile App Development", id: "mobile", icon: FaMobile },
-    { name: "UI/UX Design", id: "design", icon: FaPalette },
-    { name: "Backend Development", id: "backend", icon: FaDatabase },
+    { name: `${headers.nav_services?.[0]}`, id: "web", icon: FaCode },
+    { name: `${headers.nav_services?.[1]}`, id: "mobile", icon: FaMobile },
+    { name: `${headers.nav_services?.[2]}`, id: "design", icon: FaPalette },
+    { name: `${headers.nav_services?.[3]}`, id: "backend", icon: FaDatabase },
   ];
 
   const languages = [

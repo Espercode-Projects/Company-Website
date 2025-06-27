@@ -12,7 +12,7 @@
     "content_detail_label": "Project Details", 
     "content_detail_overview_label": "Project Overview", 
     "content_detail_technology_label": "Technologies Used", 
-    "content_detail_challenge_label": "Result Achieved", 
+    "content_detail_challenge_label": "Key Challenges", 
     "content_detail_result_label": "Result Achieved", 
     "content_detail_timeline_label": "Timeline", 
     "content_detail_team_label": "Team Size", 
@@ -25,28 +25,25 @@
             "description": "Web social media for sharing photos/videos and buying or selling transactions.", 
             "full_description": "A web-based social media platform that allows users to share their photos and videos. It includes common features found in social media, such as a homepage, explore section, and the ability to add friends. Additionally, there is a marketplace that can be used for buying and selling within this web application.", 
             "features": [
-                "Payment Gateway",
-                "Real-time Inventory",
-                "Admin Dashboard", 
-                "Mobile Responsive",
-                "Multi-language Support",
-                "Analytics Dashboard",
-                "Email Notifications",
-                "Product Reviews System"
+                "Social Media Sharing", 
+                "Product Reviews System", 
+                "Modern Design", 
+                "Responsive Design", 
+                "Email Notifications"
             ], 
             "timeline": "3 months", 
-            "team_size": "4 developers", 
+            "team_size": "3 developers", 
             "challenges": [
-                "Integrating multiple payment gateways",
-                "Real-time inventory synchronization",
+                "Implementing secure user authentication", 
                 "Optimizing database queries for large product catalogs",
-                "Implementing secure user authentication"
+                "Consistent experiences across devices", 
+                "Balancing trends and usability"
             ],
             "results": [
-                "40% increase in conversion rate",
-                "60% reduction in page load time",
-                "99.9% uptime achieved",
-                "500+ concurrent users supported"
+                "Boosted user engagement", 
+                "Increase trust and conversions", 
+                "Enhanced user satisfaction", 
+                "Improve accessibility and retention"
             ]
         }, 
         {
@@ -54,28 +51,25 @@
             "description": "Car rental app for booking vehicles and managing rental payments.", 
             "full_description": "A mobile application used for renting vehicles. Users can easily browse and book cars available for rent. There is also a feature to track rental history and view available vehicles in different locations. The application includes payment integration for seamless transactions.", 
             "features": [
-                "Biometric Login",
-                "QR Payment",
-                "Investment Portfolio",
-                "Bill Payment",
-                "Fund Transfer",
-                "Transaction History",
-                "Budgeting Tools",
-                "Customer Support Chat"
+                "Property Listings", 
+                "Product Reviews System", 
+                "Transaction History", 
+                "Role-Based Permissions", 
+                "Email Notifications"
             ], 
             "timeline": "3 months", 
-            "team_size": "4 developers", 
+            "team_size": "3 developers", 
             "challenges": [
-                "Implementing bank-grade security measures",
-                "Ensuring cross-platform compatibility",
-                "Optimizing performance for low-end devices",
-                "Meeting regulatory compliance requirements"
+                "Managing a large volume of listings", 
+                "Ensuring review authenticity", 
+                "Maintaining accurate records", 
+                "Implementing secure access control"
             ],
             "results": [
-                "200,000+ downloads in first month",
-                "4.8/5 app store rating",
-                "Zero security breaches",
-                "30% reduction in customer support tickets"
+                "Streamlined search and navigation for users", 
+                "Boosted credibility and user trust", 
+                "Enhance transparency and user confidence", 
+                "Improve security and user management"
             ]
         }, 
         {
@@ -83,28 +77,25 @@
             "description": "Mobile application for recording transactions and tracking finances.", 
             "full_description": "A mobile application used for tracking incoming and outgoing money. Users can easily record any transactions they have made. There is also a reporting feature to understand how a user manages their finances over a certain period.", 
             "features": [
-                "Modern Design",
-                "SEO Optimized",
-                "Performance Boost",
-                "Brand Consistency",
-                "Responsive Design",
-                "Content Management System",
-                "Multi-language Support",
-                "Analytics Integration"
+                "Budgeting Tools", 
+                "Transaction History", 
+                "Report Dashboard", 
+                "Export Report Data", 
+                "Email Notifications"
             ], 
-            "timeline": "2 months", 
-            "team_size": "3 designers", 
+            "timeline": "3 months", 
+            "team_size": "3 developers", 
             "challenges": [
-                "Balancing modern design with brand heritage",
-                "Improving site speed without compromising visuals",
-                "Creating intuitive navigation for complex content",
-                "Ensuring accessibility compliance"
+                "Creating intuitive financial planning interfaces", 
+                "Proccessing and displaying transactions data", 
+                "Visualizing financial data simply", 
+                "Supporting export format securely"
             ],
             "results": [
-                "75% increase in organic traffic",
-                "50% reduction in bounce rate",
-                "90+ PageSpeed Insights score",
-                "25% increase in lead generation"
+                "Users achieved better financial controls and savings", 
+                "Provide complete financial transparency for users", 
+                "Enabled quick financial insights and decision=making", 
+                "Gave users flexible financial record management"
             ]
         }
     ], 

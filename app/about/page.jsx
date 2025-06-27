@@ -218,6 +218,7 @@ const About = () => {
     `${translations.achievement_achievements?.[1]}`,
     `${translations.achievement_achievements?.[2]}`,
     `${translations.achievement_achievements?.[3]}`, 
+    `${translations.achievement_achievements?.[4]}`, 
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

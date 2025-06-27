@@ -90,7 +90,7 @@ const TeamCard = () => {
     {
       id: 1,
       name: "Adi Firmansyah",
-      role: "Digital Marketing",
+      role: `${translations.team_members?.[0].role}`, 
       image: "/img/adi_profile.avif",
       skills: ["Facebook", "Instagram", "Whatsapp", "Canva"],
       bio: `${translations.team_members?.[0].bio}`,
@@ -99,7 +99,7 @@ const TeamCard = () => {
     {
       id: 2,
       name: "Rifal Ali Fahri",
-      role: "Backend Developer",
+      role: `${translations.team_members?.[1].role}`, 
       image: "/img/rifal_profile.avif",
       skills: ["PHP", "Java", "Kotlin", "Python"],
       bio: `${translations.team_members?.[1].bio}`,
@@ -108,7 +108,7 @@ const TeamCard = () => {
     {
       id: 3,
       name: "Nando Abdillah Salam",
-      role: "Frontend Developer",
+      role: `${translations.team_members?.[2].role}`, 
       image: "/img/nando_profile.avif",
       skills: ["React", "NextJs", "Tailwinds", "PHP"],
       bio: `${translations.team_members?.[2].bio}`,
@@ -117,7 +117,7 @@ const TeamCard = () => {
   ];
 
   const stats = [
-    { number: "6+", label: `${translations.team_stats_label?.[0]}` },
+    { number: "5+", label: `${translations.team_stats_label?.[0]}` },
     { number: "3+", label: `${translations.team_stats_label?.[1]}` },
     { number: "4+", label: `${translations.team_stats_label?.[2]}` },
   ];

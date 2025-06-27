@@ -23,28 +23,28 @@ const WhoWeAre = () => {
     {
       id: 1,
       title: "Zphere Social ",
-      category: "Web Development",
+      category: `${translations.creativity_projects?.[0].category}`, 
       description: `${translations.creativity_projects?.[0].description}`,
       image: "/img/zphere.png",
-      tech: ["React", "Node.js", "AI/ML"],
+      tech: ["React", "Laravel", "MySQL"],
       status: "Completed"
     },
     {
       id: 2,
       title: "Flowise",
-      category: "Mobile Development",
+      category: `${translations.creativity_projects?.[1].category}`, 
       description: `${translations.creativity_projects?.[1].description}`,
       image: "/img/flowise.png",
-      tech: ["React Native", "Blockchain", "Security"],
+      tech: ["React", "Laravel", "MySQL"],
       status: "Completed"
     },
     {
       id: 3,
       title: "Voice Chat Translator",
-      category: "Web Development & AI/ML",
+      category: `${translations.creativity_projects?.[2].category}`, 
       description: `${translations.creativity_projects?.[2].description}`,
       image: "/img/call.png",
-      tech: ["Python", "TensorFlow", "Healthcare"],
+      tech: ["React", "Node.js", "Python"],
       status: "In Progress"
     }
   ];

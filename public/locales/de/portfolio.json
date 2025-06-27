@@ -12,7 +12,7 @@
     "content_detail_label": "Projekt Details", 
     "content_detail_overview_label": "Projektübersicht", 
     "content_detail_technology_label": "Verwendete Technologien", 
-    "content_detail_challenge_label": "Erzieltes Ergebnis", 
+    "content_detail_challenge_label": "Hauptherausforderungen", 
     "content_detail_result_label": "Erzieltes Ergebnis", 
     "content_detail_timeline_label": "Zeitplan", 
     "content_detail_team_label": "Teamgröße", 
@@ -25,28 +25,25 @@
             "description": "Web soziale Medien zum Teilen von Fotos/Videos und für Kauf- oder Verkaufstransaktionen.", 
             "full_description": "Eine webbasierte Social-Media-Plattform, die es Benutzern ermöglicht, ihre Fotos und Videos zu teilen. Sie umfasst gängige Funktionen, die in sozialen Medien zu finden sind, wie eine Startseite, einen Erkundungsbereich und die Möglichkeit, Freunde hinzuzufügen. Darüber hinaus gibt es einen Marktplatz, der für den Kauf und Verkauf innerhalb dieser Webanwendung genutzt werden kann.", 
             "features": [
-                "Zahlungsgateway",
-                "Echtzeit-Inventar",
-                "Admin-Dashboard", 
-                "Mobil responsiv",
-                "Mehrsprachige Unterstützung",
-                "Analytik-Dashboard",
-                "E-Mail-Benachrichtigungen",
-                "Produktbewertungssystem"
+                "Soziale Medien Teilen",
+                "Produktbewertungssystem",
+                "Modernes Design",
+                "Responsives Design",
+                "E-Mail-Benachrichtigungen"
             ], 
             "timeline": "3 Monate", 
-            "team_size": "4 Entwickler", 
+            "team_size": "3 Entwickler", 
             "challenges": [
-                "Integration mehrerer Zahlungsgateways",
-                "Echtzeit-Inventarsynchronisation",
+                "Implementierung einer sicheren Benutzeranmeldung",
                 "Optimierung von Datenbankabfragen für große Produktkataloge",
-                "Implementierung einer sicheren Benutzerautorisierung"
+                "Konsistente Erfahrungen über Geräte hinweg",
+                "Balance zwischen Trends und Benutzerfreundlichkeit"
             ],
             "results": [
-                "40% Steigerung der Konversionsrate",
-                "60% Reduzierung der Ladezeit der Seite",
-                "99,9% Betriebszeit erreicht",
-                "500+ gleichzeitige Benutzer unterstützt"
+                "Steigerung des Benutzerengagements",
+                "Erhöhung von Vertrauen und Konversionen",
+                "Verbesserte Benutzerzufriedenheit",
+                "Verbesserung der Zugänglichkeit und Bindung"
             ]
         }, 
         {
@@ -54,28 +51,25 @@
             "description": "Autovermietungs-App zum Buchen von Fahrzeugen und Verwalten von Mietzahlungen.", 
             "full_description": "Eine mobile Anwendung zur Anmietung von Fahrzeugen. Benutzer können einfach die verfügbaren Autos durchsuchen und buchen. Es gibt auch eine Funktion, um die Miethistorie zu verfolgen und verfügbare Fahrzeuge an verschiedenen Standorten anzuzeigen. Die Anwendung umfasst eine Zahlungsintegration für nahtlose Transaktionen.", 
             "features": [
-                "Biometrische Anmeldung",
-                "QR-Zahlung",
-                "Investitionsportfolio",
-                "Rechnungszahlung",
-                "Geldüberweisung",
+                "Immobilienangebote",
+                "Produktbewertungssystem",
                 "Transaktionshistorie",
-                "Budgetierungstools",
-                "Kunden-Support-Chat"
+                "Rollenbasierte Berechtigungen",
+                "E-Mail-Benachrichtigungen"
             ], 
             "timeline": "3 Monate", 
-            "team_size": "4 Entwickler", 
+            "team_size": "3 Entwickler", 
             "challenges": [
-                "Implementierung von Sicherheitsmaßnahmen auf Bankniveau",
-                "Sicherstellung der plattformübergreifenden Kompatibilität",
-                "Optimierung der Leistung für Geräte mit niedriger Leistung",
-                "Einhaltung der regulatorischen Anforderungen"
+                "Verwaltung eines großen Volumens an Angeboten",
+                "Sicherstellung der Authentizität von Bewertungen",
+                "Führung genauer Aufzeichnungen",
+                "Implementierung einer sicheren Zugriffskontrolle"
             ],
             "results": [
-                "200.000+ Downloads im ersten Monat",
-                "4,8/5 App-Store-Bewertung",
-                "Keine Sicherheitsverletzungen",
-                "30% Reduzierung der Supportanfragen"
+                "Optimierung der Suche und Navigation für Benutzer",
+                "Steigerung der Glaubwürdigkeit und des Benutzervertrauens",
+                "Erhöhung der Transparenz und des Benutzervertrauens",
+                "Verbesserung der Sicherheit und Benutzerverwaltung"
             ]
         }, 
         {
@@ -83,28 +77,25 @@
             "description": "Mobile Anwendung zur Aufzeichnung von Transaktionen und zur Verfolgung von Finanzen.", 
             "full_description": "Eine mobile Anwendung zur Verfolgung von Einnahmen und Ausgaben. Benutzer können einfach alle Transaktionen aufzeichnen, die sie getätigt haben. Es gibt auch eine Reporting-Funktion, um zu verstehen, wie ein Benutzer seine Finanzen über einen bestimmten Zeitraum verwaltet.", 
             "features": [
-                "Modernes Design",
-                "SEO-optimiert",
-                "Leistungssteigerung",
-                "Markenkonsistenz",
-                "Responsives Design",
-                "Content-Management-System",
-                "Mehrsprachige Unterstützung",
-                "Analytik-Integration"
+                "Budgetierungstools",
+                "Transaktionshistorie",
+                "Berichtsdashboard",
+                "Berichtsdaten exportieren",
+                "E-Mail-Benachrichtigungen"
             ], 
             "timeline": "2 Monate", 
-            "team_size": "3 Designer", 
+            "team_size": "3 Entwickler", 
             "challenges": [
-                "Moderne Gestaltung mit Markenherkunft in Einklang bringen",
-                "Verbesserung der Seitenladegeschwindigkeit ohne Kompromisse bei der visuellen Gestaltung",
-                "Intuitive Navigation für komplexe Inhalte schaffen",
-                "Einhaltung der Barrierefreiheitsanforderungen"
+                "Erstellung intuitiver Finanzplanungsoberflächen",
+                "Verarbeitung und Anzeige von Transaktionsdaten",
+                "Einfache Visualisierung von Finanzdaten",
+                "Sichere Unterstützung von Exportformaten"
             ],
             "results": [
-                "75% Steigerung des organischen Verkehrs",
-                "50% Reduzierung der Absprungrate",
-                "90+ PageSpeed Insights Punktzahl",
-                "25% Steigerung der Lead-Generierung"
+                "Benutzer erreichten bessere finanzielle Kontrolle und Einsparungen",
+                "Vollständige finanzielle Transparenz für Benutzer bereitstellen",
+                "Schnelle finanzielle Einblicke und Entscheidungsfindung ermöglichen",
+                "Benutzern flexible Verwaltung finanzieller Aufzeichnungen bieten"
             ]
         }
     ], 

@@ -26,15 +26,15 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: `${translations?.content_projects?.[0]?.title}` || 'Abc',
+      title: `${translations?.content_projects?.[0]?.title}`,
       description:
         `${translations.content_projects?.[0].description}`,
       fullDescription:
         `${translations.content_projects?.[0].full_description}`,
       image: "/api/placeholder/400/300",
       category: "web-development",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      client: "TechStore Indonesia",
+      tags: ["React", "Laravel", "MySQL"],
+      client: "",
       year: "2024",
       status: "completed",
       link: "https://techstore.example.com",
@@ -44,11 +44,8 @@ const Portfolio = () => {
         `${translations.content_projects?.[0].features?.[2]}`, 
         `${translations.content_projects?.[0].features?.[3]}`, 
         `${translations.content_projects?.[0].features?.[4]}`, 
-        `${translations.content_projects?.[0].features?.[5]}`, 
-        `${translations.content_projects?.[0].features?.[6]}`, 
-        `${translations.content_projects?.[0].features?.[7]}`, 
       ],
-      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe API", "Socket.io", "JWT Authentication", "Cloudinary"],
+      technologies: ["React", "Node.js", "MySQL", "Laravel", "Socket.io", "JWT Authentication", "Cloudinary"],
       timeline: `${translations.content_projects?.[0].timeline}`,
       teamSize: `${translations.content_projects?.[0].team_size}`, 
       challenges: [
@@ -74,12 +71,11 @@ const Portfolio = () => {
       image: "/api/placeholder/400/300",
       category: "mobile-app-development",
       tags: [
-        "React Native",
-        "Firebase",
-        "Biometric Auth",
-        "Push Notifications",
+        "Kotlin",
+        "Laravel",
+        "MySQL",
       ],
-      client: "Bank Digital Nusantara",
+      client: "",
       year: "2024",
       status: "completed",
       link: "#",
@@ -89,11 +85,8 @@ const Portfolio = () => {
         `${translations.content_projects?.[1].features?.[2]}`, 
         `${translations.content_projects?.[1].features?.[3]}`, 
         `${translations.content_projects?.[1].features?.[4]}`, 
-        `${translations.content_projects?.[1].features?.[5]}`, 
-        `${translations.content_projects?.[1].features?.[6]}`, 
-        `${translations.content_projects?.[1].features?.[7]}`, 
       ],
-      technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "Redis", "JWT", "Biometric SDK", "Push Notifications"],
+      technologies: ["Android Studio", "Kotlin", "Laravel", "MySQL", "Firebase", "JWT Authentication"],
       timeline: `${translations.content_projects?.[1].timeline}`,
       teamSize: `${translations.content_projects?.[1].team_size}`, 
       challenges: [
@@ -117,9 +110,9 @@ const Portfolio = () => {
       fullDescription:
         `${translations.content_projects?.[2].full_description}`,
       image: "/api/placeholder/400/300",
-      category: "ui-ux-design",
-      tags: ["Figma", "Adobe XD", "User Research", "Prototyping"],
-      client: "PT Maju Bersama",
+      category: "mobile-app-development",
+      tags: ["Kotlin", "Laravel", "MySQL"],
+      client: "",
       year: "2024",
       status: "completed",
       link: "https://majubersama.example.com",
@@ -129,11 +122,8 @@ const Portfolio = () => {
         `${translations.content_projects?.[2].features?.[2]}`, 
         `${translations.content_projects?.[2].features?.[3]}`, 
         `${translations.content_projects?.[2].features?.[4]}`, 
-        `${translations.content_projects?.[2].features?.[5]}`, 
-        `${translations.content_projects?.[2].features?.[6]}`, 
-        `${translations.content_projects?.[2].features?.[7]}`, 
       ],
-      technologies: ["Figma", "Adobe XD", "HTML5", "CSS3", "JavaScript", "WordPress", "Google Analytics", "Search Console"],
+      technologies: ["Android Studio", "Kotlin", "Laravel", "MySQL", "JWT Authentication"],
       timeline: `${translations.content_projects?.[2].timeline}`,
       teamSize: `${translations.content_projects?.[2].team_size}`, 
       challenges: [
@@ -203,7 +193,21 @@ const Portfolio = () => {
       prevProjectsRef.current = projects;
     }
     setIsLoading(false)
-  }, [projects, activeFilter]);
+  }, [projects]);
+
+  useEffect(() => {
+    setIsLoading(true)
+    if (prevProjectsRef.current !== undefined) {
+      if (activeFilter == "all") {
+        setFilteredProjects(prevProjectsRef.current)
+      } else {
+        setFilteredProjects(
+          prevProjectsRef.current.filter((project) => project.category === activeFilter)
+        )
+      }
+    }
+    setIsLoading(false)
+  }, [activeFilter])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -407,7 +411,15 @@ const Portfolio = () => {
                     {selectedProject.title}
                   </h2>
                   <p className="text-green-400 text-sm">
-                    {selectedProject.client} • {selectedProject.year}
+                    {selectedProject.client ? (
+                      <>
+                        {selectedProject.client} • {selectedProject.year}
+                      </>
+                    ) : (
+                      <>
+                        {selectedProject.year}
+                      </>
+                    )}
                   </p>
                 </div>
                 <motion.button
@@ -510,10 +522,12 @@ const Portfolio = () => {
                     <div className="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30">
                       <h3 className="text-lg font-bold text-white mb-4">{translations.content_detail_label}</h3>
                       <div className="space-y-4">
-                        <div>
-                          <p className="text-sm text-gray-400 mb-1">{translations.content_client_label}</p>
-                          <p className="text-white font-medium">{selectedProject.client}</p>
-                        </div>
+                        {selectedProject.client && (
+                          <div>
+                            <p className="text-sm text-gray-400 mb-1">{translations.content_client_label}</p>
+                            <p className="text-white font-medium">{selectedProject.client}</p>
+                          </div>
+                        )}
                         <div>
                           <p className="text-sm text-gray-400 mb-1">{translations.content_detail_timeline_label}</p>
                           <p className="text-white font-medium">{selectedProject.timeline}</p>
@@ -765,12 +779,14 @@ const Portfolio = () => {
                           {project.description}
                         </p>
 
-                        <div className="mb-4">
-                          <p className="text-xs font-medium text-green-400 mb-2">
-                            {translations.content_client_label}{":"}
-                          </p>
-                          <p className="text-sm text-white">{project.client}</p>
-                        </div>
+                        {project.client && (
+                          <div className="mb-4">
+                            <p className="text-xs font-medium text-green-400 mb-2">
+                              {translations.content_client_label}{":"}
+                            </p>
+                            <p className="text-sm text-white">{project.client}</p>
+                          </div>
+                        )}
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2 mb-4">

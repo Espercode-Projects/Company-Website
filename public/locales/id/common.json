@@ -34,14 +34,17 @@
   "creativity_projects": [
     {
       "title": "Zphere Social", 
+      "category": "Pengembangan Web", 
       "description": "Media sosial web untuk berbagi foto/video dan transaksi jual/beli."
     }, 
     {
       "title": "Flowise", 
+      "category": "Pengembangan Mobile", 
       "description": "Aplikasi mobile untuk mencatat transaksi dan melacak keuangan."
     }, 
     {
       "title": "Voice Chat Translator", 
+      "category": "Pengembangan Web", 
       "description": "Memfasilitasi komunikasi lintas bahasa melalui ruang virtual."
     }
   ], 
@@ -53,12 +56,15 @@
   "team_skills_label": "Keahlian & Kompetensi", 
   "team_members": [
     {
+      "role": "Pemasaran Digital", 
       "bio": "Pemasar digital berpengalaman yang fokus pada pembuatan kampanye media sosial yang berdampak di Facebook, Instagram, dan WhatsApp. Terampil dalam menggunakan Canva untuk merancang konten menarik yang meningkatkan visibilitas merek dan interaksi audiens."
     }, 
     {
+      "role": "Pengembang Backend", 
       "bio": "Pengembang backend yang terampil dalam membangun API yang kuat dan sistem sisi server."
     }, 
     {
+      "role": "Pengembang Frontend", 
       "bio": "Pengembang frontend yang fokus membangun antarmuka web yang cepat dan responsif."
     }
   ], 
