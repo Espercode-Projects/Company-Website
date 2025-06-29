@@ -2,6 +2,15 @@
     "hero_information": "私たちのサービス", 
     "hero_title": ["私たちの", "サービスを発見する"], 
     "hero_description": "デジタルトランスフォーメーションはここから始まります。私たちは、強力なウェブサイト、モバイルアプリケーション、システムを通じてビジネスを成長させるための先進的なテクノロジーソリューションを提供します。", 
+    "content_price_prefix": "Rp ", 
+    "content_price_suffix": "から", 
+    "content_duration_suffix": "週間", 
+    "content_categories": [
+        "ウェブ開発", 
+        "モバイルアプリ開発", 
+        "UI/UXデザイン", 
+         "バックエンド開発" 
+    ], 
     "content_services": [
         {
             "title": "ウェブ開発",

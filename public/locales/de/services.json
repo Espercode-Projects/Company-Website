@@ -2,6 +2,14 @@
     "hero_information": "Unsere Dienstleistungen", 
     "hero_title": ["Entdecken Sie", "Unsere Dienstleistungen"], 
     "hero_description": "Die digitale Transformation beginnt hier. Wir bieten führende Technologielösungen, um Ihr Geschäft durch leistungsstarke Websites, mobile Anwendungen und Systeme zu wachsen.", 
+    "content_price_prefix": "Ab Rp ", 
+    "content_duration_suffix": " Wochen", 
+    "content_categories": [
+        "Webentwicklung", 
+        "Mobile App Entwicklung", 
+        "UI/UX Design", 
+        "Backend-Entwicklung"
+    ], 
     "content_services": [
         {
             "title": "Webentwicklung",

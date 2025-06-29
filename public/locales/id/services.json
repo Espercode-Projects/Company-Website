@@ -2,6 +2,14 @@
     "hero_information": "Layanan Kami", 
     "hero_title": ["Jelajahi", "Layanan Kami"], 
     "hero_description": "Transformasi digital dimulai di sini. Kami menyediakan solusi teknologi terdepan untuk mengembangkan bisnis Anda melalui situs web yang kuat, aplikasi mobile, dan sistem.", 
+    "content_price_prefix": "Mulai dari Rp ", 
+    "content_duration_suffix": " minggu", 
+    "content_categories": [
+        "Pengembangan Web", 
+        "Pengembangan Aplikasi Mobile", 
+        "Desain UI/UX", 
+        "Pengembangan Backend"
+    ], 
     "content_services": [
         {
             "title": "Pengembangan Web",

@@ -70,125 +70,534 @@ const Services = () => {
   const categories = [
     {
       id: "web", 
-      label: ""
+      label: `${translations.content_categories?.[0]}`, 
+      icon: <Globe className="w-8 h-8" />, 
     }, 
     {
       id: "mobile", 
-      label: ""
+      label: `${translations.content_categories?.[1]}`, 
+      icon: <Smartphone className="w-8 h-8" />, 
     }, 
     {
       id: "design", 
-      label: ""
+      label: `${translations.content_categories?.[2]}`, 
+      icon: <Palette className="w-8 h-8" />, 
     }, 
     {
       id: "backend", 
-      label: ""
+      label: `${translations.content_categories?.[3]}`, 
+      icon: <Database className="w-8 h-8" />, 
     }
   ]
 
+  const pricePrefix = `${translations?.content_price_prefix}`
+  const priceSuffix = `${translations?.content_price_suffix}`
+  const durationSuffix = `${translations?.content_duration_suffix}`
+
+  const webServices = [
+    {
+      title: "Wedding Invitation Website", 
+      subtitle: "Modern & Romantic Digital Invitation", 
+      description: "Elevate your wedding with our elegant modern websites! Stylish and functional, they beautifully showcase your love story and keep guests informed.", 
+      features: [
+        "Countdown Timers", 
+        "Photo Galleries", 
+        "Map Integrations", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"], 
+      price: "500,000", 
+      duration: "1 - 3", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Landing Page Website", 
+      subtitle: "Simple & Powerful Web Presence for Everyone", 
+      description: "Create an impactful online landing page that showcases your work, ideas, or business effortlessly.", 
+      features: [
+        "Modern Design", 
+        "Product Listings", 
+        "Review System", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"], 
+      price: "500,000", 
+      duration: "2 - 4", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Website Profile", 
+      subtitle: "Digital Identity In One Professional Package", 
+      description: "A comprehensive website profile that tells your unique story, showcases your work, and connects with your audience.", 
+      features: [
+        "Modern Design", 
+        "Portfolio Display", 
+        "Social Media Integration", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"], 
+      price: "500,000", 
+      duration: "2 - 4", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Simple E-Commerce Website", 
+      subtitle: "Streamlined E-Commerce Platform for Modern Businesses", 
+      description: "A streamlined e-commerce solution to launch your online business quickly and efficiently.", 
+      features: [
+        "Product Listing", 
+        "Payment Gateway", 
+        "Review System", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Simple POS System Website", 
+      subtitle: "Streamlined Your Sales With an Easy Web-Based POS", 
+      description: "A lightweight browser-based point-of-sale system accessible from any device.", 
+      features: [
+        "Inventory Monitoring", 
+        "Web-Based Transactions", 
+        "Basic Customer Management", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Event Organizer Website", 
+      subtitle: "Everything You Need to Showcase and Manage Events", 
+      description: "A complete event management solution with built-in scheduling, ticketing, and attendee engagement tools.", 
+      features: [
+        "Scheduling System", 
+        "Ticket & Attendee Management", 
+        "Social Media Integration", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Link-In Bio Website", 
+      subtitle: "One Link for Everything You Share", 
+      description: "A clean, mobile-friendly landing page that consolidates all your important links in one place.", 
+      features: [
+        "Social Media Integration", 
+        "Easy Updates", 
+        "Responsive Design", 
+      ], 
+      technologies: ["Linktree"], 
+      price: "300,000", 
+      duration: "1 - 2", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+    {
+      title: "Fully Custom Website", 
+      subtitle: "Built Exactly How You Imagine It", 
+      description: "A completely tailored web solution designed and developed to meet your unique requirements and branding.", 
+      features: [
+        "Client Based Custom Design", 
+        "Advanced Functionality", 
+        "Modern Design", 
+        "Responsive Design", 
+      ], 
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg", 
+    }, 
+  ]
+
+  const mobileServices = [
+    {
+      title: "Simple POS System Application", 
+      subtitle: "Efficient Sales Handling for Small Businesses", 
+      description: "A lightweight POS app that streamlines transactions and inventory management without complexity.", 
+      features: [
+        "Inventory Monitoring", 
+        "App-Based Transactions", 
+        "Basic Customer Management", 
+        "Friendly Interface", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+    {
+      title: "Employee Presence Application", 
+      subtitle: "Simple and Accurate Workforce Tracking", 
+      description: "A frictionless system to log and verify employee attendance, location, and availability in real time.", 
+      features: [
+        "GPS Location / QR Code Based", 
+        "Clock In / Out Verification", 
+        "Team Presence Dashboard", 
+        "Exportable Timesheets", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+    {
+      title: "Simple Budgeting Tools Application", 
+      subtitle: "Track smarter, Stress Less", 
+      description: "An intuitive app that makes managing your money simpler with visual tools and automatic tracking.", 
+      features: [
+        "Custom Budget Categories", 
+        "Report Dashboard", 
+        "Exportable Data", 
+        "Friendly Interface", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+    {
+      title: "Digital Guest Book Application", 
+      subtitle: "Modern and Elegant Visitor Check-Ins", 
+      description: "Replace paper guest books with a sleek digital solution that captures memories and organizes guest data effortlessly.", 
+      features: [
+        "Check - In Interface", 
+        "Guest List View", 
+        "Customizable Fields", 
+        "Exportable Guest Data", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+    {
+      title: "Simple To-Do List / Agenda Management Application", 
+      subtitle: "Organize Your Day Without the Overwhelm", 
+      description: "A clean, intuitive task manager that helps you focus on what matters, without unnecessary features.", 
+      features: [
+        "Smart Priority Sorting", 
+        "Subtask Breakdowns", 
+        "Progress Tracking", 
+        "Friendly Interface", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "1,000,000", 
+      duration: "3 - 6", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+    {
+      title: "Fully Custom Application", 
+      subtitle: "Built Exactly for Your Unique Workflow", 
+      description: "A tailored digital solution designed from scratch to match your specific operational needs and business logic.", 
+      features: [
+        "Client Based Custom Design", 
+        "Advanced Functionality", 
+        "Modern Design", 
+        "Friendly Interface", 
+      ], 
+      technologies: ["Android Studio", "Kotlin", "Xml", "Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg", 
+    }, 
+  ]
+  
+  const designServices = [
+    {
+      title: "Admin POS Dashboard UI Design", 
+      subtitle: "Powerful and Intuitive Control for Seamless Sales Management", 
+      description: "A sleek and high-performance POS admin dashboard designed to simplify sales tracking, inventory, and analytics in one central hub.", 
+      features: [
+        "Data Display", 
+        "Navigation & Control", 
+        "Light / Dark Mode", 
+        "Responsive Breakpoints", 
+      ], 
+      technologies: ["Figma"], 
+      price: "2,000,000", 
+      duration: "2 - 4", 
+      image: "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg", 
+    }, 
+    {
+      title: "Mobile Application UI Design", 
+      subtitle: "Beautiful and Intuitive Interfaces for Mobile", 
+      description: "Custom mobile app UI designed for usability, brand alignment, and platform-specific best practices.", 
+      features: [
+        "Data Display", 
+        "Navigation & Control", 
+        "Light / Dark Mode", 
+        "Responsive Breakpoints", 
+      ], 
+      technologies: ["Figma"], 
+      price: "1,500,000", 
+      duration: "2 - 4", 
+      image: "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg", 
+    }, 
+    {
+      title: "Existing Application / Website UI Redesign", 
+      subtitle: "Modernize and Elevate Your Digital Experience", 
+      description: "A strategic UI/UX overhaul that retains your product’s core functionality while delivering a fresh, contemporary interface.", 
+      features: [
+        "Data Display", 
+        "Navigation & Control", 
+        "Light / Dark Mode", 
+        "Responsive Breakpoints", 
+      ], 
+      technologies: ["Figma"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg", 
+    }, 
+    {
+      title: "Digital Branding Design Package", 
+      subtitle: "Strategic Visual Identity for the Digital World", 
+      description: "A comprehensive branding solution tailored to help your business stand out across all digital touchpoints.", 
+      features: [
+        "Modern Logo", 
+        "Custom Color Palette", 
+        "Typography System", 
+        "UI Friendly Element", 
+      ], 
+      technologies: ["Figma"], 
+      price: "2,000,000", 
+      duration: "2 - 7", 
+      image: "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg", 
+    }, 
+    {
+      title: "Fully Custom UI Design", 
+      subtitle: "Designed Specifically for Your Product & Users", 
+      description: "Tailored interfaces that align precisely with your brand and functionality needs with thoughtful design.", 
+      features: [
+        "Customer Based Design", 
+        "Advanced Design", 
+        "Light / Dark Mode", 
+        "Responsive Breakpoints", 
+      ], 
+      technologies: ["Figma"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg", 
+    }, 
+  ]
+
+  const backendServices = [
+    {
+      title: "Authentication API", 
+      subtitle: "Secure and Scalable Identity Management for Applications", 
+      description: "A tailored digital solution designed from scratch to match your specific operational needs and business logic.", 
+      features: [
+        "User Authentication", 
+        "Token Management", 
+        "Map Integrations", 
+        "Role-Based Access Control", 
+      ], 
+      technologies: ["Laravel"], 
+      price: "500,000", 
+      duration: "1 - 3", 
+      image: "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg", 
+    }, 
+    {
+      title: "Dynamic Data Backend API", 
+      subtitle: "Flexible Infrastructure for Evolving Data Needs", 
+      description: "A configurable API layer that adapts in real-time to your changing data models and access patterns.", 
+      features: [
+        "CRUD Operation", 
+        "Exportable Timesheets", 
+      ], 
+      technologies: ["Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg", 
+    }, 
+    {
+      title: "Admin Panel Backend", 
+      subtitle: "Powerful Management Interface for Your Web / Application", 
+      description: "A secure, customizable administration system to efficiently manage your platform's data and users.", 
+      features: [
+        "Management Dashboard", 
+        "CRUD Operation", 
+        "Role-Based Access Control", 
+        "Friendly Interface", 
+      ], 
+      technologies: ["React", "Next.js", "Node.js", "Laravel", "Firebase"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg", 
+    }, 
+    {
+      title: "E-Commerce Backend API", 
+      subtitle: "Robust Commerce Infrastructure for Online Stores", 
+      description: "API suite that handles all core e-commerce operations with enterprise-grade", 
+      features: [
+        "Product Listing", 
+        "Payment Gateway", 
+        "Review System", 
+        "User Authentication", 
+      ], 
+      technologies: ["Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg", 
+    }, 
+    {
+      title: "Fully Custom Backend API", 
+      subtitle: "Tailored API Infrastructure Built for Your Exact Requirements", 
+      description: "Bespoke API development that aligns perfectly with your business logic and technical ecosystem.", 
+      features: [
+        "Client Based Custom Endpoint", 
+        "Advanced Functionality", 
+      ], 
+      technologies: ["Laravel"], 
+      price: "3,000,000", 
+      duration: "4 - 12", 
+      image: "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg", 
+    }, 
+  ]
+
   const services = [
-    {
-      id: "web",
-      icon: <Globe className="w-8 h-8" />,
-      title: `${translations.content_services?.[0].title}`,
-      subtitle: `${translations.content_services?.[0].subtitle}`, 
-      description:
-        `${translations.content_services?.[0].description}`, 
-      features: [
-        `${translations.content_services?.[0].features?.[0]}`, 
-        `${translations.content_services?.[0].features?.[1]}`, 
-        `${translations.content_services?.[0].features?.[2]}`, 
-        `${translations.content_services?.[0].features?.[3]}`, 
-      ],
-      technologies: [
-        "React",
-        "Next.js",
-        "Node.js",
-        "Laravel",
-        "SQL",
-        "Tailwind CSS",
-      ],
-      price: `${translations.content_services?.[0].price}`, 
-      duration: `${translations.content_services?.[0].duration}`, 
-      image:
-        "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg",
-    },
-    {
-      id: "mobile",
-      icon: <Smartphone className="w-8 h-8" />,
-      title: `${translations.content_services?.[1].title}`,
-      subtitle: `${translations.content_services?.[1].subtitle}`, 
-      description:
-        `${translations.content_services?.[1].description}`, 
-      features: [
-        `${translations.content_services?.[1].features?.[0]}`, 
-        `${translations.content_services?.[1].features?.[1]}`, 
-        `${translations.content_services?.[1].features?.[2]}`, 
-        `${translations.content_services?.[1].features?.[3]}`, 
-        `${translations.content_services?.[1].features?.[4]}`, 
-      ],
-      technologies: [
-        // "React Native",
-        // "Swift",
-        "Kotlin",
-        "Java",
-        "Firebase",
-        "Flutter",
-      ],
-      price: `${translations.content_services?.[1].price}`, 
-      duration: `${translations.content_services?.[1].duration}`, 
-      image:
-        "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg",
-    },
-    {
-      id: "design",
-      icon: <Palette className="w-8 h-8" />,
-      title: `${translations.content_services?.[2].title}`,
-      subtitle: `${translations.content_services?.[2].subtitle}`, 
-      description:
-        `${translations.content_services?.[1].description}`, 
-      features: [
-        `${translations.content_services?.[2].features?.[0]}`, 
-        `${translations.content_services?.[2].features?.[1]}`, 
-        `${translations.content_services?.[2].features?.[2]}`, 
-        `${translations.content_services?.[2].features?.[3]}`, 
-        `${translations.content_services?.[2].features?.[4]}`, 
-        `${translations.content_services?.[2].features?.[5]}`, 
-      ],
-      technologies: ["Figma"],
-      price: `${translations.content_services?.[2].price}`, 
-      duration: `${translations.content_services?.[2].duration}`, 
-      image:
-        "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg",
-    },
-    {
-      id: "backend",
-      icon: <Database className="w-8 h-8" />,
-      title: `${translations.content_services?.[3].title}`,
-      subtitle: `${translations.content_services?.[3].subtitle}`, 
-      description:
-        `${translations.content_services?.[3].description}`, 
-      features: [
-        `${translations.content_services?.[3].features?.[0]}`, 
-        `${translations.content_services?.[3].features?.[1]}`, 
-        `${translations.content_services?.[3].features?.[2]}`, 
-        `${translations.content_services?.[3].features?.[3]}`, 
-        `${translations.content_services?.[3].features?.[4]}`, 
-        `${translations.content_services?.[3].features?.[5]}`, 
-      ],
-      technologies: [
-        "Node.js",
-        // "Express",
-        "Python",
-        // "Django",
-        "PostgreSQL",
-        "Laravel",
-      ],
-      price: `${translations.content_services?.[3].price}`, 
-      duration: `${translations.content_services?.[3].duration}`, 
-      image:
-        "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg",
-    },
+    ...webServices.map(item => ({
+      ...item, 
+      cat_id: "web", 
+      icon: <Globe className="w-8 h-8" />, 
+      price: (currentLocale !== "jp") ? pricePrefix+item.price : pricePrefix+item.price+priceSuffix, 
+      duration: item.duration+durationSuffix, 
+    })), 
+    
+    ...mobileServices.map(item => ({
+      ...item, 
+      cat_id: "mobile", 
+      icon: <Smartphone className="w-8 h-8" />, 
+      price: (currentLocale !== "jp") ? pricePrefix+item.price : pricePrefix+item.price+priceSuffix, 
+      duration: item.duration+durationSuffix, 
+    })), 
+
+    ...designServices.map(item => ({
+      ...item, 
+      cat_id: "design", 
+      icon: <Palette className="w-8 h-8" />, 
+      price: (currentLocale !== "jp") ? pricePrefix+item.price : pricePrefix+item.price+priceSuffix, 
+      duration: item.duration+durationSuffix, 
+    })), 
+
+    ...backendServices.map(item => ({
+      ...item, 
+      cat_id: "backend", 
+      icon: <Globe className="w-8 h-8" />, 
+      price: (currentLocale !== "jp") ? pricePrefix+item.price : pricePrefix+item.price+priceSuffix, 
+      duration: item.duration+durationSuffix, 
+    }))
+  ]
+
+  // const services = [
+  //   {
+  //     id: "web",
+  //     icon: <Globe className="w-8 h-8" />,
+  //     title: `${translations.content_services?.[0].title}`,
+  //     subtitle: `${translations.content_services?.[0].subtitle}`, 
+  //     description:
+  //       `${translations.content_services?.[0].description}`, 
+  //     features: [
+  //       `${translations.content_services?.[0].features?.[0]}`, 
+  //       `${translations.content_services?.[0].features?.[1]}`, 
+  //       `${translations.content_services?.[0].features?.[2]}`, 
+  //       `${translations.content_services?.[0].features?.[3]}`, 
+  //     ],
+  //     technologies: [
+  //       "React",
+  //       "Next.js",
+  //       "Node.js",
+  //       "Laravel",
+  //       "SQL",
+  //       "Tailwind CSS",
+  //     ],
+  //     price: `${translations.content_services?.[0].price}`, 
+  //     duration: `${translations.content_services?.[0].duration}`, 
+  //     image:
+  //       "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg",
+  //   },
+  //   {
+  //     id: "mobile",
+  //     icon: <Smartphone className="w-8 h-8" />,
+  //     title: `${translations.content_services?.[1].title}`,
+  //     subtitle: `${translations.content_services?.[1].subtitle}`, 
+  //     description:
+  //       `${translations.content_services?.[1].description}`, 
+  //     features: [
+  //       `${translations.content_services?.[1].features?.[0]}`, 
+  //       `${translations.content_services?.[1].features?.[1]}`, 
+  //       `${translations.content_services?.[1].features?.[2]}`, 
+  //       `${translations.content_services?.[1].features?.[3]}`, 
+  //       `${translations.content_services?.[1].features?.[4]}`, 
+  //     ],
+  //     technologies: [
+  //       // "React Native",
+  //       // "Swift",
+  //       "Kotlin",
+  //       "Java",
+  //       "Firebase",
+  //       "Flutter",
+  //     ],
+  //     price: `${translations.content_services?.[1].price}`, 
+  //     duration: `${translations.content_services?.[1].duration}`, 
+  //     image:
+  //       "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg",
+  //   },
+  //   {
+  //     id: "design",
+  //     icon: <Palette className="w-8 h-8" />,
+  //     title: `${translations.content_services?.[2].title}`,
+  //     subtitle: `${translations.content_services?.[2].subtitle}`, 
+  //     description:
+  //       `${translations.content_services?.[1].description}`, 
+  //     features: [
+  //       `${translations.content_services?.[2].features?.[0]}`, 
+  //       `${translations.content_services?.[2].features?.[1]}`, 
+  //       `${translations.content_services?.[2].features?.[2]}`, 
+  //       `${translations.content_services?.[2].features?.[3]}`, 
+  //       `${translations.content_services?.[2].features?.[4]}`, 
+  //       `${translations.content_services?.[2].features?.[5]}`, 
+  //     ],
+  //     technologies: ["Figma"],
+  //     price: `${translations.content_services?.[2].price}`, 
+  //     duration: `${translations.content_services?.[2].duration}`, 
+  //     image:
+  //       "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg",
+  //   },
+  //   {
+  //     id: "backend",
+  //     icon: <Database className="w-8 h-8" />,
+  //     title: `${translations.content_services?.[3].title}`,
+  //     subtitle: `${translations.content_services?.[3].subtitle}`, 
+  //     description:
+  //       `${translations.content_services?.[3].description}`, 
+  //     features: [
+  //       `${translations.content_services?.[3].features?.[0]}`, 
+  //       `${translations.content_services?.[3].features?.[1]}`, 
+  //       `${translations.content_services?.[3].features?.[2]}`, 
+  //       `${translations.content_services?.[3].features?.[3]}`, 
+  //       `${translations.content_services?.[3].features?.[4]}`, 
+  //       `${translations.content_services?.[3].features?.[5]}`, 
+  //     ],
+  //     technologies: [
+  //       "Node.js",
+  //       // "Express",
+  //       "Python",
+  //       // "Django",
+  //       "PostgreSQL",
+  //       "Laravel",
+  //     ],
+  //     price: `${translations.content_services?.[3].price}`, 
+  //     duration: `${translations.content_services?.[3].duration}`, 
+  //     image:
+  //       "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg",
+  //   },
     // {
     //   id: "cloud",
     //   icon: <Cloud className="w-8 h-8" />,
@@ -241,7 +650,7 @@ const Services = () => {
     //   duration: "1-2 minggu",
     //   image: "/api/placeholder/600/400",
     // },
-  ];
+  // ];
 
   const testimonials = [
     {
@@ -579,13 +988,13 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {services.map((service) => (
+            {categories.map((category) => (
               <motion.button
-                id={service.id}
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
+                id={category.id}
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${
-                  activeTab === service.id
+                  activeTab === category.id
                     ? "bg-lime-400 text-slate-900"
                     : "bg-slate-700 text-white hover:bg-slate-600"
                 }`}
@@ -593,8 +1002,8 @@ const Services = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {service.icon}
-                <span className="font-medium">{service.title}</span>
+                {category.icon}
+                <span className="font-medium">{category.label}</span>
               </motion.button>
             ))}
           </motion.div>
@@ -602,15 +1011,15 @@ const Services = () => {
           {/* Active Service Detail */}
           <AnimatePresence mode="wait">
             {services.map(
-              (service) =>
-                activeTab === service.id && (
+              (service, index) =>
+                activeTab === service.cat_id && (
                   <motion.div
-                    key={service.id}
+                    key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-slate-800 rounded-3xl p-8 md:p-12"
+                    className="bg-slate-800 rounded-3xl mb-5 p-8 md:p-12"
                   >
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                       <div>
@@ -1193,8 +1602,8 @@ const Services = () => {
                         required
                       >
                         <option value="">{translations.form_service_placeholder}</option>
-                        {services.map((service) => (
-                          <option key={service.id} value={service.title}>
+                        {services.map((service, index) => (
+                          <option key={index} value={service.title}>
                             {service.title}
                           </option>
                         ))}

@@ -2,6 +2,14 @@
     "hero_information": "我们的服务", 
     "hero_title": ["探索我们的", "服务"], 
     "hero_description": "数字化转型从这里开始。我们提供先进的技术解决方案，通过强大的网站、移动应用程序和系统来推动业务增长。", 
+    "content_price_prefix": "起价Rp ", 
+    "content_duration_suffix": "周", 
+    "content_categories": [
+        "网站开发", 
+        "移动应用开发", 
+        "UI/UX设计", 
+        "后端开发" 
+    ], 
     "content_services": [
         {
             "title": "网站开发",

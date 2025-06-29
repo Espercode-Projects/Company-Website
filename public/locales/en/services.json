@@ -2,6 +2,14 @@
     "hero_information": "Our Services", 
     "hero_title": ["Explore Our", "Services"], 
     "hero_description": "Digital transformation starts here. We provide leading technology solutions to grow your business through powerful websites, mobile applications, and systems.", 
+    "content_price_prefix": "Starting from Rp ", 
+    "content_duration_suffix": " weeks", 
+    "content_categories": [
+        "Web Development", 
+        "Mobile App Development", 
+        "UI/UX Design", 
+        "Backend Development"
+    ], 
     "content_services": [
         {
             "title": "Web Development",
