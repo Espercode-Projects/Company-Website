@@ -94,7 +94,7 @@ const Services = () => {
   const priceSuffix = `${translations?.content_price_suffix}`
   const durationSuffix = `${translations?.content_duration_suffix}`
 
-  const webServices = [
+  const webServices = translations?.web_services || [
     {
       title: "Wedding Invitation Website", 
       subtitle: "Modern & Romantic Digital Invitation", 
@@ -216,7 +216,7 @@ const Services = () => {
     }, 
   ]
 
-  const mobileServices = [
+  const mobileServices = translations?.mobile_services || [
     {
       title: "Simple POS System Application", 
       subtitle: "Efficient Sales Handling for Small Businesses", 
@@ -309,7 +309,7 @@ const Services = () => {
     }, 
   ]
   
-  const designServices = [
+  const designServices = translations?.design_services || [
     {
       title: "Admin POS Dashboard UI Design", 
       subtitle: "Powerful and Intuitive Control for Seamless Sales Management", 
@@ -387,7 +387,7 @@ const Services = () => {
     }, 
   ]
 
-  const backendServices = [
+  const backendServices = translations?.backend_services || [
     {
       title: "Authentication API", 
       subtitle: "Secure and Scalable Identity Management for Applications", 

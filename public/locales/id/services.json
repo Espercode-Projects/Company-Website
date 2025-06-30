@@ -151,5 +151,368 @@
     "card_title": "Siap untuk Mengubah Bisnis Anda?", 
     "card_description": "Mari wujudkan ide digital Anda bersama tim ahli kami. Dapatkan konsultasi gratis untuk membahas kebutuhan proyek Anda.", 
     "card_main_cta": "Mulai Proyek Anda", 
-    "card_secondary_cta": "Hubungi Kami Sekarang"
+    "card_secondary_cta": "Hubungi Kami Sekarang", 
+    "web_services": [
+      {
+        "title": "Website Undangan Pernikahan",
+        "subtitle": "Undangan Digital Modern & Romantis",
+        "description": "Tingkatkan pernikahan Anda dengan website elegan kami! Bergaya dan fungsional, website ini menampilkan kisah cinta Anda dan menjaga tamu tetap terinformasi.",
+        "features": [
+          "Penghitung Waktu",
+          "Galeri Foto",
+          "Integrasi Peta",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+        "price": "500,000",
+        "duration": "1 - 3",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Halaman Utama",
+        "subtitle": "Kehadiran Web Sederhana & Kuat untuk Semua",
+        "description": "Buat halaman arahan yang berdampak untuk menampilkan karya, ide, atau bisnis Anda dengan mudah.",
+        "features": [
+          "Desain Modern",
+          "Daftar Produk",
+          "Sistem Ulasan",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+        "price": "500,000",
+        "duration": "2 - 4",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Profil",
+        "subtitle": "Identitas Digital dalam Satu Paket Profesional",
+        "description": "Profil website komprehensif yang menceritakan kisah unik Anda, menampilkan karya Anda, dan menghubungkan dengan audiens.",
+        "features": [
+          "Desain Modern",
+          "Tampilan Portofolio",
+          "Integrasi Media Sosial",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+        "price": "500,000",
+        "duration": "2 - 4",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website E-Commerce Sederhana",
+        "subtitle": "Platform E-Commerce yang Disederhanakan untuk Bisnis Modern",
+        "description": "Sebuah solusi e-commerce yang disederhanakan untuk meluncurkan bisnis online Anda dengan cepat dan efisien.",
+        "features": [
+          "Daftar Produk",
+          "Gerbang Pembayaran",
+          "Sistem Ulasan",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Sistem POS Sederhana",
+        "subtitle": "Menyederhanakan Penjualan Anda dengan POS Berbasis Web yang Mudah",
+        "description": "Sistem point-of-sale berbasis browser yang ringan dan dapat diakses dari perangkat apa pun.",
+        "features": [
+          "Pemantauan Inventaris",
+          "Transaksi Berbasis Web",
+          "Manajemen Pelanggan Dasar",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Pengelola Acara",
+        "subtitle": "Segala yang Anda Butuhkan untuk Menampilkan dan Mengelola Acara",
+        "description": "Sebuah solusi manajemen acara lengkap dengan alat penjadwalan, tiket, dan keterlibatan peserta yang terintegrasi.",
+        "features": [
+          "Sistem Penjadwalan",
+          "Manajemen Tiket & Peserta",
+          "Integrasi Media Sosial",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Link-In Bio",
+        "subtitle": "Satu Tautan untuk Segala Sesuatu yang Anda Bagikan",
+        "description": "Halaman arahan yang bersih dan ramah seluler yang mengkonsolidasikan semua tautan penting Anda di satu tempat.",
+        "features": [
+          "Integrasi Media Sosial",
+          "Pembaruan Mudah",
+          "Desain Responsif"
+        ],
+        "technologies": ["Linktree"],
+        "price": "300,000",
+        "duration": "1 - 2",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      },
+      {
+        "title": "Website Kustom Sepenuhnya",
+        "subtitle": "Dibangun Persis Seperti yang Anda Bayangkan",
+        "description": "Sebuah solusi web yang sepenuhnya disesuaikan dirancang dan dikembangkan untuk memenuhi kebutuhan dan branding unik Anda.",
+        "features": [
+          "Desain Kustom Berbasis Klien",
+          "Fungsionalitas Lanjutan",
+          "Desain Modern",
+          "Desain Responsif"
+        ],
+        "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+      }
+    ],
+    "mobile_services": [
+      {
+        "title": "Aplikasi POS Sederhana",
+        "subtitle": "Penanganan Penjualan yang Efisien untuk Bisnis Kecil",
+        "description": "Aplikasi POS ringan yang menyederhanakan transaksi dan manajemen inventaris tanpa kompleksitas.",
+        "features": [
+          "Pemantauan Inventaris",
+          "Transaksi Berbasis Aplikasi",
+          "Manajemen Pelanggan Dasar",
+          "Antarmuka Ramah"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      },
+      {
+        "title": "Aplikasi Absensi Karyawan",
+        "subtitle": "Pelacakan Tenaga Kerja yang Sederhana dan Akurat",
+        "description": "Sistem tanpa gesekan untuk mencatat dan memverifikasi kehadiran, lokasi, dan ketersediaan karyawan secara real-time.",
+        "features": [
+          "Berdasarkan Lokasi GPS / Kode QR",
+          "Verifikasi Masuk / Keluar",
+          "Dasbor Kehadiran Tim",
+          "Timesheet yang Dapat Diekspor"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      },
+      {
+        "title": "Aplikasi Alat Penganggaran Sederhana",
+        "subtitle": "Lacak dengan Lebih Cerdas, Kurangi Stres",
+        "description": "Aplikasi intuitif yang membuat pengelolaan uang Anda lebih sederhana dengan alat visual dan pelacakan otomatis.",
+        "features": [
+          "Kategori Anggaran Kustom",
+          "Dasbor Laporan",
+          "Data yang Dapat Diekspor",
+          "Antarmuka Ramah"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      },
+      {
+        "title": "Aplikasi Buku Tamu Digital",
+        "subtitle": "Check-In Pengunjung yang Modern dan Elegan",
+        "description": "Gantikan buku tamu kertas dengan solusi digital yang ramping yang menangkap kenangan dan mengatur data tamu dengan mudah.",
+        "features": [
+          "Antarmuka Check-In",
+          "Tampilan Daftar Tamu",
+          "Bidang Kustomisasi",
+          "Data Tamu yang Dapat Diekspor"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      },
+      {
+        "title": "Aplikasi Manajemen Daftar Tugas Sederhana",
+        "subtitle": "Atur Hari Anda Tanpa Terlalu Banyak Beban",
+        "description": "Manajer tugas yang bersih dan intuitif yang membantu Anda fokus pada apa yang penting, tanpa fitur yang tidak perlu.",
+        "features": [
+          "Penyortiran Prioritas Cerdas",
+          "Pecahan Subtugas",
+          "Pelacakan Kemajuan",
+          "Antarmuka Ramah"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "1,000,000",
+        "duration": "3 - 6",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      },
+      {
+        "title": "Aplikasi Kustom Sepenuhnya",
+        "subtitle": "Dibangun Persis untuk Alur Kerja Unik Anda",
+        "description": "Sebuah solusi digital yang dirancang dari awal untuk mencocokkan kebutuhan operasional dan logika bisnis spesifik Anda.",
+        "features": [
+          "Desain Kustom Berbasis Klien",
+          "Fungsionalitas Lanjutan",
+          "Desain Modern",
+          "Antarmuka Ramah"
+        ],
+        "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+      }
+    ],
+    "design_services": [
+      {
+        "title": "Desain UI Dasbor Admin POS",
+        "subtitle": "Kontrol yang Kuat dan Intuitif untuk Manajemen Penjualan yang Lancar",
+        "description": "Dasbor admin POS yang ramping dan berkinerja tinggi dirancang untuk menyederhanakan pelacakan penjualan, inventaris, dan analitik dalam satu pusat.",
+        "features": [
+          "Tampilan Data",
+          "Navigasi & Kontrol",
+          "Mode Terang / Gelap",
+          "Titik Patah Responsif"
+        ],
+        "technologies": ["Figma"],
+        "price": "2,000,000",
+        "duration": "2 - 4",
+        "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+      },
+      {
+        "title": "Desain UI Aplikasi Mobile",
+        "subtitle": "Antarmuka yang Indah dan Intuitif untuk Mobile",
+        "description": "Desain UI aplikasi mobile kustom yang dirancang untuk kegunaan, keselarasan merek, dan praktik terbaik spesifik platform.",
+        "features": [
+          "Tampilan Data",
+          "Navigasi & Kontrol",
+          "Mode Terang / Gelap",
+          "Titik Patah Responsif"
+        ],
+        "technologies": ["Figma"],
+        "price": "1,500,000",
+        "duration": "2 - 4",
+        "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+      },
+      {
+        "title": "Redesain UI Aplikasi / Website yang Telah Ada",
+        "subtitle": "Modernisasi dan Tingkatkan Pengalaman Digital Anda",
+        "description": "Perombakan UI/UX strategis yang mempertahankan fungsionalitas inti produk Anda sambil memberikan antarmuka yang segar dan kontemporer.",
+        "features": [
+          "Tampilan Data",
+          "Navigasi & Kontrol",
+          "Mode Terang / Gelap",
+          "Titik Patah Responsif"
+        ],
+        "technologies": ["Figma"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+      },
+      {
+        "title": "Paket Desain Branding Digital",
+        "subtitle": "Identitas Visual Strategis untuk Dunia Digital",
+        "description": "Solusi branding komprehensif yang dirancang untuk membantu bisnis Anda menonjol di semua titik sentuh digital.",
+        "features": [
+          "Logo Modern",
+          "Palet Warna Kustom",
+          "Sistem Tipografi",
+          "Elemen Ramah UI"
+        ],
+        "technologies": ["Figma"],
+        "price": "2,000,000",
+        "duration": "2 - 7",
+        "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+      },
+      {
+        "title": "Desain UI Kustom Sepenuhnya",
+        "subtitle": "Dirancang Khusus untuk Produk & Pengguna Anda",
+        "description": "Antarmuka yang disesuaikan yang selaras dengan merek dan kebutuhan fungsionalitas Anda dengan desain yang dipikirkan.",
+        "features": [
+          "Desain Berbasis Pelanggan",
+          "Desain Lanjutan",
+          "Mode Terang / Gelap",
+          "Titik Patah Responsif"
+        ],
+        "technologies": ["Figma"],
+        "price": "3,000,000",
+        "duration": "4 - 12",
+        "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+      }
+    ],
+    "backend_services": [
+        {
+          "title": "API Autentikasi",
+          "subtitle": "Manajemen Identitas yang Aman dan Skala untuk Aplikasi",
+          "description": "Solusi digital yang dirancang untuk mencocokkan kebutuhan operasional dan logika bisnis spesifik Anda.",
+          "features": [
+            "Autentikasi Pengguna",
+            "Manajemen Token",
+            "Integrasi Peta",
+            "Kontrol Akses Berbasis Peran"
+          ],
+          "technologies": ["Laravel"],
+          "price": "500,000",
+          "duration": "1 - 3",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "API Backend Data Dinamis",
+          "subtitle": "Infrastruktur Fleksibel untuk Kebutuhan Data yang Berkembang",
+          "description": "Lapisan API yang dapat dikonfigurasi yang beradaptasi secara real-time dengan model data dan pola akses Anda yang berubah.",
+          "features": [
+            "Operasi CRUD",
+            "Timesheet yang Dapat Diekspor"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "Backend Panel Admin",
+          "subtitle": "Antarmuka Manajemen yang Kuat untuk Website / Aplikasi Anda",
+          "description": "Sistem administrasi yang aman dan dapat disesuaikan untuk mengelola data dan pengguna platform Anda dengan efisien.",
+          "features": [
+            "Dasbor Manajemen",
+            "Operasi CRUD",
+            "Kontrol Akses Berbasis Peran",
+            "Antarmuka Ramah"
+          ],
+          "technologies": ["React", "Next.js", "Node.js", "Laravel", "Firebase"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+            "title": "API Backend E-Commerce",
+            "subtitle": "Infrastruktur Perdagangan yang Kuat untuk Toko Online",
+            "description": "Kumpulan API yang menangani semua operasi inti e-commerce dengan tingkat keandalan perusahaan.",
+            "features": [
+              "Daftar Produk",
+              "Gerbang Pembayaran",
+              "Sistem Ulasan",
+              "Autentikasi Pengguna"
+            ],
+            "technologies": ["Laravel"],
+            "price": "3,000,000",
+            "duration": "4 - 12",
+            "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },  
+        {   
+            "title": "API Backend Kustom Sepenuhnya",
+            "subtitle": "Infrastruktur API yang Dirancang Sesuai Kebutuhan Anda",
+            "description": "Pengembangan API yang disesuaikan yang selaras dengan logika bisnis dan ekosistem teknis Anda.",
+            "features": [
+              "Endpoint Kustom Berbasis Klien",
+              "Fungsionalitas Lanjutan"
+            ],
+            "technologies": ["Laravel"],
+            "price": "3,000,000",
+            "duration": "4 - 12",
+            "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        }   
+    ]
 }

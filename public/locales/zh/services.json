@@ -151,5 +151,368 @@
     "card_title": "准备好改变您的业务了吗？", 
     "card_description": "与我们的专业团队一起实现数字化创意。请进行免费咨询以讨论项目需求。", 
     "card_main_cta": "开始项目", 
-    "card_secondary_cta": "立即致电我们"
+    "card_secondary_cta": "立即致电我们", 
+      "web_services": [
+        {
+          "title": "婚礼邀请网站",
+          "subtitle": "现代而浪漫的数字邀请函",
+          "description": "通过我们优雅的网站提升您的婚礼！这款时尚且功能齐全的网站展示了您的爱情故事，并让宾客保持信息畅通。",
+          "features": [
+            "倒计时器",
+            "照片画廊",
+            "地图集成",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "1 - 3",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "着陆页网站",
+          "subtitle": "简单而强大的网络存在",
+          "description": "创建一个引人注目的着陆页，轻松展示您的作品、想法或业务。",
+          "features": [
+            "现代设计",
+            "产品列表",
+            "评论系统",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "个人资料网站",
+          "subtitle": "专业包中的数字身份",
+          "description": "一个全面的个人资料网站，讲述您的独特故事，展示您的作品，并与观众建立联系。",
+          "features": [
+            "现代设计",
+            "作品集展示",
+            "社交媒体集成",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "简单的电子商务网站",
+          "subtitle": "为现代企业简化的电子商务平台",
+          "description": "一个简化的电子商务解决方案，快速高效地启动您的在线业务。",
+          "features": [
+            "产品列表",
+            "支付网关",
+            "评论系统",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "简单的POS系统网站",
+          "subtitle": "通过易于使用的网络POS简化销售",
+          "description": "一个轻量级的基于浏览器的销售点系统，可以从任何设备访问。",
+          "features": [
+            "库存监控",
+            "基于网络的交易",
+            "基本客户管理",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "活动管理网站",
+          "subtitle": "展示和管理活动所需的一切",
+          "description": "一个全面的活动管理解决方案，集成了调度、票务和参与者互动工具。",
+          "features": [
+            "调度系统",
+            "票务和参与者管理",
+            "社交媒体集成",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "Link-In-Bio网站",
+          "subtitle": "为您分享的所有内容提供一个链接",
+          "description": "一个干净、移动友好的着陆页，将所有重要链接整合在一个地方。",
+          "features": [
+            "社交媒体集成",
+            "轻松更新",
+            "响应式设计"
+          ],
+          "technologies": ["Linktree"],
+          "price": "300,000",
+          "duration": "1 - 2",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "完全定制的网站",
+          "subtitle": "按照您的想法构建",
+          "description": "一个完全定制的网络解决方案，旨在满足您的独特需求和品牌。",
+          "features": [
+            "基于客户的定制设计",
+            "高级功能",
+            "现代设计",
+            "响应式设计"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        }
+      ],
+      "mobile_services": [
+        {
+          "title": "简单的POS应用",
+          "subtitle": "为小型企业提供高效的销售处理",
+          "description": "一个轻量级的POS应用，简化交易和库存管理，避免复杂性。",
+          "features": [
+            "库存监控",
+            "基于应用的交易",
+            "基本客户管理",
+            "用户友好的界面"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "员工出勤应用",
+          "subtitle": "简单而准确的劳动力追踪",
+          "description": "一个无缝的系统，用于实时记录和验证员工的出勤、位置和可用性。",
+          "features": [
+            "基于GPS位置/二维码",
+            "签到/签出验证",
+            "团队出勤仪表板",
+            "可导出的时间表"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "简单的预算管理应用",
+          "subtitle": "更聪明地追踪，减少压力",
+          "description": "一个直观的应用，通过可视化工具和自动追踪简化资金管理。",
+          "features": [
+            "自定义预算类别",
+            "报告仪表板",
+            "可导出数据",
+            "用户友好的界面"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "数字访客簿应用",
+          "subtitle": "现代而优雅的访客签到解决方案",
+          "description": "用一个简洁的数字解决方案替代纸质访客簿，轻松记录回忆并整理访客数据。",
+          "features": [
+            "签到界面",
+            "访客列表显示",
+            "自定义字段",
+            "可导出的访客数据"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "简单的任务管理应用",
+          "subtitle": "无负担地组织您的日常",
+          "description": "一个干净直观的任务管理器，帮助您专注于重要的事情，而不需要多余的功能。",
+          "features": [
+            "智能优先级排序",
+            "子任务分解",
+            "进度追踪",
+            "用户友好的界面"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "1,000,000",
+          "duration": "3 - 6",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "完全定制的应用",
+          "subtitle": "完全按照您的独特工作流程构建",
+          "description": "一个从头开始设计的数字解决方案，旨在满足您的特定运营需求和业务逻辑。",
+          "features": [
+            "基于客户的定制设计",
+            "高级功能",
+            "现代设计",
+            "用户友好的界面"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        }
+      ],
+      "design_services": [
+        {
+          "title": "POS管理仪表板的UI设计",
+          "subtitle": "强大而直观的控制，确保顺畅的销售管理",
+          "description": "一个简洁且高性能的POS管理仪表板，旨在简化销售、库存和分析的跟踪。",
+          "features": [
+            "数据视图",
+            "导航与控制",
+            "明亮/黑暗模式",
+            "响应式断点"
+          ],
+          "technologies": ["Figma"],
+          "price": "2,000,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "移动应用的UI设计",
+          "subtitle": "美丽而直观的移动界面",
+          "description": "为移动应用设计的定制UI，注重可用性、品牌一致性和平台特定的最佳实践。",
+          "features": [
+            "数据视图",
+            "导航与控制",
+            "明亮/黑暗模式",
+            "响应式断点"
+          ],
+          "technologies": ["Figma"],
+          "price": "1,500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "现有应用/网站的UI重新设计",
+          "subtitle": "现代化并提升您的数字体验",
+          "description": "一项战略性的UI/UX重新设计，保留产品的核心功能，同时提供新鲜、现代的界面。",
+          "features": [
+            "数据视图",
+            "导航与控制",
+            "明亮/黑暗模式",
+            "响应式断点"
+          ],
+          "technologies": ["Figma"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "数字品牌设计套餐",
+          "subtitle": "为数字世界提供战略性的视觉身份",
+          "description": "一个全面的品牌解决方案，旨在帮助您的业务在所有数字接触点中脱颖而出。",
+          "features": [
+            "现代标志",
+            "自定义色彩方案",
+            "排版系统",
+            "用户友好的UI元素"
+          ],
+          "technologies": ["Figma"],
+          "price": "2,000,000",
+          "duration": "2 - 7",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "完全定制的UI设计",
+          "subtitle": "专为您的产品和用户设计",
+          "description": "一个与您的品牌和功能需求相一致的定制界面，经过深思熟虑的设计。",
+          "features": [
+            "基于客户的设计",
+            "高级设计",
+            "明亮/黑暗模式",
+            "响应式断点"
+          ],
+          "technologies": ["Figma"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        }
+      ],
+      "backend_services": [
+        {
+          "title": "API认证",
+          "subtitle": "为应用程序提供安全和可扩展的身份管理",
+          "description": "一个旨在满足特定运营需求和业务逻辑的数字解决方案。",
+          "features": [
+            "用户认证",
+            "令牌管理",
+            "地图集成",
+            "基于角色的访问控制"
+          ],
+          "technologies": ["Laravel"],
+          "price": "500,000",
+          "duration": "1 - 3",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "动态后端API",
+          "subtitle": "为不断增长的数据需求提供灵活的基础设施",
+          "description": "一个可配置的API层，能够实时适应您的数据模型和访问模式的变化。",
+          "features": [
+            "CRUD操作",
+            "可导出的时间表"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "后台管理面板",
+          "subtitle": "为您的网站/应用程序提供强大的管理界面",
+          "description": "一个安全且可定制的管理系统，用于高效管理平台的数据和用户。",
+          "features": [
+            "管理仪表板",
+            "CRUD操作",
+            "基于角色的访问控制",
+            "用户友好的界面"
+          ],
+          "technologies": ["React", "Next.js", "Node.js", "Laravel", "Firebase"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "电子商务后端API",
+          "subtitle": "为在线商店提供强大的交易基础设施",
+          "description": "一个处理所有核心电子商务操作的API集合，具有企业级的可靠性。",
+          "features": [
+            "产品列表",
+            "支付网关",
+            "评论系统",
+            "用户认证"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "完全定制的后端API",
+          "subtitle": "根据您的需求定制的API基础设施",
+          "description": "开发一个与您的业务逻辑和技术生态系统相一致的定制API。",
+          "features": [
+            "基于客户的自定义端点",
+            "高级功能"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        }
+    ]
 }

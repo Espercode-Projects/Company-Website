@@ -152,5 +152,368 @@
     "card_title": "ビジネスを変革する準備はできていますか？", 
     "card_description": "私たちの専門チームと共にデジタルアイデアを実現しましょう。プロジェクトのニーズを話し合うために無料相談を受けてください。", 
     "card_main_cta": "プロジェクトを始める", 
-    "card_secondary_cta": "今すぐお電話ください"
+    "card_secondary_cta": "今すぐお電話ください", 
+    "web_services": [
+        {
+          "title": "ウェディング招待状ウェブサイト",
+          "subtitle": "モダンでロマンチックなデジタル招待状",
+          "description": "私たちのエレガントなウェブサイトであなたの結婚式を向上させましょう！スタイリッシュで機能的なこのウェブサイトは、あなたの愛の物語を紹介し、ゲストを情報で満たします。",
+          "features": [
+            "カウントダウンタイマー",
+            "フォトギャラリー",
+            "地図統合",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "1 - 3",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "ランディングページウェブサイト",
+          "subtitle": "誰でも簡単に強力なウェブプレゼンス",
+          "description": "あなたの作品、アイデア、またはビジネスを簡単に紹介する印象的なランディングページを作成しましょう。",
+          "features": [
+            "モダンなデザイン",
+            "製品リスト",
+            "レビューシステム",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "プロフィールウェブサイト",
+          "subtitle": "プロフェッショナルなパッケージでのデジタルアイデンティティ",
+          "description": "あなたのユニークなストーリーを語り、あなたの作品を紹介し、オーディエンスとつながる包括的なプロフィールウェブサイト。",
+          "features": [
+            "モダンなデザイン",
+            "ポートフォリオ表示",
+            "ソーシャルメディア統合",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Firebase"],
+          "price": "500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "シンプルなEコマースウェブサイト",
+          "subtitle": "現代ビジネスのための簡素化されたEコマースプラットフォーム",
+          "description": "あなたのオンラインビジネスを迅速かつ効率的に立ち上げるための簡素化されたEコマースソリューション。",
+          "features": [
+            "製品リスト",
+            "決済ゲートウェイ",
+            "レビューシステム",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "シンプルなPOSシステムウェブサイト",
+          "subtitle": "使いやすいウェブベースのPOSで販売を簡素化",
+          "description": "どのデバイスからでもアクセスできる軽量のブラウザベースのポイントオブセールシステム。",
+          "features": [
+            "在庫監視",
+            "ウェブベースのトランザクション",
+            "基本的な顧客管理",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "イベント管理ウェブサイト",
+          "subtitle": "イベントを表示し、管理するために必要なすべて",
+          "description": "スケジューリング、チケット、参加者エンゲージメントツールを統合した包括的なイベント管理ソリューション。",
+          "features": [
+            "スケジューリングシステム",
+            "チケットと参加者管理",
+            "ソーシャルメディア統合",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "Link-In-Bioウェブサイト",
+          "subtitle": "あなたが共有するすべてのための1つのリンク",
+          "description": "すべての重要なリンクを1か所に統合したクリーンでモバイルフレンドリーなランディングページ。",
+          "features": [
+            "ソーシャルメディア統合",
+            "簡単な更新",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["Linktree"],
+          "price": "300,000",
+          "duration": "1 - 2",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        },
+        {
+          "title": "完全カスタムウェブサイト",
+          "subtitle": "あなたの思い描いた通りに構築",
+          "description": "あなたのユニークなニーズとブランディングに合わせて設計・開発された完全にカスタマイズされたウェブソリューション。",
+          "features": [
+            "クライアントベースのカスタムデザイン",
+            "高度な機能性",
+            "モダンなデザイン",
+            "レスポンシブデザイン"
+          ],
+          "technologies": ["React", "Next.js", "Tailwind CSS", "Node.js", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/38/f9/13/38f913f969b14a6ca5af964cc5b3528a.jpg"
+        }
+      ],
+    "mobile_services": [
+        {
+          "title": "シンプルなPOSアプリ",
+          "subtitle": "小規模ビジネスのための効率的な販売処理",
+          "description": "複雑さを排除した軽量のPOSアプリで、トランザクションと在庫管理を簡素化します。",
+          "features": [
+            "在庫監視",
+            "アプリベースのトランザクション",
+            "基本的な顧客管理",
+            "ユーザーフレンドリーなインターフェース"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "従業員出席アプリ",
+          "subtitle": "シンプルで正確な労働力追跡",
+          "description": "従業員の出席、位置、可用性をリアルタイムで記録し、確認するためのシームレスなシステム。",
+          "features": [
+            "GPS位置情報 / QRコードに基づく",
+            "チェックイン / チェックアウトの確認",
+            "チーム出席ダッシュボード",
+            "エクスポート可能なタイムシート"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "シンプルな予算管理アプリ",
+          "subtitle": "賢く追跡し、ストレスを軽減",
+          "description": "視覚的なツールと自動追跡でお金の管理を簡素化する直感的なアプリ。",
+          "features": [
+            "カスタム予算カテゴリ",
+            "レポートダッシュボード",
+            "エクスポート可能なデータ",
+            "ユーザーフレンドリーなインターフェース"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "デジタルゲストブックアプリ",
+          "subtitle": "現代的でエレガントな訪問者チェックインソリューション",
+          "description": "紙のゲストブックを置き換えるスリムなデジタルソリューションで、思い出を記録し、ゲストデータを簡単に整理します。",
+          "features": [
+            "チェックインインターフェース",
+            "ゲストリスト表示",
+            "カスタムフィールド",
+            "エクスポート可能なゲストデータ"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "シンプルなタスクリスト管理アプリ",
+          "subtitle": "負担をかけずに日々を整理",
+          "description": "不要な機能なしで重要なことに集中できる、クリーンで直感的なタスクマネージャー。",
+          "features": [
+            "スマートな優先順位ソート",
+            "サブタスクの分割",
+            "進捗追跡",
+            "ユーザーフレンドリーなインターフェース"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "1,000,000",
+          "duration": "3 - 6",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        },
+        {
+          "title": "完全カスタムアプリ",
+          "subtitle": "あなたのユニークなワークフローに合わせて構築",
+          "description": "特定の運用ニーズとビジネスロジックに合わせて設計されたデジタルソリューション。",
+          "features": [
+            "クライアントベースのカスタムデザイン",
+            "高度な機能性",
+            "モダンなデザイン",
+            "ユーザーフレンドリーなインターフェース"
+          ],
+          "technologies": ["Android Studio", "Kotlin", "Xml", "Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/d5/b8/56/d5b85646e59db988d3eb47b1947092c7.jpg"
+        }
+      ],
+    "design_services": [
+        {
+          "title": "POS管理ダッシュボードのUIデザイン",
+          "subtitle": "スムーズな販売管理のための強力で直感的なコントロール",
+          "description": "販売、在庫、分析の追跡を一元化するために設計されたスリムで高性能なPOS管理ダッシュボード。",
+          "features": [
+            "データ表示",
+            "ナビゲーションとコントロール",
+            "ライト/ダークモード",
+            "レスポンシブブレークポイント"
+          ],
+          "technologies": ["Figma"],
+          "price": "2,000,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "モバイルアプリのUIデザイン",
+          "subtitle": "モバイル向けの美しく直感的なインターフェース",
+          "description": "使いやすさ、ブランドの整合性、プラットフォーム固有のベストプラクティスに基づいて設計されたカスタムモバイルアプリのUIデザイン。",
+          "features": [
+            "データ表示",
+            "ナビゲーションとコントロール",
+            "ライト/ダークモード",
+            "レスポンシブブレークポイント"
+          ],
+          "technologies": ["Figma"],
+          "price": "1,500,000",
+          "duration": "2 - 4",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "既存のアプリ/ウェブサイトのUIリデザイン",
+          "subtitle": "デジタル体験を現代化し、向上させる",
+          "description": "製品のコア機能を維持しながら、フレッシュで現代的なインターフェースを提供する戦略的なUI/UXリデザイン。",
+          "features": [
+            "データ表示",
+            "ナビゲーションとコントロール",
+            "ライト/ダークモード",
+            "レスポンシブブレークポイント"
+          ],
+          "technologies": ["Figma"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "デジタルブランディングデザインパッケージ",
+          "subtitle": "デジタル世界のための戦略的なビジュアルアイデンティティ",
+          "description": "すべてのデジタルタッチポイントでビジネスを際立たせるために設計された包括的なブランディングソリューション。",
+          "features": [
+            "モダンなロゴ",
+            "カスタムカラーパレット",
+            "タイポグラフィシステム",
+            "ユーザーフレンドリーなUI要素"
+          ],
+          "technologies": ["Figma"],
+          "price": "2,000,000",
+          "duration": "2 - 7",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        },
+        {
+          "title": "完全カスタムUIデザイン",
+          "subtitle": "製品とユーザーのために特別に設計",
+          "description": "ブランドと機能要件に合わせたカスタマイズされたインターフェースで、考え抜かれたデザイン。",
+          "features": [
+            "顧客ベースのデザイン",
+            "高度なデザイン",
+            "ライト/ダークモード",
+            "レスポンシブブレークポイント"
+          ],
+          "technologies": ["Figma"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/3c/53/99/3c5399ef4a7b2f6575361c0935c61170.jpg"
+        }
+      ],
+    "backend_services": [
+        {
+          "title": "API認証",
+          "subtitle": "アプリケーションのための安全でスケーラブルなアイデンティティ管理",
+          "description": "特定の運用ニーズとビジネスロジックに合わせて設計されたデジタルソリューション。",
+          "features": [
+            "ユーザー認証",
+                    "トークン管理",
+            "地図統合",
+            "役割ベースのアクセス制御"
+          ],
+          "technologies": ["Laravel"],
+          "price": "500,000",
+          "duration": "1 - 3",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "動的バックエンドAPI",
+          "subtitle": "成長するデータニーズのための柔軟なインフラ",
+          "description": "データモデルとアクセスパターンの変化にリアルタイムで適応する構成可能なAPIレイヤー。",
+          "features": [
+            "CRUD操作",
+            "エクスポート可能なタイムシート"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "管理者パネルバックエンド",
+          "subtitle": "ウェブサイト/アプリケーションのための強力な管理インターフェース",
+          "description": "データとユーザーを効率的に管理するための安全でカスタマイズ可能な管理システム。",
+          "features": [
+            "管理ダッシュボード",
+            "CRUD操作",
+            "役割ベースのアクセス制御",
+            "ユーザーフレンドリーなインターフェース"
+          ],
+          "technologies": ["React", "Next.js", "Node.js", "Laravel", "Firebase"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "EコマースバックエンドAPI",
+          "subtitle": "オンラインストアのための強力な商取引インフラ",
+          "description": "企業の信頼性を持つすべてのコアEコマース操作を処理するAPIのセット。",
+          "features": [
+            "製品リスト",
+            "決済ゲートウェイ",
+            "レビューシステム",
+            "ユーザー認証"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        },
+        {
+          "title": "完全カスタムバックエンドAPI",
+          "subtitle": "ニーズに合わせたAPIインフラ",
+          "description": "ビジネスロジックと技術エコシステムに合わせて設計されたカスタムAPIの開発。",
+          "features": [
+            "クライアントベースのカスタムエンドポイント",
+            "高度な機能性"
+          ],
+          "technologies": ["Laravel"],
+          "price": "3,000,000",
+          "duration": "4 - 12",
+          "image": "https://i.pinimg.com/736x/e5/b6/f4/e5b6f4fd63603104df57eec77f22e8f1.jpg"
+        }
+    ]
 }
