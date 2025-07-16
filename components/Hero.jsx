@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import {
   motion,
   AnimatePresence,
@@ -697,29 +697,45 @@ const Hero = () => {
   const [isServiceHovered, setIsServiceHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState(currentLocale.toUpperCase());
+  const [currentLanguage, setCurrentLanguage] = useState(currentLocale?.toUpperCase() || 'EN');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  
-  // State untuk mengontrol animasi
   const [isVisible, setIsVisible] = useState(true);
   const [isWindowFocused, setIsWindowFocused] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  
   const heroRef = useRef(null);
+  const textAnimationRef = useRef(null);
+  const lastUpdateTime = useRef(0);
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
 
-  const animatedTexts = translations.hero_animated_texts || ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
+  // Memoize animated texts to prevent recreation
+  const animatedTexts = useMemo(() => {
+    return translations.hero_animated_texts || ["INNOVATION", "SOLUTIONS", "EXCELLENCE", "FUTURE"];
+  }, [translations.hero_animated_texts]);
 
-  // Intersection Observer untuk detect visibility
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Intersection Observer dengan konfigurasi yang lebih stabil untuk mobile
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Trigger ketika 10% komponen terlihat
-        rootMargin: '50px' // Tambahan margin untuk early detection
+        threshold: isMobile ? 0.05 : 0.1, // Threshold lebih rendah untuk mobile
+        rootMargin: isMobile ? '20px' : '50px' // Margin lebih kecil untuk mobile
       }
     );
 
@@ -732,79 +748,106 @@ const Hero = () => {
         observer.unobserve(heroRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   // Window focus/blur detection
   useEffect(() => {
     const handleFocus = () => setIsWindowFocused(true);
     const handleBlur = () => setIsWindowFocused(false);
+    const handleVisibilityChange = () => {
+      setIsWindowFocused(!document.hidden);
+    };
 
     window.addEventListener('focus', handleFocus);
     window.addEventListener('blur', handleBlur);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('blur', handleBlur);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
-  // Mouse move handler - hanya aktif saat visible dan focused
+  // Mouse/Touch move handler dengan optimasi untuk mobile
   useEffect(() => {
     if (!isVisible || !isWindowFocused) return;
 
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 2,
-        y: (e.clientY / window.innerHeight - 0.5) * 2,
+    let animationFrameId;
+    
+    const handleMove = (e) => {
+      const now = Date.now();
+      
+      // Throttle updates untuk mobile (60fps max)
+      if (isMobile && now - lastUpdateTime.current < 16) return;
+      
+      lastUpdateTime.current = now;
+      
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      
+      animationFrameId = requestAnimationFrame(() => {
+        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+        
+        setMousePosition({
+          x: (clientX / window.innerWidth - 0.5) * (isMobile ? 1 : 2), // Reduced movement on mobile
+          y: (clientY / window.innerHeight - 0.5) * (isMobile ? 1 : 2),
+        });
       });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [isVisible, isWindowFocused]);
+    // Event listeners untuk desktop dan mobile
+    window.addEventListener("mousemove", handleMove);
+    window.addEventListener("touchmove", handleMove, { passive: true });
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      window.removeEventListener("touchmove", handleMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [isVisible, isWindowFocused, isMobile]);
 
-  // Text animation - hanya aktif saat visible dan focused
+  // Text animation dengan optimasi mobile
   useEffect(() => {
-    if (!isVisible || !isWindowFocused) return;
+    if (!isVisible || !isWindowFocused || animatedTexts.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % animatedTexts.length);
-    }, 3000);
+    }, isMobile ? 4000 : 3000); // Slower on mobile untuk mengurangi flickering
     
     return () => clearInterval(interval);
-  }, [isVisible, isWindowFocused, animatedTexts.length]);
+  }, [isVisible, isWindowFocused, animatedTexts.length, isMobile]);
 
-  const [isInitialRender, setIsInitialRender] = useState(true);
-  
+  // Language handling - stable version
   useEffect(() => {
-    if (isInitialRender) {
-      setIsInitialRender(false);
-      const lang = localStorage.getItem('lang')
-      if (lang) {
-        setCurrentLanguage(lang.toUpperCase())
-      }
-      return;
+    const storedLang = localStorage.getItem('lang');
+    if (storedLang && storedLang.toUpperCase() !== currentLanguage) {
+      setCurrentLanguage(storedLang.toUpperCase());
     }
+  }, []);
 
-    setCurrentLocale(currentLanguage.toLowerCase());
-    if (typeof window !== 'undefined') {
+  useEffect(() => {
+    if (currentLanguage && currentLanguage.toLowerCase() !== currentLocale) {
+      setCurrentLocale(currentLanguage.toLowerCase());
       localStorage.setItem('lang', currentLanguage.toLowerCase());
     }
-  }, [currentLanguage]);
+  }, [currentLanguage, setCurrentLocale]);
 
-  // Kondisi untuk menghentikan animasi
-  const shouldAnimate = isVisible && isWindowFocused;
+  const shouldAnimate = useMemo(() => isVisible && isWindowFocused, [isVisible, isWindowFocused]);
 
   return (
     <div 
       ref={heroRef}
       className="relative min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden"
     >
-      {/* Animated Background Pattern */}
+      {/* Animated Background Pattern - Reduced animations on mobile */}
       <motion.div 
         className="absolute inset-0" 
-        style={{ y: shouldAnimate ? y1 : 0 }}
-        animate={shouldAnimate ? {} : { transition: { duration: 0 } }}
+        style={{ y: isMobile ? 0 : y1 }} // Disable parallax on mobile
       >
         <div
           className="absolute inset-0 opacity-10"
@@ -822,51 +865,63 @@ const Hero = () => {
           }}
         />
 
-        {/* Enhanced floating geometric shapes - dengan conditional animation */}
-        <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-green-400/10 rounded-full blur-3xl"
-          animate={shouldAnimate ? {
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1],
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          } : {}}
-          transition={shouldAnimate ? { duration: 8, repeat: Infinity } : { duration: 0 }}
-          style={{
-            boxShadow: "0 0 100px rgba(34, 197, 94, 0.2)",
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"
-          animate={shouldAnimate ? {
-            scale: [1.2, 1, 1.2],
-            opacity: [0.1, 0.25, 0.1],
-            x: [0, -40, 0],
-            y: [0, 20, 0],
-          } : {}}
-          transition={shouldAnimate ? { duration: 10, repeat: Infinity, delay: 2 } : { duration: 0 }}
-          style={{
-            boxShadow: "0 0 120px rgba(34, 197, 94, 0.25)",
-          }}
-        />
+        {/* Reduced floating shapes on mobile */}
+        {!isMobile && (
+          <>
+            <motion.div
+              className="absolute top-20 left-20 w-64 h-64 bg-green-400/10 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.1, 0.3, 0.1],
+                x: [0, 50, 0],
+                y: [0, -30, 0],
+              }}
+              transition={{ 
+                duration: 8, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                boxShadow: "0 0 100px rgba(34, 197, 94, 0.2)",
+              }}
+            />
+            
+            <motion.div
+              className="absolute bottom-20 right-20 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.1, 0.25, 0.1],
+                x: [0, -40, 0],
+                y: [0, 20, 0],
+              }}
+              transition={{ 
+                duration: 10, 
+                repeat: Infinity, 
+                delay: 2,
+                ease: "easeInOut"
+              }}
+              style={{
+                boxShadow: "0 0 120px rgba(34, 197, 94, 0.25)",
+              }}
+            />
 
-        {/* Additional ambient elements */}
-        <motion.div
-          className="absolute top-1/3 left-1/3 w-32 h-32 bg-green-300/5 rounded-full blur-2xl"
-          animate={shouldAnimate ? {
-            rotate: 360,
-            scale: [1, 1.5, 1],
-          } : {}}
-          transition={shouldAnimate ? {
-            rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-            scale: { duration: 6, repeat: Infinity },
-          } : { duration: 0 }}
-        />
+            <motion.div
+              className="absolute top-1/3 left-1/3 w-32 h-32 bg-green-300/5 rounded-full blur-2xl"
+              animate={{
+                rotate: 360,
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+                scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+              }}
+            />
+          </>
+        )}
       </motion.div>
 
-      {/* Particle System - conditional rendering */}
-      {shouldAnimate && <ParticleSystem />}
+      {/* Particle System - Disabled on mobile */}
+      {!isMobile && <ParticleSystem />}
 
       {/* Navbar */}
       <Navbar
@@ -894,19 +949,22 @@ const Hero = () => {
       {/* Main Content */}
       <motion.div
         className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 lg:px-[6rem] py-12 min-h-[calc(100vh-200px)] mb-5"
-        style={{ y: shouldAnimate ? y2 : 0 }}
+        style={{ y: isMobile ? 0 : y2 }} // Disable parallax on mobile
       >
-        {/* Left Content */}
-        <HeroContent
+        {/* Hero Content Component */}
+        <HeroContentOptimized
           mousePosition={mousePosition}
           currentTextIndex={currentTextIndex}
           shouldAnimate={shouldAnimate}
+          isMobile={isMobile}
+          animatedTexts={animatedTexts}
         />
 
         {/* Right Content - Tech Image */}
-        <HeroImage 
+        <HeroImageOptimized 
           mousePosition={mousePosition} 
           shouldAnimate={shouldAnimate}
+          isMobile={isMobile}
         />
       </motion.div>
 
@@ -914,18 +972,311 @@ const Hero = () => {
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 mb-16"
         initial={{ opacity: 0, y: 20 }}
-        animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0.5, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
         <span className="text-white/60 text-sm">{translations.hero_hint}</span>
         <motion.div className="w-6 h-10 border-2 border-green-400/50 rounded-full flex justify-center">
           <motion.div
             className="w-1 h-3 bg-green-400 rounded-full mt-2"
-            animate={shouldAnimate ? { y: [0, 12, 0] } : {}}
-            transition={shouldAnimate ? { duration: 1.5, repeat: Infinity } : { duration: 0 }}
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
           />
         </motion.div>
       </motion.div>
+    </div>
+  );
+};
+
+// Optimized Hero Content Component
+const HeroContentOptimized = ({ mousePosition, currentTextIndex, shouldAnimate, isMobile, animatedTexts }) => {
+  const { currentLocale, translations } = useLocale();
+
+  return (
+    <div className="flex-1 max-w-4xl mb-12 lg:mb-0 lg:pr-12">
+      <div className="mb-8">
+        {currentLocale && currentLocale === 'id' ? (
+          <>
+            {/* Animated changing text - Optimized for mobile */}
+            <div className="relative h-24 lg:h-32 overflow-hidden">
+              <motion.h1
+                key={`${currentTextIndex}-${animatedTexts[currentTextIndex]}`} // More stable key
+                className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
+                initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: isMobile ? -10 : -20 }}
+                transition={{ 
+                  duration: isMobile ? 0.3 : 0.5, 
+                  ease: "easeOut",
+                  // Disable hardware acceleration on mobile yang bisa cause flickering
+                  ...(isMobile && { type: "tween" })
+                }}
+                style={{
+                  filter: isMobile ? "none" : "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
+                  // Force GPU layer on mobile
+                  transform: isMobile ? "translate3d(0, 0, 0)" : "none"
+                }}
+              >
+                {animatedTexts[currentTextIndex]}
+              </motion.h1>
+            </div>
+
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500 leading-tight mb-4"
+              initial={{ opacity: 0, y: isMobile ? 25 : 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }}
+              style={{
+                filter: isMobile ? "none" : "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
+                transform: isMobile ? "translate3d(0, 0, 0)" : "none"
+              }}
+            >
+              {translations.hero_header}
+            </motion.h1>
+          </>
+        ) : (
+          <>
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500 leading-tight mb-4"
+              initial={{ opacity: 0, y: isMobile ? 25 : 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }}
+              style={{
+                filter: isMobile ? "none" : "drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))",
+                transform: isMobile ? "translate3d(0, 0, 0)" : "none"
+              }}
+            >
+              {translations.hero_header}
+            </motion.h1>
+            
+            {/* Animated changing text - Optimized for mobile */}
+            <div className="relative h-24 lg:h-32 overflow-hidden">
+              <motion.h1
+                key={`${currentTextIndex}-${animatedTexts[currentTextIndex]}`}
+                className="absolute text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-500 leading-tight"
+                initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: isMobile ? -10 : -20 }}
+                transition={{ 
+                  duration: isMobile ? 0.3 : 0.5, 
+                  ease: "easeOut",
+                  ...(isMobile && { type: "tween" })
+                }}
+                style={{
+                  filter: isMobile ? "none" : "drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))",
+                  transform: isMobile ? "translate3d(0, 0, 0)" : "none"
+                }}
+              >
+                {animatedTexts[currentTextIndex]}
+              </motion.h1>
+            </div>
+          </>
+        )}
+
+        <motion.div
+          className="text-xl md:text-2xl text-white/80 font-light mt-4"
+          initial={{ opacity: 0, y: isMobile ? 15 : 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.6 }}
+          style={{
+            textShadow: isMobile ? "none" : "0 0 10px rgba(255, 255, 255, 0.3)",
+          }}
+        >
+          " {translations.hero_subheader} "
+        </motion.div>
+      </div>
+
+      {/* Description */}
+      <motion.p
+        className="text-white/90 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed"
+        initial={{ opacity: 0, y: isMobile ? 15 : 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.8 }}
+        style={{
+          textShadow: isMobile ? "none" : "0 0 8px rgba(255, 255, 255, 0.2)",
+        }}
+      >
+        {translations.hero_description}
+      </motion.p>
+
+      {/* CTA Buttons */}
+      <motion.div
+        className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
+        initial={{ opacity: 0, y: isMobile ? 15 : 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: isMobile ? 0.6 : 0.8, delay: 1 }}
+      >
+        <motion.a
+          className="bg-gradient-to-r from-green-400 to-green-600 text-slate-900 px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 group relative overflow-hidden"
+          whileHover={!isMobile ? {
+            scale: 1.05,
+            boxShadow: "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(34, 197, 94, 0.4)",
+          } : {}}
+          whileTap={{ scale: 0.95 }}
+          style={{
+            boxShadow: isMobile ? "none" : "0 0 20px rgba(34, 197, 94, 0.4)",
+          }}
+          href="#service"
+        >
+          <motion.div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <span className="relative z-10">{translations.hero_main_cta}</span>
+          <motion.div
+            className="relative z-10"
+            animate={!isMobile ? { x: [0, 4, 0] } : {}}
+            transition={!isMobile ? { duration: 1.5, repeat: Infinity } : {}}
+          >
+            <FaArrowRight />
+          </motion.div>
+        </motion.a>
+
+        <motion.button
+          className="border border-green-400/40 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group"
+          whileHover={!isMobile ? {
+            scale: 1.05,
+            borderColor: "rgba(34, 197, 94, 0.8)",
+            boxShadow: "0 0 25px rgba(34, 197, 94, 0.3)",
+            textShadow: "0 0 8px rgba(34, 197, 94, 0.8)",
+          } : {}}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => {window.location.href = "/portfolio"}}
+        >
+          <motion.div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <span className="relative z-10">
+            {translations.hero_secondary_cta}
+          </span>
+        </motion.button>
+      </motion.div>
+    </div>
+  );
+};
+
+// Optimized Hero Image Component
+const HeroImageOptimized = ({ mousePosition, shouldAnimate, isMobile }) => {
+  return (
+    <div className="flex-1 relative max-w-lg">
+      {/* Simplified floating elements for mobile */}
+      {!isMobile && (
+        <>
+          <motion.div
+            className="absolute -top-10 -left-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+            style={{
+              boxShadow: "0 0 40px rgba(34, 197, 94, 0.4)",
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-10 -right-10 w-32 h-32 bg-green-500/20 rounded-full blur-xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.4, 0.7, 0.4],
+            }}
+            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+            style={{
+              boxShadow: "0 0 50px rgba(34, 197, 94, 0.5)",
+            }}
+          />
+        </>
+      )}
+
+      {/* Main container */}
+      <div className="relative">
+        {/* Simplified glow effect */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-green-400/30 to-green-600/30 rounded-3xl blur-2xl"
+          animate={!isMobile ? {
+            opacity: [0.3, 0.6, 0.3],
+            scale: [1, 1.05, 1],
+          } : {}}
+          transition={!isMobile ? { duration: 3, repeat: Infinity } : {}}
+          style={{
+            boxShadow: isMobile ? "none" : "0 0 60px rgba(34, 197, 94, 0.4)",
+          }}
+        />
+
+        {/* Image container */}
+        <motion.div
+          className="relative z-10 rounded-3xl overflow-hidden border border-green-400/20 backdrop-blur-sm"
+          style={{
+            transform: isMobile ? "none" : `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px)`,
+          }}
+          whileHover={!isMobile ? {
+            scale: 1.05,
+            borderColor: "rgba(34, 197, 94, 0.5)",
+            boxShadow: "0 0 40px rgba(34, 197, 94, 0.3)",
+          } : {}}
+          initial={{ opacity: 0, scale: 0.8, rotateY: isMobile ? 0 : 15 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <img
+            src="/img/programmer.avif"
+            alt="Technology Innovation"
+            className="w-full h-90 object-cover"
+            loading="lazy"
+          />
+
+          {/* Tech overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+
+          {/* Simplified floating tech icons */}
+          <motion.div
+            className="absolute top-4 right-4 w-12 h-12 bg-green-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
+            style={{
+              boxShadow: isMobile ? "none" : "0 0 15px rgba(34, 197, 94, 0.3)",
+            }}
+          >
+            <FaBolt className="text-2xl text-green-400" />
+          </motion.div>
+          <motion.div
+            className="absolute bottom-4 left-4 w-12 h-12 bg-green-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
+            style={{
+              boxShadow: isMobile ? "none" : "0 0 15px rgba(34, 197, 94, 0.3)",
+            }}
+          >
+            <FaRocket className="text-2xl text-green-400" />
+          </motion.div>
+        </motion.div>
+
+        {/* Simplified geometric decorations */}
+        {!isMobile && (
+          <>
+            <motion.div
+              className="absolute top-10 -right-5 w-16 h-16 border-2 border-green-400/50 rounded-full"
+              animate={{
+                rotate: 360,
+                borderColor: [
+                  "rgba(34, 197, 94, 0.5)",
+                  "rgba(34, 197, 94, 0.8)",
+                  "rgba(34, 197, 94, 0.5)",
+                ],
+              }}
+              transition={{
+                rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                borderColor: { duration: 2, repeat: Infinity },
+              }}
+              style={{
+                boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)",
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-5 -left-5 w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-lg"
+              animate={{
+                rotateZ: [0, 180, 360],
+                boxShadow: [
+                  "0 0 15px rgba(34, 197, 94, 0.4)",
+                  "0 0 25px rgba(34, 197, 94, 0.6)",
+                  "0 0 15px rgba(34, 197, 94, 0.4)",
+                ],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
 };

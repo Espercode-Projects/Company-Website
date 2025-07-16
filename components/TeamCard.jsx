@@ -350,7 +350,7 @@ const TeamCard = () => {
 
                       {/* Card Info */}
                       <div className="h-1/4 p-3 bg-gradient-to-r from-gray-900 to-black text-white flex flex-col justify-center">
-                        <h3 className="font-bold text-sm truncate">
+                        <h3 className="font-bold text-sm truncate min-h-5">
                           {member.name}
                         </h3>
                         <p className="text-green-400 text-xs font-semibold">
